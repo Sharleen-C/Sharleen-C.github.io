@@ -20,18 +20,48 @@
   </url><url>
     <loc>https://sharleen-c.github.io/science/</loc>
     <lastmod>2020-09-15T11:30:03+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sharleen-c.github.io/zh/science/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sharleen-c.github.io/science/"
+                />
   </url><url>
     <loc>https://sharleen-c.github.io/zh/science/</loc>
     <lastmod>2020-09-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://sharleen-c.github.io/life/</loc>
     <lastmod>2020-09-15T11:30:03+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sharleen-c.github.io/zh/life/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sharleen-c.github.io/life/"
+                />
   </url><url>
     <loc>https://sharleen-c.github.io/science/paper/</loc>
     <lastmod>2020-09-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://sharleen-c.github.io/technology/</loc>
     <lastmod>2020-09-15T11:30:03+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sharleen-c.github.io/zh/technology/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sharleen-c.github.io/technology/"
+                />
   </url><url>
     <loc>https://sharleen-c.github.io/zh/life/</loc>
     <lastmod>2020-09-15T11:30:03+00:00</lastmod>

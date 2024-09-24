@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://sharleen-c.github.io/zh/life/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sharleen-c.github.io/life/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sharleen-c.github.io/zh/life/"
+                />
+  </url><url>
+    <loc>https://sharleen-c.github.io/zh/science/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sharleen-c.github.io/science/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sharleen-c.github.io/zh/science/"
+                />
+  </url><url>
     <loc>https://sharleen-c.github.io/zh/</loc>
     <xhtml:link
                 rel="alternate"
@@ -14,10 +38,16 @@
                 href="https://sharleen-c.github.io/zh/"
                 />
   </url><url>
-    <loc>https://sharleen-c.github.io/zh/zhcategories/</loc>
-  </url><url>
-    <loc>https://sharleen-c.github.io/zh/zhseries/</loc>
-  </url><url>
-    <loc>https://sharleen-c.github.io/zh/zhtags/</loc>
+    <loc>https://sharleen-c.github.io/zh/technology/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://sharleen-c.github.io/technology/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://sharleen-c.github.io/zh/technology/"
+                />
   </url>
 </urlset>
