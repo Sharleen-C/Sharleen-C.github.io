@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Hugo &#43; PaperMode 建站踩坑指北 | Sharing Sharleen Blog</title>
+<meta name="keywords" content="technology">
+<meta name="description" content="一些泪和痛，其实不难，但莫名其妙地花费了很长时间">
+<meta name="author" content="Sharleen">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://sharleen-c.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sharleen-c.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharleen-c.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sharleen-c.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sharleen-c.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://sharleen-c.github.io/posts/technology/new_website/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[\[','\]\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style><meta property="og:title" content="Hugo &#43; PaperMode 建站踩坑指北" />
+<meta property="og:description" content="一些泪和痛，其实不难，但莫名其妙地花费了很长时间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sharleen-c.github.io/posts/technology/new_website/" />
+<meta property="og:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-25T14:42:17+08:00" />
+<meta property="article:modified_time" content="2024-09-25T14:42:17+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content="Hugo &#43; PaperMode 建站踩坑指北"/>
+<meta name="twitter:description" content="一些泪和痛，其实不难，但莫名其妙地花费了很长时间"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sharleen-c.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "🥂🪄Useful Technology",
+      "item": "https://sharleen-c.github.io/posts/technology/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Hugo + PaperMode 建站踩坑指北",
+      "item": "https://sharleen-c.github.io/posts/technology/new_website/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hugo + PaperMode 建站踩坑指北",
+  "name": "Hugo \u002b PaperMode 建站踩坑指北",
+  "description": "一些泪和痛，其实不难，但莫名其妙地花费了很长时间",
+  "keywords": [
+    "technology"
+  ],
+  "articleBody": "建站方法 基本思路参考如下博客\n如何用 GitHub Pages + Hugo 搭建个人博客\nhugo博客搭建 | PaperMod主题\n关于hugo.toml 在hugo new website后，出现的不是config.yml，而是hugo.toml\n因此，现有教程中的config需要加以转换，在此分享个人的hugo.toml（仅保留了en版本）\n网站：YAML转TOML\n1baseURL = 'https://sharleen-c.github.io/' 2languageCode = 'en-us' 3title = 'Sharing Sharleen Blog' 4 5theme = [\"PaperMod\"] 6copyright = \"© [Sharleen](https://sharleen-c.github.io/)\" 7paginate = 5 8 9[article] 10 math = true 11 12[minify] 13 disableXML = true 14 15[taxonomies] 16science = \"science\" 17technology = \"technology\" 18life = \"life\" 19 20[[menu.main]] 21name = \"Archive\" 22url = \"archives\" 23weight = 5 24 25[[menu.main]] 26name = \"Science\" 27url = \"posts/science/\" 28weight = 5 29 30[[menu.main]] 31name = \"Technology\" 32url = \"posts/technology/\" 33weight = 10 34 35[[menu.main]] 36name = \"Life\" 37url = \"posts/life/\" 38weight = 10 39 40 41[[menu.main]] 42name = \"About\" 43url = \"about/\" 44weight = 10 45 46[[menu.main]] 47name = \"Tags\" 48url = \"tags/\" 49weight = 10 50 51[[menu.main]] 52name = \"Search\" 53url = \"search/\" 54weight = 10 55 56[params] 57# mainsections主要和Search以及Archive有关，Search和Archive可以包含这其中包含的内容 58# mainsections = [\"posts\", \"papermod\"] 59mainsections = [ \"posts\", \"papermod\",\"life\",\"science\",\"technology\"] 60# 在Archive中显示所有博客 61ShowAllPagesInArchive = true 62enableInlineShortcodes = true 63enableRobotsTXT = true 64buildDrafts = false 65buildFuture = false 66buildExpired = false 67enableEmoji = true 68pygmentsUseClasses = true 69 70[params.homeInfoParams] 71Title = \"Hi, there is Sharing Sharleen👋\" 72subtitle = \"😊Relax and Take it Easy!🌲\" 73Content = \"\"\" 74- 👋 Welcome to Sharleen's home🥰! 75- 76- **Sharleen** is a post-graduated student from Central South University. 77- **Love** Photograph, Fitness \u0026 Literature 78- 79- ✨✨事实上，你比晚霞🌇更耀眼✨✨ 80\"\"\" 81 82[[params.socialIcons]] 83name = \"github\" 84url = \"https://github.com/Sharleen-C\" 85 86[[params.socialIcons]] 87name = \"email\" 88url = \"mailto:changxy_0327@163.com\" 89 90[outputs] 91home = [ \"HTML\", \"RSS\", \"JSON\" ] 92 93[params.fuseOpts] 94 isCaseSensitive = false 95 shouldSort = true 96 location = 0 97 distance = 1_000 98 threshold = 0.4 99 minMatchCharLength = 0 100 keys = [ \"title\", \"permalink\", \"summary\", \"content\" ] 101 102[params.assets] 103disableHLJS = true 104disableFingerprinting = true 105 106[markup.goldmark.renderer] 107unsafe = true 108 109[markup.highlight] 110noClasses = false 111 112[services.instagram] 113disableInlineCSS = true 114 115[services.twitter] 116disableInlineCSS = true 关于页面展示 在content文件夹中，新增博客文件，除了archive和search直接建在content文件夹下，其他内容需要首先新建文件夹 新建文件夹中需要新增_index.md文件，形成层级标题 文件夹层层嵌套，形成层层标题 archetypes/default.md中包含的是每次新增一个页面遵循的模板，如下 1--- 2title: \"My post\" 3date : '{{ .Date }}' # 形成Archive所必需的 4lastmod : '{{ .Date }}' 5# weight: 1 6tags: [\"first\"] 7author: \"Sharleen\" 8showToc: true # md Toc 9TocOpen: true 10draft: false 11hidemeta: false 12comments: false 13description: \"Desc Text.\" 14canonicalURL: \"https://canonical.url/to/page\" 15disableHLJS: true # to disable highlightjs 16disableShare: false 17hideSummary: false 18searchHidden: false #设置为true，Search页面搜索不到 19ShowReadingTime: true 20ShowBreadCrumbs: true 21ShowPostNavLinks: true 22ShowCodeCopyButtons: true 23cover: 24 image: \"\u003cimage path/url\u003e\" # image path/url 25 alt: \"\u003calt text\u003e\" # alt text 26 caption: \"\u003ctext\u003e\" # display caption under cover 27 relative: false # when using page bundles set this to true 28 hidden: true # only hide on current single page 29--- 关于部署 按照 建站方法 中的方法进行构建即可。\n参考：Hugo博客从本地托管到github\n期间，可能会遇到一个问题！那就是本地hugo server时界面正常显示，但是github部署之后界面仅保留文字，没有渲染CSS / JS。 此时对界面检查会发现一个报错：\nFailed to find a valid digest in the 'integrity' attribute......\n通过查询官方文档可以解决该问题：官方解答\n在hugo.toml中增加如下部分：\n1[params.assets] 2disableFingerprinting = true 重新部署即可。\n关于 Git 只需要将public文件夹同步至Github上即可，因此先转到public文件下，进行初始化和与远程repository进行连接\n1cd ./public 2git init -b main 3git remote add origin https://github.com/Sharleen-C/Sharleen-C.github.io.git ！注意！：在commit和push之前养成好习惯，先pull!\n1git pull https://github.com/Sharleen-C/Sharleen-C.github.io.git main 将public文件夹下的所有文件commit\n1git add . 2git commit -m \"v1\" 向远程仓库push，注意此处代表branch为main，如果远程仓库branch为master，记得修改！\n1git push origin main push的另外一种方式\n1git push --set-upstream origin main Archive hugo new archives.md\n在archives.md中加入\n1--- 2title: \"Archive\" 3layout: \"archives\" 4#url: \"/archives\" 5summary: \"archives\" 6--- 注意在hugo.toml中修改\n1# Origin 2[params] 3mainsections = [ \"posts\", \"papermod\"] 4# New 5[params] 6mainsections = [ \"posts\", \"papermod\",\"life\",\"science\",\"technology\"] Others 关于TOC左侧悬浮 参考Hugo博客目录放在侧边\n该博主文中有许多教程，可以按需调整。\n关于代码字体 方法一：修改hugo.toml 博客中使用的风格如下\n1[markup.highlight] 2lineNoStart = 1 3lineNos = true 4lineNumbersInTable = false 5noClasses = true 6style = 'rose-pine-dawn' 方法二：适用于特殊字体 JetBrains Mono 最漂亮的编程字体\n下载字体 将下载好的字体放到static/fonts文件夹中 在assets/css/extended中新增文件fonts.css 1@font-face { 2font-family: \"JetBrainsMono_Regular\"; 3src: url(\"/fonts/JetBrainsMono-Regular.woff2 \") format(\"truetype\"); 4} 在assets/css/common/post-single.css中修改 1.post-content code { 2 margin: auto 4px; 3 padding: 4px 6px; 4 font-size: 0.78em; 5 letter-spacing: 20px; 6 font-family: JetBrainsMono-Regular; 7 line-height: 2; 8 background: var(--code-bg); 9 border-radius: 2px; 10} ",
+  "wordCount" : "594",
+  "inLanguage": "en",
+  "image":"https://sharleen-c.github.io/%3Cimage%20path/url%3E","datePublished": "2024-09-25T14:42:17+08:00",
+  "dateModified": "2024-09-25T14:42:17+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Sharleen"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharleen-c.github.io/posts/technology/new_website/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sharing Sharleen Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharleen-c.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://sharleen-c.github.io/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://sharleen-c.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/science/" title="Science">
+                    <span>Science</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/life/" title="Life">
+                    <span>Life</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/technology/" title="Technology">
+                    <span>Technology</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://sharleen-c.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/technology/">🥂🪄Useful Technology</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Hugo &#43; PaperMode 建站踩坑指北
+    </h1>
+    <div class="post-description">
+      一些泪和痛，其实不难，但莫名其妙地花费了很长时间
+    </div>
+    <div class="post-meta"><span title='2024-09-25 14:42:17 +0800 CST'>September 25, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Sharleen
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%bb%ba%e7%ab%99%e6%96%b9%e6%b3%95" aria-label="建站方法">建站方法</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8ehugotoml" aria-label="关于hugo.toml">关于hugo.toml</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e9%a1%b5%e9%9d%a2%e5%b1%95%e7%a4%ba" aria-label="关于页面展示">关于页面展示</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e9%83%a8%e7%bd%b2" aria-label="关于部署">关于部署</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e-git" aria-label="关于 Git">关于 Git</a></li>
+                <li>
+                    <a href="#archive" aria-label="Archive">Archive</a></li>
+                <li>
+                    <a href="#others" aria-label="Others">Others</a><ul>
+                        
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8etoc%e5%b7%a6%e4%be%a7%e6%82%ac%e6%b5%ae" aria-label="关于TOC左侧悬浮">关于TOC左侧悬浮</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e4%ba%8e%e4%bb%a3%e7%a0%81%e5%ad%97%e4%bd%93" aria-label="关于代码字体">关于代码字体</a><ul>
+                        
+                <li>
+                    <a href="#%e6%96%b9%e6%b3%95%e4%b8%80%e4%bf%ae%e6%94%b9hugotoml" aria-label="方法一：修改hugo.toml">方法一：修改hugo.toml</a></li>
+                <li>
+                    <a href="#%e6%96%b9%e6%b3%95%e4%ba%8c%e9%80%82%e7%94%a8%e4%ba%8e%e7%89%b9%e6%ae%8a%e5%ad%97%e4%bd%93" aria-label="方法二：适用于特殊字体">方法二：适用于特殊字体</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+  <div class="post-content"><h1 id="建站方法">建站方法<a hidden class="anchor" aria-hidden="true" href="#建站方法">#</a></h1>
+<p>基本思路参考如下博客</p>
+<p><a href="https://krislinzhao.github.io/docs/create-a-wesite-using-github-pages-and-hugo/#83%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%88%B0%E6%BA%90%E7%A0%81%E4%BB%93%E5%BA%93">如何用 GitHub Pages + Hugo 搭建个人博客</a></p>
+<p><a href="https://www.sulvblog.cn/posts/blog/build_hugo/">hugo博客搭建 | PaperMod主题</a></p>
+<h1 id="关于hugotoml">关于hugo.toml<a hidden class="anchor" aria-hidden="true" href="#关于hugotoml">#</a></h1>
+<p>在<code>hugo new website</code>后，出现的不是<code>config.yml</code>，而是<code>hugo.toml</code></p>
+<p>因此，现有教程中的config需要加以转换，在此分享个人的<code>hugo.toml</code>（仅保留了en版本）</p>
+<p>网站：<a href="https://paji-toolset.net/zh-CN/yaml-to-toml-converter">YAML转TOML</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span><span style="color:#d7827e">baseURL</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#39;https://sharleen-c.github.io/&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span><span style="color:#d7827e">languageCode</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#39;en-us&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span><span style="color:#d7827e">title</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#39;Sharing Sharleen Blog&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span><span style="color:#d7827e">theme</span> <span style="color:#797593">=</span> <span style="color:#797593">[</span><span style="color:#ea9d34">&#34;PaperMod&#34;</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span><span><span style="color:#d7827e">copyright</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;© [Sharleen](https://sharleen-c.github.io/)&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span><span style="color:#d7827e">paginate</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">5</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span><span><span style="color:#797593">[</span><span style="color:#d7827e">article</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span> <span style="color:#d7827e">math</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span><span><span style="color:#797593">[</span><span style="color:#d7827e">minify</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span> <span style="color:#d7827e">disableXML</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span><span style="color:#797593">[</span><span style="color:#d7827e">taxonomies</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span><span style="color:#d7827e">science</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;science&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span><span style="color:#d7827e">technology</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;technology&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span><span><span style="color:#d7827e">life</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;life&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Archive&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;archives&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">5</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Science&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;posts/science/&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">5</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Technology&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;posts/technology/&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Life&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;posts/life/&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;About&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;about/&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Tags&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;tags/&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">menu</span><span style="color:#797593">.</span><span style="color:#d7827e">main</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Search&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;search/&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span><span style="color:#d7827e">weight</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span><span><span style="color:#9893a5"># mainsections主要和Search以及Archive有关，Search和Archive可以包含这其中包含的内容</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span><span style="color:#9893a5"># mainsections = [&#34;posts&#34;, &#34;papermod&#34;]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span><span style="color:#d7827e">mainsections</span> <span style="color:#797593">=</span> <span style="color:#797593">[</span> <span style="color:#ea9d34">&#34;posts&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;papermod&#34;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#34;life&#34;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#34;science&#34;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#34;technology&#34;</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span><span style="color:#9893a5"># 在Archive中显示所有博客</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span><span><span style="color:#d7827e">ShowAllPagesInArchive</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span><span><span style="color:#d7827e">enableInlineShortcodes</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span><span><span style="color:#d7827e">enableRobotsTXT</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span><span><span style="color:#d7827e">buildDrafts</span> <span style="color:#797593">=</span> <span style="color:#286983">false</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span><span style="color:#d7827e">buildFuture</span> <span style="color:#797593">=</span> <span style="color:#286983">false</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span><span style="color:#d7827e">buildExpired</span> <span style="color:#797593">=</span> <span style="color:#286983">false</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span><span style="color:#d7827e">enableEmoji</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span><span><span style="color:#d7827e">pygmentsUseClasses</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">.</span><span style="color:#d7827e">homeInfoParams</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span><span style="color:#d7827e">Title</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;Hi, there is Sharing Sharleen👋&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span><span><span style="color:#d7827e">subtitle</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;😊Relax and Take it Easy!🌲&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span><span style="color:#d7827e">Content</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span><span><span style="color:#ea9d34">- 👋 Welcome to Sharleen&#39;s home🥰!
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span><span><span style="color:#ea9d34">-
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span><span><span style="color:#ea9d34">- **Sharleen**  is a post-graduated student from Central South University.
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span><span style="color:#ea9d34">- **Love** Photograph, Fitness &amp; Literature
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span><span><span style="color:#ea9d34">-
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span><span style="color:#ea9d34">- ✨✨事实上，你比晚霞🌇更耀眼✨✨
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span><span style="color:#ea9d34">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">params</span><span style="color:#797593">.</span><span style="color:#d7827e">socialIcons</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;github&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;https://github.com/Sharleen-C&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span><span><span style="color:#797593">[[</span><span style="color:#d7827e">params</span><span style="color:#797593">.</span><span style="color:#d7827e">socialIcons</span><span style="color:#797593">]]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span><span style="color:#d7827e">name</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;email&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span><span><span style="color:#d7827e">url</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#34;mailto:changxy_0327@163.com&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span><span style="color:#797593">[</span><span style="color:#d7827e">outputs</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span><span><span style="color:#d7827e">home</span> <span style="color:#797593">=</span> <span style="color:#797593">[</span> <span style="color:#ea9d34">&#34;HTML&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;RSS&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;JSON&#34;</span> <span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">.</span><span style="color:#d7827e">fuseOpts</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span> <span style="color:#d7827e">isCaseSensitive</span> <span style="color:#797593">=</span> <span style="color:#286983">false</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span> <span style="color:#d7827e">shouldSort</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span><span> <span style="color:#d7827e">location</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span><span> <span style="color:#d7827e">distance</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">1_000</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span> <span style="color:#d7827e">threshold</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">0.4</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span> <span style="color:#d7827e">minMatchCharLength</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span><span> <span style="color:#d7827e">keys</span> <span style="color:#797593">=</span> <span style="color:#797593">[</span> <span style="color:#ea9d34">&#34;title&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;permalink&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;summary&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;content&#34;</span> <span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">.</span><span style="color:#d7827e">assets</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span><span><span style="color:#d7827e">disableHLJS</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span><span><span style="color:#d7827e">disableFingerprinting</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span><span><span style="color:#797593">[</span><span style="color:#d7827e">markup</span><span style="color:#797593">.</span><span style="color:#d7827e">goldmark</span><span style="color:#797593">.</span><span style="color:#d7827e">renderer</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span><span><span style="color:#d7827e">unsafe</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span><span><span style="color:#797593">[</span><span style="color:#d7827e">markup</span><span style="color:#797593">.</span><span style="color:#d7827e">highlight</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span><span><span style="color:#d7827e">noClasses</span> <span style="color:#797593">=</span> <span style="color:#286983">false</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span><span><span style="color:#797593">[</span><span style="color:#d7827e">services</span><span style="color:#797593">.</span><span style="color:#d7827e">instagram</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span><span><span style="color:#d7827e">disableInlineCSS</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span><span><span style="color:#797593">[</span><span style="color:#d7827e">services</span><span style="color:#797593">.</span><span style="color:#d7827e">twitter</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span><span><span style="color:#d7827e">disableInlineCSS</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span></code></pre></div><h1 id="关于页面展示">关于页面展示<a hidden class="anchor" aria-hidden="true" href="#关于页面展示">#</a></h1>
+<ol>
+<li>在<code>content</code>文件夹中，新增博客文件，除了<code>archive</code>和<code>search</code>直接建在<code>content</code>文件夹下，其他内容需要首先新建文件夹</li>
+<li>新建文件夹中需要新增<code>_index.md</code>文件，形成层级标题</li>
+<li>文件夹层层嵌套，形成层层标题</li>
+<li><code>archetypes/default.md</code>中包含的是每次新增一个页面遵循的模板，如下</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>title: &#34;My post&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>date : &#39;{{ .Date }}&#39; # 形成Archive所必需的
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>lastmod : &#39;{{ .Date }}&#39;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span># weight: 1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>tags: [&#34;first&#34;]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>author: &#34;Sharleen&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>showToc: true # md Toc
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>TocOpen: true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>draft: false
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>hidemeta: false
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>comments: false
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>description: &#34;Desc Text.&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>canonicalURL: &#34;https://canonical.url/to/page&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>disableHLJS: true # to disable highlightjs
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>disableShare: false
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>hideSummary: false
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>searchHidden: false <span style="color:#d7827e">#设置为true</span>，Search页面搜索不到
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>ShowReadingTime: true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>ShowBreadCrumbs: true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>ShowPostNavLinks: true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>ShowCodeCopyButtons: true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>cover:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    image: &#34;<span style="color:#797593">&lt;</span><span style="color:#d7827e">image</span> <span style="color:#d7827e">path</span><span style="color:#b4637a">/</span><span style="color:#d7827e">url</span><span style="color:#797593">&gt;</span>&#34; # image path/url
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    alt: &#34;<span style="color:#797593">&lt;</span><span style="color:#d7827e">alt</span> <span style="color:#d7827e">text</span><span style="color:#797593">&gt;</span>&#34; # alt text
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    caption: &#34;<span style="color:#797593">&lt;</span><span style="color:#d7827e">text</span><span style="color:#797593">&gt;</span>&#34; # display caption under cover
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    relative: false # when using page bundles set this to true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    hidden: true # only hide on current single page
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>---
+</span></span></code></pre></div><h1 id="关于部署">关于部署<a hidden class="anchor" aria-hidden="true" href="#关于部署">#</a></h1>
+<p>按照 <a href="#%E5%BB%BA%E7%AB%99%E6%96%B9%E6%B3%95">建站方法</a> 中的方法进行构建即可。</p>
+<p>参考：<a href="https://www.daniao.org/5349.html">Hugo博客从本地托管到github</a></p>
+<p>期间，可能会遇到一个问题！那就是本地<code>hugo server</code>时界面正常显示，但是github部署之后界面仅保留文字，没有渲染CSS / JS。
+此时对界面检查会发现一个报错：</p>
+<p><code>Failed to find a valid digest in the 'integrity' attribute......</code></p>
+<p>通过查询官方文档可以解决该问题：<a href="https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs">官方解答</a></p>
+<p>在<code>hugo.toml</code>中增加如下部分：</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">.</span><span style="color:#d7827e">assets</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#d7827e">disableFingerprinting</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span></code></pre></div><p>重新部署即可。</p>
+<h1 id="关于-git">关于 Git<a hidden class="anchor" aria-hidden="true" href="#关于-git">#</a></h1>
+<p>只需要将public文件夹同步至Github上即可，因此先转到public文件下，进行初始化和与远程repository进行连接</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#d7827e">cd</span> ./public
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git init -b main
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>git remote add origin https://github.com/Sharleen-C/Sharleen-C.github.io.git
+</span></span></code></pre></div><p><strong>！注意！</strong>：在commit和push之前养成好习惯，先pull!</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git pull https://github.com/Sharleen-C/Sharleen-C.github.io.git main
+</span></span></code></pre></div><p>将public文件夹下的所有文件commit</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git add .
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>git commit -m <span style="color:#ea9d34">&#34;v1&#34;</span>
+</span></span></code></pre></div><p>向远程仓库push，<strong>注意</strong>此处代表branch为main，如果远程仓库branch为master，记得修改！</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git push origin main
+</span></span></code></pre></div><p>push的另外一种方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>git push --set-upstream origin main
+</span></span></code></pre></div><h1 id="archive">Archive<a hidden class="anchor" aria-hidden="true" href="#archive">#</a></h1>
+<p><code>hugo new archives.md</code></p>
+<p>在<code>archives.md</code>中加入</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>---
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>title: &#34;Archive&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>layout: &#34;archives&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>#url: &#34;/archives&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>summary: &#34;archives&#34;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>---
+</span></span></code></pre></div><p>注意在<code>hugo.toml</code>中修改</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#9893a5"># Origin</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#d7827e">mainsections</span> <span style="color:#797593">=</span> <span style="color:#797593">[</span> <span style="color:#ea9d34">&#34;posts&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;papermod&#34;</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#9893a5"># New</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#d7827e">mainsections</span> <span style="color:#797593">=</span> <span style="color:#797593">[</span> <span style="color:#ea9d34">&#34;posts&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;papermod&#34;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#34;life&#34;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#34;science&#34;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#34;technology&#34;</span><span style="color:#797593">]</span>
+</span></span></code></pre></div><h1 id="others">Others<a hidden class="anchor" aria-hidden="true" href="#others">#</a></h1>
+<h2 id="关于toc左侧悬浮">关于TOC左侧悬浮<a hidden class="anchor" aria-hidden="true" href="#关于toc左侧悬浮">#</a></h2>
+<p>参考<a href="https://www.sulvblog.cn/posts/blog/hugo_toc_side/">Hugo博客目录放在侧边</a></p>
+<p>该博主文中有许多教程，可以按需调整。</p>
+<h2 id="关于代码字体">关于代码字体<a hidden class="anchor" aria-hidden="true" href="#关于代码字体">#</a></h2>
+<h3 id="方法一修改hugotoml">方法一：修改hugo.toml<a hidden class="anchor" aria-hidden="true" href="#方法一修改hugotoml">#</a></h3>
+<p>博客中使用的风格如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#797593">[</span><span style="color:#d7827e">markup</span><span style="color:#797593">.</span><span style="color:#d7827e">highlight</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#d7827e">lineNoStart</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#d7827e">lineNos</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#d7827e">lineNumbersInTable</span> <span style="color:#797593">=</span> <span style="color:#286983">false</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#d7827e">noClasses</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#d7827e">style</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#39;rose-pine-dawn&#39;</span>
+</span></span></code></pre></div><h3 id="方法二适用于特殊字体">方法二：适用于特殊字体<a hidden class="anchor" aria-hidden="true" href="#方法二适用于特殊字体">#</a></h3>
+<p><a href="https://www.jetbrains.com/zh-cn/lp/mono/">JetBrains Mono 最漂亮的编程字体</a></p>
+<ol>
+<li>下载字体</li>
+<li>将下载好的字体放到<code>static/fonts</code>文件夹中</li>
+<li>在<code>assets/css/extended</code>中新增文件<code>fonts.css</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#797593">@</span><span style="color:#286983">font-face</span> <span style="color:#797593">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#d7827e">font-family</span><span style="color:#797593">:</span> <span style="color:#ea9d34">&#34;JetBrainsMono_Regular&#34;</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#d7827e">src</span><span style="color:#797593">:</span> <span style="color:#d7827e">url</span><span style="color:#797593">(</span><span style="color:#ea9d34">&#34;/fonts/JetBrainsMono-Regular.woff2 &#34;</span><span style="color:#797593">)</span> <span style="color:#d7827e">format</span><span style="color:#797593">(</span><span style="color:#ea9d34">&#34;truetype&#34;</span><span style="color:#797593">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#797593">}</span>
+</span></span></code></pre></div><ol start="4">
+<li>在<code>assets/css/common/post-single.css</code>中修改</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#797593">.</span><span style="color:#56949f">post-content</span> <span style="color:#d7827e">code</span> <span style="color:#797593">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    <span style="color:#286983">margin</span><span style="color:#797593">:</span> <span style="color:#286983">auto</span> <span style="color:#ea9d34">4</span><span style="color:#286983">px</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    <span style="color:#286983">padding</span><span style="color:#797593">:</span> <span style="color:#ea9d34">4</span><span style="color:#286983">px</span> <span style="color:#ea9d34">6</span><span style="color:#286983">px</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#286983">font-size</span><span style="color:#797593">:</span> <span style="color:#ea9d34">0.78</span><span style="color:#286983">em</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#286983">letter-spacing</span><span style="color:#797593">:</span> <span style="color:#ea9d34">20</span><span style="color:#286983">px</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#286983">font-family</span><span style="color:#797593">:</span> <span style="color:#d7827e">JetBrainsMono-Regular</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#286983">line-height</span><span style="color:#797593">:</span> <span style="color:#ea9d34">2</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#286983">background</span><span style="color:#797593">:</span> <span style="color:#d7827e">var</span><span style="color:#797593">(</span><span style="color:#797593">--</span><span style="color:#d7827e">code</span><span style="color:#797593">-</span><span style="color:#d7827e">bg</span><span style="color:#797593">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#286983">border-radius</span><span style="color:#797593">:</span> <span style="color:#ea9d34">2</span><span style="color:#286983">px</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#797593">}</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://sharleen-c.github.io/posts/technology/conda_install/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Conda安装以及创建虚拟环境</span>
+  </a>
+  <a class="next" href="https://sharleen-c.github.io/posts/life/winter/">
+    <span class="title">Next »</span>
+    <br>
+    <span>☃️Winter</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://sharleen-c.github.io/">Sharleen</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

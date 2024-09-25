@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Conda安装以及创建虚拟环境 | Sharing Sharleen Blog</title>
+<meta name="keywords" content="technology">
+<meta name="description" content="Conda安装简单但又有一点复杂🥲">
+<meta name="author" content="Sharleen">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://sharleen-c.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sharleen-c.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharleen-c.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sharleen-c.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sharleen-c.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://sharleen-c.github.io/posts/technology/conda_install/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[\[','\]\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style><meta property="og:title" content="Conda安装以及创建虚拟环境" />
+<meta property="og:description" content="Conda安装简单但又有一点复杂🥲" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sharleen-c.github.io/posts/technology/conda_install/" />
+<meta property="og:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-25T21:34:54+08:00" />
+<meta property="article:modified_time" content="2024-09-25T21:34:54+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content="Conda安装以及创建虚拟环境"/>
+<meta name="twitter:description" content="Conda安装简单但又有一点复杂🥲"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sharleen-c.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "🥂🪄Useful Technology",
+      "item": "https://sharleen-c.github.io/posts/technology/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Conda安装以及创建虚拟环境",
+      "item": "https://sharleen-c.github.io/posts/technology/conda_install/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Conda安装以及创建虚拟环境",
+  "name": "Conda安装以及创建虚拟环境",
+  "description": "Conda安装简单但又有一点复杂🥲",
+  "keywords": [
+    "technology"
+  ],
+  "articleBody": "Conda安装以及创建虚拟环境 conda安装 首先查看自己是否安装了conda，键盘Win+R, 输入cmd，按回车，输入conda -V，查看版本号。\n下载Anaconda,直接搜索，进入官网， 依次点击，选择与自己电脑对应的版本，进行下载。\n右击，以管理员身份运行，进行安装。\n默认安装路径D:\\Anaconda\\install\n一定要勾选添加环境变量！点击Install，安装\n这里两个方框都不勾选，防止打开其他网页。\n查看Anaconda是否安装成功\nAnaconda创建Pytorch虚拟环境 首先使用conda创建虚拟环境 输入activate，激活，进入base环境。\n输入conda create -n pytorch1 python=3.8 #指定python版本号创建名为pytorch1虚拟环境\n创建完成\nbase环境输入conda activate pytorch1，进入创建的虚拟环境。并验证python环境\n在PyCharm中配置Interpreter\nFile-Settings-Project-Project Interpreter-Add Interpreter\nconda info --envs查看是否有虚拟环境\nconda install pytorch torchvision torchaudio cpuonly -c pytorch安装pytorch\nAnaconda创建Tensorflow虚拟环境 Tensorflow和Keras版本对照表 - _yhwu - 博客园 (cnblogs.com)\ntensorflow=2.1 keras=2.3.1 python=3.6\nconda create -n TF2.1 python=3.6\n和创建Pytorch一致\n使用不同的虚拟环境时需要切换不同的Interpreter\n==安装这些库的时候千万注意，要使用命令 activate 虚拟环境名 进入你创建的虚拟环境之后在使用pip或者conda指令安装对应的库。==\nconda创建Python虚拟环境并安装tensorflow GPU环境_conda search cudnn==7.4-CSDN博客\n在Anaconda下安装Pytorch的超详细步骤_anaconda安装pytorch-CSDN博客\nAnaconda同时安装Tensorflow和Pytorch（window系统）步骤/流程/方法_tensorflow和pytorch可以共存吗-CSDN博客\n手把手教Anaconda，pytorch、tensorflow安装、虚拟环境搭建及jupyter、pycharm编译器配制（后附安装包供下载）_下了pytorch之后怎么下tensorflow-CSDN博客\nPyTorch\nConda创建等指令 创建虚拟环境\n1conda create -n xxx python=3.? 进入虚拟环境\n1source activate xxx 2# or 3conda activate xxx 退出虚拟环境\n1conda deactivate 删除虚拟环境\n1conda remove -n xxx --all 查看虚拟环境\n1conda info --env 其他问题 Conda cannot proceed due to an error in your proxy configuration. Check for typos and other configuration errors in any ‘.netrc’ file in your home directory, any environment variables ending in ‘_PROXY’, and any other system-wide proxy configuration settings.\n该问题源于网络问题，可以打开/关闭VPN试试\n【已解决】ProxyError: Conda cannot proceed due to an error in your proxy configuration.Check for typos a-CSDN博客\nAttributeError: module numpy has no attribute object . np.object\nnumpy版本太高导致的，最新版本通常会改很多东西，直接降低numpy版本就行，一个版本一个版本慢慢试下去就行\nconda uninstall numpy\nconda install numpy==1.20.0\nPackagesNotFoundError: The following packages are not available from current channels:\nPackagesNotFoundError: The following packages are not available from current channels的解决办法-CSDN博客\nPackagesNotFoundError: The following packages are not available from current channels 解决办法-CSDN博客\n（清华镜像不能用，改用豆瓣或阿里）\n【陆续排坑】解决conda下载速度慢的问题：更换国内源_conda config –remove-key channels-CSDN博客\nTensorflow、python、keras和cuda的对应版本（更新于2022.6.18） - 知乎 (zhihu.com)\n服务器安装Jupyter pwd：123456\njupyter_notebook_config.py\n1c.NotebookApp.ip = '*' 2c.NotebookApp.open_browser = False 3c.NotebookApp.port = 8080 4c.NotebookApp.password = 'argon2:$argon2id$v=19$m=10240,t=10,p=8$eamL8kky6WaYSEKeNGPXHA$c8oDS/K1rWkN2vhDEr//rOVguKfG5nwPMfW34iA/R0c' 5allow_remote_access = True 最详细本地浏览器远程访问服务器Jupyter notebook配置_jupyter notebook host-CSDN博客\n在cmd中输入ssh -p 端口号 用户名@服务器 -L127.0.0.1:9999:127.0.0.1:8080\n输入个人密码\n在本地浏览器输入：127.0.0.1:9999\n再输入Jupyter密码：123456\n",
+  "wordCount" : "240",
+  "inLanguage": "en",
+  "image":"https://sharleen-c.github.io/%3Cimage%20path/url%3E","datePublished": "2024-09-25T21:34:54+08:00",
+  "dateModified": "2024-09-25T21:34:54+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Sharleen"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharleen-c.github.io/posts/technology/conda_install/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sharing Sharleen Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharleen-c.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://sharleen-c.github.io/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://sharleen-c.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/science/" title="Science">
+                    <span>Science</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/life/" title="Life">
+                    <span>Life</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/technology/" title="Technology">
+                    <span>Technology</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://sharleen-c.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/technology/">🥂🪄Useful Technology</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Conda安装以及创建虚拟环境
+    </h1>
+    <div class="post-description">
+      Conda安装简单但又有一点复杂🥲
+    </div>
+    <div class="post-meta"><span title='2024-09-25 21:34:54 +0800 CST'>September 25, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Sharleen
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#conda%e5%ae%89%e8%a3%85%e4%bb%a5%e5%8f%8a%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83" aria-label="Conda安装以及创建虚拟环境">Conda安装以及创建虚拟环境</a><ul>
+                        
+                <li>
+                    <a href="#conda%e5%ae%89%e8%a3%85" aria-label="conda安装">conda安装</a></li>
+                <li>
+                    <a href="#anaconda%e5%88%9b%e5%bb%bapytorch%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83" aria-label="Anaconda创建Pytorch虚拟环境">Anaconda创建Pytorch虚拟环境</a><ul>
+                        
+                <li>
+                    <a href="#%e9%a6%96%e5%85%88%e4%bd%bf%e7%94%a8conda%e5%88%9b%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83" aria-label="首先使用conda创建虚拟环境">首先使用conda创建虚拟环境</a></li></ul>
+                </li>
+                <li>
+                    <a href="#anaconda%e5%88%9b%e5%bb%batensorflow%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83" aria-label="Anaconda创建Tensorflow虚拟环境">Anaconda创建Tensorflow虚拟环境</a></li>
+                <li>
+                    <a href="#conda%e5%88%9b%e5%bb%ba%e7%ad%89%e6%8c%87%e4%bb%a4" aria-label="Conda创建等指令">Conda创建等指令</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98" aria-label="其他问题">其他问题</a></li>
+                <li>
+                    <a href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%ae%89%e8%a3%85jupyter" aria-label="服务器安装Jupyter">服务器安装Jupyter</a>
+                </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+  <div class="post-content"><h1 id="conda安装以及创建虚拟环境">Conda安装以及创建虚拟环境<a hidden class="anchor" aria-hidden="true" href="#conda安装以及创建虚拟环境">#</a></h1>
+<h2 id="conda安装">conda安装<a hidden class="anchor" aria-hidden="true" href="#conda安装">#</a></h2>
+<p>首先查看自己是否安装了conda，键盘Win+R, 输入cmd，按回车，输入conda -V，查看版本号。</p>
+<p>下载Anaconda,直接搜索，进入官网， 依次点击，选择与自己电脑对应的版本，进行下载。</p>
+<p>右击，以管理员身份运行，进行安装。</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/bec6d1724bbb4672b99551ff538515d5.png" alt="img"  />
+</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/2d8f360fc70f4232b0c26ef52b9e5ab0.png" alt="img"  />
+</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/615ef66153384441997a17312d03b8d2.png" alt="img"  />
+</p>
+<p>默认安装路径<code>D:\Anaconda\install</code></p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/fdc55c8ab7914171b749d19900560604.png" alt="img"  />
+</p>
+<p>一定要勾选添加环境变量！点击Install，安装</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/aa15969e11b54cb799bc787c286eaa44.png" alt="img"  />
+</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/21b5cef82f8f4c978dce673b2fc2706b.png" alt="img"  />
+</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/5bf1ece7f7394556852a05fa7a592609.png" alt="img"  />
+</p>
+<p>这里两个方框都不勾选，防止打开其他网页。</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/d17115e12dcc465ab47c5441be0043ac.png" alt="img"  />
+</p>
+<p>查看Anaconda是否安装成功</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/ba74ef2c2601409297f5277e34f753fb.png" alt="img"  />
+</p>
+<h2 id="anaconda创建pytorch虚拟环境">Anaconda创建Pytorch虚拟环境<a hidden class="anchor" aria-hidden="true" href="#anaconda创建pytorch虚拟环境">#</a></h2>
+<h3 id="首先使用conda创建虚拟环境">首先使用conda创建虚拟环境<a hidden class="anchor" aria-hidden="true" href="#首先使用conda创建虚拟环境">#</a></h3>
+<p>输入activate，激活，进入base环境。</p>
+<p><img loading="lazy" src="https://img-blog.csdnimg.cn/bc704f34f98b477ba45d74665e24b945.png" alt="img"  />
+</p>
+<p>输入<code>conda create -n pytorch1 python=3.8</code> #指定python版本号创建名为pytorch1虚拟环境</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106130622967.png" alt="image-20240106130622967"  />
+</p>
+<p>创建完成</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106130608302.png" alt="image-20240106130608302"  />
+</p>
+<p>base环境输入<code>conda activate pytorch1</code>，进入创建的虚拟环境。并验证python环境</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106130808382.png" alt="image-20240106130808382"  />
+</p>
+<p>在PyCharm中配置Interpreter</p>
+<p><code>File-Settings-Project-Project Interpreter-Add Interpreter</code></p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106131404709.png" alt="image-20240106131404709"  />
+</p>
+<p><code>conda info --envs</code>查看是否有虚拟环境</p>
+<p><code>conda install pytorch torchvision torchaudio cpuonly -c pytorch</code>安装pytorch</p>
+<h2 id="anaconda创建tensorflow虚拟环境">Anaconda创建Tensorflow虚拟环境<a hidden class="anchor" aria-hidden="true" href="#anaconda创建tensorflow虚拟环境">#</a></h2>
+<p><a href="https://www.cnblogs.com/-yhwu/p/14619541.html">Tensorflow和Keras版本对照表 - _yhwu - 博客园 (cnblogs.com)</a></p>
+<p><code>tensorflow=2.1 keras=2.3.1 python=3.6</code></p>
+<p><code>conda create -n TF2.1 python=3.6</code></p>
+<p>和创建Pytorch一致</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106151000922.png" alt="image-20240106151000922"  />
+</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106150454538.png" alt="image-20240106150454538"  />
+</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106132905505.png" alt="image-20240106132905505"  />
+</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106133316716.png" alt="image-20240106133316716"  />
+</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106133334291.png" alt="image-20240106133334291"  />
+</p>
+<p>使用不同的虚拟环境时需要切换不同的Interpreter</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240106133418323.png" alt="image-20240106133418323"  />
+</p>
+<p>==<strong>安装这些库的时候千万注意，要使用命令 activate 虚拟环境名 进入你创建的虚拟环境之后在使用pip或者conda指令安装对应的库。</strong>==</p>
+<p><a href="https://blog.csdn.net/flying_sfeng/article/details/109777300">conda创建Python虚拟环境并安装tensorflow GPU环境_conda search cudnn==7.4-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/qq_45281807/article/details/112442423">在Anaconda下安装Pytorch的超详细步骤_anaconda安装pytorch-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/x007664/article/details/115794783">Anaconda同时安装Tensorflow和Pytorch（window系统）步骤/流程/方法_tensorflow和pytorch可以共存吗-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/weixin_52860733/article/details/128850105?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-128850105-blog-125973783.235%5Ev40%5Epc_relevant_3m_sort_dl_base1&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-2-128850105-blog-125973783.235%5Ev40%5Epc_relevant_3m_sort_dl_base1&amp;utm_relevant_index=5">手把手教Anaconda，pytorch、tensorflow安装、虚拟环境搭建及jupyter、pycharm编译器配制（后附安装包供下载）_下了pytorch之后怎么下tensorflow-CSDN博客</a></p>
+<p><a href="https://pytorch.org/">PyTorch</a></p>
+<h2 id="conda创建等指令">Conda创建等指令<a hidden class="anchor" aria-hidden="true" href="#conda创建等指令">#</a></h2>
+<p>创建虚拟环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>conda create -n xxx <span style="color:#d7827e">python</span><span style="color:#797593">=</span>3.?
+</span></span></code></pre></div><p>进入虚拟环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#d7827e">source</span> activate xxx
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#9893a5"># or</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>conda activate xxx
+</span></span></code></pre></div><p>退出虚拟环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>conda deactivate
+</span></span></code></pre></div><p>删除虚拟环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>conda remove -n xxx --all
+</span></span></code></pre></div><p>查看虚拟环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>conda info --env
+</span></span></code></pre></div><h1 id="其他问题">其他问题<a hidden class="anchor" aria-hidden="true" href="#其他问题">#</a></h1>
+<ol>
+<li>
+<p>Conda cannot proceed due to an error in your proxy configuration.
+Check for typos and other configuration errors in any &lsquo;.netrc&rsquo; file in your home directory,
+any environment variables ending in &lsquo;_PROXY&rsquo;, and any other system-wide proxy
+configuration settings.</p>
+<p>该问题源于网络问题，可以打开/关闭VPN试试</p>
+<p><a href="https://blog.csdn.net/BetrayFree/article/details/134249864">【已解决】ProxyError: Conda cannot proceed due to an error in your proxy configuration.Check for typos a-CSDN博客</a></p>
+</li>
+<li>
+<p>AttributeError: module numpy has no attribute object . <code>np.object</code></p>
+<p><a href="https://so.csdn.net/so/search?q=numpy%E7%89%88%E6%9C%AC&amp;spm=1001.2101.3001.7020">numpy版本</a>太高导致的，最新版本通常会改很多东西，直接降低numpy版本就行，一个版本一个版本慢慢试下去就行</p>
+<p><code>conda uninstall numpy</code></p>
+<p><code>conda install numpy==1.20.0</code></p>
+</li>
+<li>
+<p>PackagesNotFoundError: The following packages are not available from current channels:</p>
+<p><a href="https://blog.csdn.net/weixin_45552562/article/details/109668589">PackagesNotFoundError: The following packages are not available from current channels的解决办法-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/marleylee/article/details/103722080">PackagesNotFoundError: The following packages are not available from current channels 解决办法-CSDN博客</a></p>
+<p>（清华镜像不能用，改用豆瓣或阿里）</p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/Xiao_Spring/article/details/109130663">【陆续排坑】解决conda下载速度慢的问题：更换国内源_conda config &ndash;remove-key channels-CSDN博客</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/530540730">Tensorflow、python、keras和cuda的对应版本（更新于2022.6.18） - 知乎 (zhihu.com)</a></p>
+</li>
+</ol>
+<h1 id="服务器安装jupyter">服务器安装Jupyter<a hidden class="anchor" aria-hidden="true" href="#服务器安装jupyter">#</a></h1>
+<p>pwd：123456</p>
+<p>jupyter_notebook_config.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#d7827e">c</span><span style="color:#797593">.</span><span style="color:#d7827e">NotebookApp</span><span style="color:#797593">.</span><span style="color:#d7827e">ip</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#39;*&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#d7827e">c</span><span style="color:#797593">.</span><span style="color:#d7827e">NotebookApp</span><span style="color:#797593">.</span><span style="color:#d7827e">open_browser</span> <span style="color:#797593">=</span> <span style="color:#286983">False</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#d7827e">c</span><span style="color:#797593">.</span><span style="color:#d7827e">NotebookApp</span><span style="color:#797593">.</span><span style="color:#d7827e">port</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">8080</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#d7827e">c</span><span style="color:#797593">.</span><span style="color:#d7827e">NotebookApp</span><span style="color:#797593">.</span><span style="color:#d7827e">password</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">&#39;argon2:$argon2id$v=19$m=10240,t=10,p=8$eamL8kky6WaYSEKeNGPXHA$c8oDS/K1rWkN2vhDEr//rOVguKfG5nwPMfW34iA/R0c&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#d7827e">allow_remote_access</span> <span style="color:#797593">=</span> <span style="color:#286983">True</span>
+</span></span></code></pre></div><p><a href="https://blog.csdn.net/weixin_42534065/article/details/119936459">最详细本地浏览器远程访问服务器Jupyter notebook配置_jupyter notebook host-CSDN博客</a></p>
+<p>在cmd中输入<code>ssh -p 端口号 用户名@服务器 -L127.0.0.1:9999:127.0.0.1:8080</code></p>
+<p>输入个人密码</p>
+<p>在本地浏览器输入：<code>127.0.0.1:9999</code></p>
+<p>再输入Jupyter密码：123456</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://sharleen-c.github.io/posts/technology/vscode_usage/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>VSCode使用相关问题</span>
+  </a>
+  <a class="next" href="https://sharleen-c.github.io/posts/technology/new_website/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Hugo &#43; PaperMode 建站踩坑指北</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://sharleen-c.github.io/">Sharleen</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Markdown数学公式 | Sharing Sharleen Blog</title>
+<meta name="keywords" content="first">
+<meta name="description" content="美丽Blog必备才艺">
+<meta name="author" content="Sharleen">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://sharleen-c.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://sharleen-c.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://sharleen-c.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://sharleen-c.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://sharleen-c.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://sharleen-c.github.io/posts/technology/md_math/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[\[','\]\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style><meta property="og:title" content="Markdown数学公式" />
+<meta property="og:description" content="美丽Blog必备才艺" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sharleen-c.github.io/posts/technology/md_math/" />
+<meta property="og:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-25T21:49:02+08:00" />
+<meta property="article:modified_time" content="2024-09-25T21:49:02+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" />
+<meta name="twitter:title" content="Markdown数学公式"/>
+<meta name="twitter:description" content="美丽Blog必备才艺"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://sharleen-c.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "🥂🪄Useful Technology",
+      "item": "https://sharleen-c.github.io/posts/technology/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Markdown数学公式",
+      "item": "https://sharleen-c.github.io/posts/technology/md_math/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Markdown数学公式",
+  "name": "Markdown数学公式",
+  "description": "美丽Blog必备才艺",
+  "keywords": [
+    "first"
+  ],
+  "articleBody": "Hugo \u0026 MathJax 参考在Hugo中使用MathJax\n新建`layouts/partials/mathjax.html' 1\u003cscript type=\"text/javascript\" 2 async 3 src=\"https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"\u003e 4 MathJax.Hub.Config({ 5 tex2jax: { 6 inlineMath: [['$','$'], ['\\\\(','\\\\)']], 7 displayMath: [['$$','$$'], ['\\[\\[','\\]\\]']], 8 processEscapes: true, 9 processEnvironments: true, 10 skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'], 11 TeX: { equationNumbers: { autoNumber: \"AMS\" }, 12 extensions: [\"AMSmath.js\", \"AMSsymbols.js\"] } 13 } 14 }); 15 16 MathJax.Hub.Queue(function() { 17 // Fix tags after MathJax finishes running. This is a 18 // hack to overcome a shortcoming of Markdown. Discussion at 19 // https://github.com/mojombo/jekyll/issues/199 20 var all = MathJax.Hub.getAllJax(), i; 21 for(i = 0; i \u003c all.length; i += 1) { 22 all[i].SourceElement().parentNode.className += ' has-jax'; 23 } 24 }); 25\u003c/script\u003e 26 27\u003cstyle\u003e 28 code.has-jax { 29 font: inherit; 30 font-size: 100%; 31 background: inherit; 32 border: inherit; 33 color: #515151; 34 } 35\u003c/style\u003e 在layouts/partials/head.html中新增 1{{ partial \"mathjax.html\" . }} 在hugo.toml中增加 1[params] 2math = true 注意在实际在使用过程中由于\\\\会被转义为\\，因此在markdown书写过程中需要注意将换行符\\\\转换为\\\\\\\\ 公式 微分符号 语法 效果 \\nabla $\\nabla$ \\partial x $\\partial x$ \\mathrm{d}x $\\mathrm{d}x$ \\dot x $\\dot x$ \\ddot y $\\ddot y$ 下标问题 语法 效果 \\sum_{i\\leq j\\leq k}^nf(n) $\\sum_{i\\leq j\\leq k}^nf(n)$ \\sum\\limits_{i\\leq j\\leq k}^nf(n) $\\sum\\limits_{i\\leq j\\leq k}^nf(n)$ \\underset{i\\leq j\\leq\\ k}{\\mathrm{arg\\ min}} $\\underset{i\\leq j\\leq\\ k}{\\mathrm{arg\\ min}}$ \\underset{i\\leq j\\leq\\ k}{\\sum} $\\underset{i\\leq j\\leq\\ k}{\\sum}$ 上下标，正负无穷 语法 效果 x^2 $x^2$ y_1 $y_1$ \\infty $\\infty$ -\\infty $-\\infty$ 加减乘除/分式/根号/省略号 语法 效果 a+b-c*d $a+b-c*d$ a\\div{b} $a\\div{b}$ a\\pm{b} $a\\pm{b}$ \\frac{a}{b} $\\frac{a}{b}$ \\sqrt{b} $\\sqrt{b}$ \\cdots $\\cdots$ 三角函数 语法 效果 \\sin{\\theta} $\\sin{\\theta}$ \\cos{\\theta} $\\cos{\\theta}$ \\tan{\\theta} $\\tan{\\theta}$ \\cot{\\theta} $\\cot{\\theta}$ 矢量/累加累乘/极限 语法 效果 \\vec{F} $\\vec{F}$ \\sum_{i=1}^{n}{a_i} $\\sum_{i=1}^{n}{a_i}$ \\prod_{i=1}^{n}{a_i} $ $ \\lim_{a\\rightarrow+\\infty}{a+b} $\\lim_{a\\rightarrow+\\infty}{a+b}$ 希腊字母 语法 效果 语法 效果 \\alpha $\\alpha$ \\beta $\\beta$ \\gamma $\\gamma$ \\delta $\\delta$ \\epsilon $\\epsilon$ \\varepsilon $\\varepsilon$ \\eta $\\eta$ \\theta $\\theta$ \\kappa $\\kappa$ \\iota $\\iota$ \\zeta $\\zeta$ \\lambda $\\lambda$ \\mu $\\mu$ \\phi $\\phi$ \\pi $\\pi$ \\rho $\\rho$ \\xi $\\xi$ \\nu $\\nu$ \\upsilon $\\upsilon$ \\varphi $\\varphi$ \\chi $\\chi$ \\psi $\\psi$ \\omega $\\omega$ 关系运算符 语法 效果 描述 \\leq $\\leq$ 小于等于 \\geq $\\geq$ 大于等于 \\sum $\\sum$ 求和 \\times $\\times$ 乘号 \\pm $\\pm$ 正负号 \\div $\\div$ 除号 \\mid $\\mid$ 竖线 \\cdot $\\cdot$ 点 \\circ $\\circ$ 圈 \\ast $\\ast$ 星号 \\bigotimes $\\bigotimes$ 克罗内克积 \\bigoplus $\\bigoplus$ 异或 \\bigodot $\\bigodot$ 点乘 \\approx $\\approx$ 约等于 \\prod $\\prod$ N元乘积 \\coprod $\\coprod$ N元余积 \\cdots $\\cdots$ 省略号 \\int $\\int$ 积分 \\iint $\\iint$ 双重积分 \\oint $\\oint$ 曲线积分 \\infty $\\infty$ 无穷 \\nabla $\\nabla$ 梯度 \\because $\\because$ 因为 \\therefore $\\therefore$ 所以 \\forall $\\forall$ 任意 \\exists $\\exists$ 存在 \\not= $\\not=$ 不等于 \\not\\subset $\\not\\subset$ 不属于 \\emptyset $\\emptyset$ 空集 \\in $\\in$ 属于 \\notin $\\notin$ 不属于 \\subset $\\subset$ 子集 \\subseteq $\\subseteq$ 真子集 \\bigcup $\\bigcup$ 并集 \\bigcap $\\bigcap$ 交集 \\bigvee $\\bigvee$ 逻辑或 \\bigwedge $\\bigwedge$ 逻辑与 \\biguplus $\\biguplus$ 多重集 \\bigsqcup $\\bigsqcup$ \\hat{y} $\\hat{y}$ 期望 \\check{y} $\\check{y}$ \\breve{y} $\\breve{y}$ \\overline{a+b+c+d} $\\overline{a+b+c+d}$ 平均值 \\underline{a+b+c+d} $\\underline{a+b+c+d}$ \\overbrace{a+\\underbrace{b+c}_{1.0}+d}^{2.0} $\\overbrace{a+\\underbrace{b+c}_{1.0}+d}^{2.0}$ \\uparrow $\\uparrow$ 向上 \\downarrow $\\downarrow$ 向下 \\Uparrow $\\Uparrow$ \\Downarrow $\\Downarrow$ \\rightarrow $\\rightarrow$ 向右 \\leftarrow $\\leftarrow$ 向左 \\Rightarrow $\\Rightarrow$ \\Leftarrow $\\Leftarrow$ \\longrightarrow $\\longrightarrow$ \\longleftarrow $\\longleftarrow$ \\Longrightarrow $\\Longrightarrow$ \\Longleftarrow $\\Longleftarrow$ 矩阵 简单矩阵 $$ \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\tag{1} $$\n1$$ 2\\begin{matrix} 3 1 \u0026 2 \u0026 3 \\\\ 4 4 \u0026 5 \u0026 6 \\\\ 5 7 \u0026 8 \u0026 9 6\\end{matrix} \\tag{1} 7$$ 带左右括号的矩阵(大中小括号) 大括号 $$ \\left{ \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\right} \\tag{2} $$\n1$$ 2 \\left\\{ 3 \\begin{matrix} 4 1 \u0026 2 \u0026 3 \\\\ 5 4 \u0026 5 \u0026 6 \\\\ 6 7 \u0026 8 \u0026 9 7 \\end{matrix} 8 \\right\\} \\tag{2} 9$$ 10或 11$$ 12 \\begin{Bmatrix} 13 1 \u0026 2 \u0026 3 \\\\ 14 4 \u0026 5 \u0026 6 \\\\ 15 7 \u0026 8 \u0026 9 16 \\end{Bmatrix} \\tag{2} 17$$ 中括号 $$ \\left[ \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\right] \\tag{3} $$\n1$$ 2 \\left[ 3 \\begin{matrix} 4 1 \u0026 2 \u0026 3 \\\\ 5 4 \u0026 5 \u0026 6 \\\\ 6 7 \u0026 8 \u0026 9 7 \\end{matrix} 8 \\right] \\tag{3} 9$$ 10 11$$ 12 \\begin{bmatrix} 13 1 \u0026 2 \u0026 3 \\\\ 14 4 \u0026 5 \u0026 6 \\\\ 15 7 \u0026 8 \u0026 9 16 \\end{bmatrix} \\tag{3} 17$$ 小括号 $$ \\left( \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\right) \\tag{4} $$\n1$$ 2 \\left( 3 \\begin{matrix} 4 1 \u0026 2 \u0026 3 \\\\ 5 4 \u0026 5 \u0026 6 \\\\ 6 7 \u0026 8 \u0026 9 7 \\end{matrix} 8 \\right) \\tag{4} 9$$ 包含希腊字母与省略号 $$ \\left( \\begin{matrix} 1 \u0026 2 \u0026 \\cdots \u0026 5 \\\\ 6 \u0026 7 \u0026 \\cdots \u0026 10 \\\\ \\vdots \u0026 \\vdots \u0026 \\ddots \u0026 \\vdots \\\\ \\alpha \u0026 \\alpha+1 \u0026 \\cdots \u0026 \\alpha+4 \\end{matrix} \\right) \\tag{5} $$\n1$$ 2\\left\\( 3\\begin{matrix} 41 \u0026 2 \u0026 \\cdots \u0026 5 \\\\ 56 \u0026 7 \u0026 \\cdots \u0026 10 \\\\ 6\\vdots \u0026 \\vdots \u0026 \\ddots \u0026 \\vdots \\\\ 7\\alpha \u0026 \\alpha+1 \u0026 \\cdots \u0026 \\alpha+4 8\\end{matrix} 9\\right\\) \\tag{5} 10$$ 行列式 $$ \\begin{vmatrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{vmatrix} \\tag{7} $$\n1$$ 2 \\begin{vmatrix} 3 1 \u0026 2 \u0026 3 \\\\ 4 4 \u0026 5 \u0026 6 \\\\ 5 7 \u0026 8 \u0026 9 6 \\end{vmatrix} 7\\tag{7} 8$$ 表格 简单表格 $$ \\begin{array}{|c|c|c|} \\hline 2 \u0026 9 \u0026 4\\\\ \\hline 7 \u0026 5 \u0026 3\\\\ \\hline 6 \u0026 1 \u0026 8\\\\ \\hline \\end{array} $$\n1$$ 2\\begin{array}{|c|c|c|} c、l、r分别表示居中、左对齐、右对齐 3\t竖直分割线：在定义式中插入 |， （||表示两条竖直分割线）。 4\t水平分割线：在下一行输入前插入 \\hline 5\t\\hline 2 \u0026 9 \u0026 4\\\\ 6\t\\hline 7 \u0026 5 \u0026 3\\\\ 7\t\\hline 6 \u0026 1 \u0026 8\\\\ 8\t\\hline 9\\end{array} 10$$ 真值表 $$ \\begin{array}{c c|c} A \u0026 B \u0026 F\\\\ \\hline 0 \u0026 0 \u0026 0\\\\ 0 \u0026 1 \u0026 1\\\\ 1 \u0026 0 \u0026 1\\\\ 1 \u0026 1 \u0026 1\\\\ \\end{array} $$\n1$$ 2\\begin{array}{c c|c} 3\tA \u0026 B \u0026 F\\\\ 4\t\\hline 0 \u0026 0 \u0026 0\\\\ 5\t0 \u0026 1 \u0026 1\\\\ 6\t1 \u0026 0 \u0026 1\\\\ 7\t1 \u0026 1 \u0026 1\\\\ 8\\end{array} 9$$ 多行等式对齐 $$ \\begin{aligned} a \u0026= b + c \\\\ \u0026= d + e + f \\end{aligned} $$\n1$$ 2\\begin{aligned} 3a \u0026= b + c \\\\ 4 \u0026= d + e + f 5\\end{aligned} 6$$ 方程组、条件表达式 $$ \\begin{cases} 3x + 5y + z \\\\ 7x - 2y + 4z \\\\ -6x + 3y + 2z \\end{cases} $$\n1$$ 2\\begin{cases} 33x + 5y + z \\\\ 47x - 2y + 4z \\\\ 5-6x + 3y + 2z 6\\end{cases} 7$$ $$ f(n) = \\begin{cases} n/2, \u0026 \\text{if }n\\text{ is even} \\\\ 3n+1, \u0026 \\text{if }n\\text{ is odd} \\end{cases} $$\n1$$ 2f(n) = 3\\begin{cases} 4n/2, \u0026 \\text{if }n\\text{ is even} \\\\ 53n+1, \u0026 \\text{if }n\\text{ is odd} 6\\end{cases} 7$$ 间隔 语法 效果 紧贴： a\\!b $a!b$ 无空格： ab $ab$ 小空格： a\\,b $a,b$ 中空格： a\\;b $a;b$ 大空格： a\\ b $a\\ b$ 真空格： a\\quad b $a\\quad b$ 双真空格： a\\qquad b $a\\qquad b$ 数学结构 符号 代码 符合 代码 符号 代码 $\\frac{abd}{xyz}$ \\frac{abd}{xyz} $\\overline{abc}$ \\overline{abc} $\\overrightarrow{abc}$ \\overrightarrow{abc} $f’$ f’ $\\underline{abc}$ \\underline{abc} $\\overleftarrow{abc}$ \\overleftarrow{abc} $\\sqrt{abc}$ \\sqrt{abc} $\\widehat{abc}$ \\widehat{abc} $\\overbrace{abc}$ \\overbrace{abc} $\\sqrt[n]{abc}$ \\sqrt[n]{abc} $\\widetilde{abc}$ \\widetilde{abc} $\\underbrace{abc}$ \\underbrace{abc} 分隔符 符号 代码 符号 代码 符号 代码 $\\vert$ \\vert $\\lfloor$ \\lfloor $\\llcorner$ \\llcorner $\\Vert$ \\Vert $\\rfloor$ \\rfloor $\\lrcorner$ \\lrcorner $\\langle$ \\langle $\\lceil$ \\lceil $\\ulcorner$ \\ulcorner $\\rangle$ \\rangle $\\rceil$ \\rceil $\\urcorner$ \\urcorner $\\backslash$ \\backslash 标准函数名称 函数名称应该出现罗马字体，而不是倾斜，如\n正确：\\tan(at-n\\pi)\\rightarrow$ $\\tan(at-n\\pi)$\n错误：tan(at-n\\pi)\\rightarrow$ $tan(at-n\\pi)$\n其他样式 Caligraphic letters \\mathcal{A} 如:$\\mathcal{A}$、$\\mathcal{B}$、$\\mathcal{C}$、$\\mathcal{D}$、$\\mathcal{E}$、$\\mathcal{F}$、$\\mathcal{G}$、$\\mathcal{H}$、$\\mathcal{I}$、$\\mathcal{J}$、$\\mathcal{K}$、$\\mathcal{L}$、$\\mathcal{M}$、……、$\\mathcal{Z}$\nMathbb letters \\mathbb{A} 如:$\\mathbb{A}$、$\\mathbb{B}$、$\\mathbb{C}$、$\\mathbb{D}$、$\\mathbb{E}$、$\\mathbb{F}$、$\\mathbb{G}$、$\\mathbb{H}$、$\\mathbb{I}$、$\\mathbb{J}$、$\\mathbb{K}$、$\\mathbb{L}$、$\\mathbb{M}$、……、$\\mathbb{Z}$\nMath Sans serif letter \\mathfrak{A} 如:$\\mathfrak{A}$、$\\mathfrak{B}$、$\\mathbb{C}$、$\\mathfrak{D}$、$\\mathfrak{E}$、$\\mathfrak{F}$、$\\mathfrak{G}$、$\\mathbb{H}$、$\\mathfrak{I}$、$\\mathfrak{J}$、$\\mathfrak{K}$、$\\mathbb{L}$、$\\mathfrak{M}$、……、$\\mathfrak{Z}$\nMath bold letter \\mathbf{A} 如:$\\mathbf{A}$、$\\mathbf{B}$、$\\mathbf{C}$、$\\mathbf{D}$、$\\mathbf{E}$、$\\mathbf{F}$、$\\mathbf{G}$、$\\mathbf{H}$、$\\mathbf{I}$、$\\mathbf{J}$、$\\mathbf{K}$、$\\mathbf{L}$、$\\mathbf{M}$、……、$\\mathbf{Z}$\n",
+  "wordCount" : "1221",
+  "inLanguage": "en",
+  "image":"https://sharleen-c.github.io/%3Cimage%20path/url%3E","datePublished": "2024-09-25T21:49:02+08:00",
+  "dateModified": "2024-09-25T21:49:02+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Sharleen"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharleen-c.github.io/posts/technology/md_math/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sharing Sharleen Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharleen-c.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://sharleen-c.github.io/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://sharleen-c.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/science/" title="Science">
+                    <span>Science</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/life/" title="Life">
+                    <span>Life</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://sharleen-c.github.io/posts/technology/" title="Technology">
+                    <span>Technology</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://sharleen-c.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/technology/">🥂🪄Useful Technology</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Markdown数学公式
+    </h1>
+    <div class="post-description">
+      美丽Blog必备才艺
+    </div>
+    <div class="post-meta"><span title='2024-09-25 21:49:02 +0800 CST'>September 25, 2024</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Sharleen
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#hugo--mathjax" aria-label="Hugo &amp; MathJax">Hugo &amp; MathJax</a></li>
+                <li>
+                    <a href="#%e5%85%ac%e5%bc%8f" aria-label="公式">公式</a><ul>
+                        
+                <li>
+                    <a href="#%e5%be%ae%e5%88%86%e7%ac%a6%e5%8f%b7" aria-label="微分符号">微分符号</a></li>
+                <li>
+                    <a href="#%e4%b8%8b%e6%a0%87%e9%97%ae%e9%a2%98" aria-label="下标问题">下标问题</a></li>
+                <li>
+                    <a href="#%e4%b8%8a%e4%b8%8b%e6%a0%87%e6%ad%a3%e8%b4%9f%e6%97%a0%e7%a9%b7" aria-label="上下标，正负无穷">上下标，正负无穷</a></li>
+                <li>
+                    <a href="#%e5%8a%a0%e5%87%8f%e4%b9%98%e9%99%a4%e5%88%86%e5%bc%8f%e6%a0%b9%e5%8f%b7%e7%9c%81%e7%95%a5%e5%8f%b7" aria-label="加减乘除/分式/根号/省略号">加减乘除/分式/根号/省略号</a></li>
+                <li>
+                    <a href="#%e4%b8%89%e8%a7%92%e5%87%bd%e6%95%b0" aria-label="三角函数">三角函数</a></li>
+                <li>
+                    <a href="#%e7%9f%a2%e9%87%8f%e7%b4%af%e5%8a%a0%e7%b4%af%e4%b9%98%e6%9e%81%e9%99%90" aria-label="矢量/累加累乘/极限">矢量/累加累乘/极限</a></li>
+                <li>
+                    <a href="#%e5%b8%8c%e8%85%8a%e5%ad%97%e6%af%8d" aria-label="希腊字母">希腊字母</a></li>
+                <li>
+                    <a href="#%e5%85%b3%e7%b3%bb%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="关系运算符">关系运算符</a></li>
+                <li>
+                    <a href="#%e7%9f%a9%e9%98%b5" aria-label="矩阵">矩阵</a><ul>
+                        
+                <li>
+                    <a href="#%e7%ae%80%e5%8d%95%e7%9f%a9%e9%98%b5" aria-label="简单矩阵">简单矩阵</a></li>
+                <li>
+                    <a href="#%e5%b8%a6%e5%b7%a6%e5%8f%b3%e6%8b%ac%e5%8f%b7%e7%9a%84%e7%9f%a9%e9%98%b5%e5%a4%a7%e4%b8%ad%e5%b0%8f%e6%8b%ac%e5%8f%b7" aria-label="带左右括号的矩阵(大中小括号)">带左右括号的矩阵(大中小括号)</a></li>
+                <li>
+                    <a href="#%e5%a4%a7%e6%8b%ac%e5%8f%b7" aria-label="大括号">大括号</a></li>
+                <li>
+                    <a href="#%e4%b8%ad%e6%8b%ac%e5%8f%b7" aria-label="中括号">中括号</a></li>
+                <li>
+                    <a href="#%e5%b0%8f%e6%8b%ac%e5%8f%b7" aria-label="小括号">小括号</a></li>
+                <li>
+                    <a href="#%e5%8c%85%e5%90%ab%e5%b8%8c%e8%85%8a%e5%ad%97%e6%af%8d%e4%b8%8e%e7%9c%81%e7%95%a5%e5%8f%b7" aria-label="包含希腊字母与省略号">包含希腊字母与省略号</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%a1%8c%e5%88%97%e5%bc%8f" aria-label="行列式">行列式</a></li>
+                <li>
+                    <a href="#%e8%a1%a8%e6%a0%bc" aria-label="表格">表格</a><ul>
+                        
+                <li>
+                    <a href="#%e7%ae%80%e5%8d%95%e8%a1%a8%e6%a0%bc" aria-label="简单表格">简单表格</a></li>
+                <li>
+                    <a href="#%e7%9c%9f%e5%80%bc%e8%a1%a8" aria-label="真值表">真值表</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%a4%9a%e8%a1%8c%e7%ad%89%e5%bc%8f%e5%af%b9%e9%bd%90" aria-label="多行等式对齐">多行等式对齐</a></li>
+                <li>
+                    <a href="#%e6%96%b9%e7%a8%8b%e7%bb%84%e6%9d%a1%e4%bb%b6%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="方程组、条件表达式">方程组、条件表达式</a></li>
+                <li>
+                    <a href="#%e9%97%b4%e9%9a%94" aria-label="间隔">间隔</a></li>
+                <li>
+                    <a href="#%e6%95%b0%e5%ad%a6%e7%bb%93%e6%9e%84" aria-label="数学结构">数学结构</a></li>
+                <li>
+                    <a href="#%e5%88%86%e9%9a%94%e7%ac%a6" aria-label="分隔符">分隔符</a></li>
+                <li>
+                    <a href="#%e6%a0%87%e5%87%86%e5%87%bd%e6%95%b0%e5%90%8d%e7%a7%b0" aria-label="标准函数名称">标准函数名称</a></li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96%e6%a0%b7%e5%bc%8f" aria-label="其他样式">其他样式</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+  <div class="post-content"><h1 id="hugo--mathjax">Hugo &amp; MathJax<a hidden class="anchor" aria-hidden="true" href="#hugo--mathjax">#</a></h1>
+<p>参考<a href="https://note.qidong.name/2018/03/hugo-mathjax/">在Hugo中使用MathJax</a></p>
+<ol>
+<li>新建`layouts/partials/mathjax.html'</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#797593">&lt;</span><span style="color:#d7827e">script</span> <span style="color:#d7827e">type</span><span style="color:#797593">=</span><span style="color:#ea9d34">&#34;text/javascript&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>        <span style="color:#d7827e">async</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>        <span style="color:#d7827e">src</span><span style="color:#797593">=</span><span style="color:#ea9d34">&#34;https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span><span style="color:#797593">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#d7827e">MathJax</span><span style="color:#797593">.</span><span style="color:#d7827e">Hub</span><span style="color:#797593">.</span><span style="color:#d7827e">Config</span><span style="color:#797593">({</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#d7827e">tex2jax</span><span style="color:#797593">:</span> <span style="color:#797593">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>            <span style="color:#d7827e">inlineMath</span><span style="color:#797593">:</span> <span style="color:#797593">[[</span><span style="color:#ea9d34">&#39;$&#39;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#39;$&#39;</span><span style="color:#797593">],</span> <span style="color:#797593">[</span><span style="color:#ea9d34">&#39;\\(&#39;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#39;\\)&#39;</span><span style="color:#797593">]],</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>            <span style="color:#d7827e">displayMath</span><span style="color:#797593">:</span> <span style="color:#797593">[[</span><span style="color:#ea9d34">&#39;$$&#39;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#39;$$&#39;</span><span style="color:#797593">],</span> <span style="color:#797593">[</span><span style="color:#ea9d34">&#39;\[\[&#39;</span><span style="color:#797593">,</span><span style="color:#ea9d34">&#39;\]\]&#39;</span><span style="color:#797593">]],</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>            <span style="color:#d7827e">processEscapes</span><span style="color:#797593">:</span> <span style="color:#286983">true</span><span style="color:#797593">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            <span style="color:#d7827e">processEnvironments</span><span style="color:#797593">:</span> <span style="color:#286983">true</span><span style="color:#797593">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#d7827e">skipTags</span><span style="color:#797593">:</span> <span style="color:#797593">[</span><span style="color:#ea9d34">&#39;script&#39;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#39;noscript&#39;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#39;style&#39;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#39;textarea&#39;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#39;pre&#39;</span><span style="color:#797593">],</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>            <span style="color:#d7827e">TeX</span><span style="color:#797593">:</span> <span style="color:#797593">{</span> <span style="color:#d7827e">equationNumbers</span><span style="color:#797593">:</span> <span style="color:#797593">{</span> <span style="color:#d7827e">autoNumber</span><span style="color:#797593">:</span> <span style="color:#ea9d34">&#34;AMS&#34;</span> <span style="color:#797593">},</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>                <span style="color:#d7827e">extensions</span><span style="color:#797593">:</span> <span style="color:#797593">[</span><span style="color:#ea9d34">&#34;AMSmath.js&#34;</span><span style="color:#797593">,</span> <span style="color:#ea9d34">&#34;AMSsymbols.js&#34;</span><span style="color:#797593">]</span> <span style="color:#797593">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#797593">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    <span style="color:#797593">});</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#d7827e">MathJax</span><span style="color:#797593">.</span><span style="color:#d7827e">Hub</span><span style="color:#797593">.</span><span style="color:#d7827e">Queue</span><span style="color:#797593">(</span><span style="color:#286983">function</span><span style="color:#797593">()</span> <span style="color:#797593">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        <span style="color:#9893a5">// Fix &lt;code&gt; tags after MathJax finishes running. This is a
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#9893a5"></span>        <span style="color:#9893a5">// hack to overcome a shortcoming of Markdown. Discussion at
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#9893a5"></span>        <span style="color:#9893a5">// https://github.com/mojombo/jekyll/issues/199
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#9893a5"></span>        <span style="color:#286983">var</span> <span style="color:#d7827e">all</span> <span style="color:#797593">=</span> <span style="color:#d7827e">MathJax</span><span style="color:#797593">.</span><span style="color:#d7827e">Hub</span><span style="color:#797593">.</span><span style="color:#d7827e">getAllJax</span><span style="color:#797593">(),</span> <span style="color:#d7827e">i</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>        <span style="color:#286983">for</span><span style="color:#797593">(</span><span style="color:#d7827e">i</span> <span style="color:#797593">=</span> <span style="color:#ea9d34">0</span><span style="color:#797593">;</span> <span style="color:#d7827e">i</span> <span style="color:#797593">&lt;</span> <span style="color:#d7827e">all</span><span style="color:#797593">.</span><span style="color:#d7827e">length</span><span style="color:#797593">;</span> <span style="color:#d7827e">i</span> <span style="color:#797593">+=</span> <span style="color:#ea9d34">1</span><span style="color:#797593">)</span> <span style="color:#797593">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            <span style="color:#d7827e">all</span><span style="color:#797593">[</span><span style="color:#d7827e">i</span><span style="color:#797593">].</span><span style="color:#d7827e">SourceElement</span><span style="color:#797593">().</span><span style="color:#d7827e">parentNode</span><span style="color:#797593">.</span><span style="color:#d7827e">className</span> <span style="color:#797593">+=</span> <span style="color:#ea9d34">&#39; has-jax&#39;</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>        <span style="color:#797593">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    <span style="color:#797593">});</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style="color:#797593">&lt;/</span><span style="color:#d7827e">script</span><span style="color:#797593">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style="color:#797593">&lt;</span><span style="color:#d7827e">style</span><span style="color:#797593">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    <span style="color:#d7827e">code</span><span style="color:#797593">.</span><span style="color:#56949f">has-jax</span> <span style="color:#797593">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>        <span style="color:#286983">font</span><span style="color:#797593">:</span> <span style="color:#286983">inherit</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        <span style="color:#286983">font-size</span><span style="color:#797593">:</span> <span style="color:#ea9d34">100</span><span style="color:#286983">%</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        <span style="color:#286983">background</span><span style="color:#797593">:</span> <span style="color:#286983">inherit</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        <span style="color:#286983">border</span><span style="color:#797593">:</span> <span style="color:#286983">inherit</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>        <span style="color:#286983">color</span><span style="color:#797593">:</span> <span style="color:#ea9d34">#515151</span><span style="color:#797593">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>    <span style="color:#797593">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span><span style="color:#797593">&lt;/</span><span style="color:#d7827e">style</span><span style="color:#797593">&gt;</span>
+</span></span></code></pre></div><ol start="2">
+<li>在<code>layouts/partials/head.html</code>中新增</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>{{ partial &#34;mathjax.html&#34; . }}
+</span></span></code></pre></div><ol start="3">
+<li>在<code>hugo.toml</code>中增加</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#797593">[</span><span style="color:#d7827e">params</span><span style="color:#797593">]</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#d7827e">math</span> <span style="color:#797593">=</span> <span style="color:#286983">true</span>
+</span></span></code></pre></div><ol start="4">
+<li>注意在实际在使用过程中由于<code>\\</code>会被转义为<code>\</code>，因此在markdown书写过程中需要注意将换行符<code>\\</code>转换为<code>\\\\</code></li>
+</ol>
+<h1 id="公式">公式<a hidden class="anchor" aria-hidden="true" href="#公式">#</a></h1>
+<h2 id="微分符号">微分符号<a hidden class="anchor" aria-hidden="true" href="#微分符号">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\nabla</code></td>
+          <td style="text-align: left">$\nabla$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\partial x</code></td>
+          <td style="text-align: left">$\partial x$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\mathrm{d}x</code></td>
+          <td style="text-align: left">$\mathrm{d}x$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\dot x</code></td>
+          <td style="text-align: left">$\dot x$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\ddot y</code></td>
+          <td style="text-align: left">$\ddot y$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="下标问题">下标问题<a hidden class="anchor" aria-hidden="true" href="#下标问题">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\sum_{i\leq j\leq k}^nf(n)</code></td>
+          <td style="text-align: left">$\sum_{i\leq j\leq k}^nf(n)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\sum\limits_{i\leq j\leq k}^nf(n)</code></td>
+          <td style="text-align: left">$\sum\limits_{i\leq j\leq k}^nf(n)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\underset{i\leq j\leq\ k}{\mathrm{arg\ min}}</code></td>
+          <td style="text-align: left">$\underset{i\leq j\leq\ k}{\mathrm{arg\ min}}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\underset{i\leq j\leq\ k}{\sum}</code></td>
+          <td style="text-align: left">$\underset{i\leq j\leq\ k}{\sum}$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="上下标正负无穷">上下标，正负无穷<a hidden class="anchor" aria-hidden="true" href="#上下标正负无穷">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>x^2</code></td>
+          <td style="text-align: left">$x^2$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>y_1</code></td>
+          <td style="text-align: left">$y_1$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\infty</code></td>
+          <td style="text-align: left">$\infty$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-\infty</code></td>
+          <td style="text-align: left">$-\infty$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="加减乘除分式根号省略号">加减乘除/分式/根号/省略号<a hidden class="anchor" aria-hidden="true" href="#加减乘除分式根号省略号">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>a+b-c*d</code></td>
+          <td style="text-align: left">$a+b-c*d$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>a\div{b}</code></td>
+          <td style="text-align: left">$a\div{b}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>a\pm{b}</code></td>
+          <td style="text-align: left">$a\pm{b}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\frac{a}{b}</code></td>
+          <td style="text-align: left">$\frac{a}{b}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\sqrt{b}</code></td>
+          <td style="text-align: left">$\sqrt{b}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\cdots</code></td>
+          <td style="text-align: left">$\cdots$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="三角函数">三角函数<a hidden class="anchor" aria-hidden="true" href="#三角函数">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\sin{\theta}</code></td>
+          <td style="text-align: left">$\sin{\theta}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\cos{\theta}</code></td>
+          <td style="text-align: left">$\cos{\theta}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\tan{\theta}</code></td>
+          <td style="text-align: left">$\tan{\theta}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\cot{\theta}</code></td>
+          <td style="text-align: left">$\cot{\theta}$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="矢量累加累乘极限">矢量/累加累乘/极限<a hidden class="anchor" aria-hidden="true" href="#矢量累加累乘极限">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\vec{F}</code></td>
+          <td style="text-align: left">$\vec{F}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\sum_{i=1}^{n}{a_i}</code></td>
+          <td style="text-align: left">$\sum_{i=1}^{n}{a_i}$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\prod_{i=1}^{n}{a_i}</code></td>
+          <td style="text-align: left">$ $</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\lim_{a\rightarrow+\infty}{a+b}</code></td>
+          <td style="text-align: left">$\lim_{a\rightarrow+\infty}{a+b}$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="希腊字母">希腊字母<a hidden class="anchor" aria-hidden="true" href="#希腊字母">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\alpha</code></td>
+          <td style="text-align: left">$\alpha$</td>
+          <td style="text-align: left"><code>\beta</code></td>
+          <td style="text-align: left">$\beta$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\gamma</code></td>
+          <td style="text-align: left">$\gamma$</td>
+          <td style="text-align: left"><code>\delta</code></td>
+          <td style="text-align: left">$\delta$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\epsilon</code></td>
+          <td style="text-align: left">$\epsilon$</td>
+          <td style="text-align: left"><code>\varepsilon</code></td>
+          <td style="text-align: left">$\varepsilon$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\eta</code></td>
+          <td style="text-align: left">$\eta$</td>
+          <td style="text-align: left"><code>\theta</code></td>
+          <td style="text-align: left">$\theta$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\kappa</code></td>
+          <td style="text-align: left">$\kappa$</td>
+          <td style="text-align: left"><code>\iota</code></td>
+          <td style="text-align: left">$\iota$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\zeta</code></td>
+          <td style="text-align: left">$\zeta$</td>
+          <td style="text-align: left"><code>\lambda</code></td>
+          <td style="text-align: left">$\lambda$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\mu</code></td>
+          <td style="text-align: left">$\mu$</td>
+          <td style="text-align: left"><code>\phi</code></td>
+          <td style="text-align: left">$\phi$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\pi</code></td>
+          <td style="text-align: left">$\pi$</td>
+          <td style="text-align: left"><code>\rho</code></td>
+          <td style="text-align: left">$\rho$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\xi</code></td>
+          <td style="text-align: left">$\xi$</td>
+          <td style="text-align: left"><code>\nu</code></td>
+          <td style="text-align: left">$\nu$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\upsilon</code></td>
+          <td style="text-align: left">$\upsilon$</td>
+          <td style="text-align: left"><code>\varphi</code></td>
+          <td style="text-align: left">$\varphi$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\chi</code></td>
+          <td style="text-align: left">$\chi$</td>
+          <td style="text-align: left"><code>\psi</code></td>
+          <td style="text-align: left">$\psi$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\omega</code></td>
+          <td style="text-align: left">$\omega$</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="关系运算符">关系运算符<a hidden class="anchor" aria-hidden="true" href="#关系运算符">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+          <th style="text-align: left">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\leq</code></td>
+          <td style="text-align: left">$\leq$</td>
+          <td style="text-align: left">小于等于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\geq</code></td>
+          <td style="text-align: left">$\geq$</td>
+          <td style="text-align: left">大于等于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\sum</code></td>
+          <td style="text-align: left">$\sum$</td>
+          <td style="text-align: left">求和</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\times</code></td>
+          <td style="text-align: left">$\times$</td>
+          <td style="text-align: left">乘号</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\pm</code></td>
+          <td style="text-align: left">$\pm$</td>
+          <td style="text-align: left">正负号</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\div</code></td>
+          <td style="text-align: left">$\div$</td>
+          <td style="text-align: left">除号</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\mid</code></td>
+          <td style="text-align: left">$\mid$</td>
+          <td style="text-align: left">竖线</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\cdot</code></td>
+          <td style="text-align: left">$\cdot$</td>
+          <td style="text-align: left">点</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\circ</code></td>
+          <td style="text-align: left">$\circ$</td>
+          <td style="text-align: left">圈</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\ast</code></td>
+          <td style="text-align: left">$\ast$</td>
+          <td style="text-align: left">星号</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigotimes</code></td>
+          <td style="text-align: left">$\bigotimes$</td>
+          <td style="text-align: left">克罗内克积</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigoplus</code></td>
+          <td style="text-align: left">$\bigoplus$</td>
+          <td style="text-align: left">异或</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigodot</code></td>
+          <td style="text-align: left">$\bigodot$</td>
+          <td style="text-align: left">点乘</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\approx</code></td>
+          <td style="text-align: left">$\approx$</td>
+          <td style="text-align: left">约等于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\prod</code></td>
+          <td style="text-align: left">$\prod$</td>
+          <td style="text-align: left">N元乘积</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\coprod</code></td>
+          <td style="text-align: left">$\coprod$</td>
+          <td style="text-align: left">N元余积</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\cdots</code></td>
+          <td style="text-align: left">$\cdots$</td>
+          <td style="text-align: left">省略号</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\int</code></td>
+          <td style="text-align: left">$\int$</td>
+          <td style="text-align: left">积分</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\iint</code></td>
+          <td style="text-align: left">$\iint$</td>
+          <td style="text-align: left">双重积分</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\oint</code></td>
+          <td style="text-align: left">$\oint$</td>
+          <td style="text-align: left">曲线积分</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\infty</code></td>
+          <td style="text-align: left">$\infty$</td>
+          <td style="text-align: left">无穷</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\nabla</code></td>
+          <td style="text-align: left">$\nabla$</td>
+          <td style="text-align: left">梯度</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\because</code></td>
+          <td style="text-align: left">$\because$</td>
+          <td style="text-align: left">因为</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\therefore</code></td>
+          <td style="text-align: left">$\therefore$</td>
+          <td style="text-align: left">所以</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\forall</code></td>
+          <td style="text-align: left">$\forall$</td>
+          <td style="text-align: left">任意</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\exists</code></td>
+          <td style="text-align: left">$\exists$</td>
+          <td style="text-align: left">存在</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\not=</code></td>
+          <td style="text-align: left">$\not=$</td>
+          <td style="text-align: left">不等于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\not\subset</code></td>
+          <td style="text-align: left">$\not\subset$</td>
+          <td style="text-align: left">不属于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\emptyset</code></td>
+          <td style="text-align: left">$\emptyset$</td>
+          <td style="text-align: left">空集</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\in</code></td>
+          <td style="text-align: left">$\in$</td>
+          <td style="text-align: left">属于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\notin</code></td>
+          <td style="text-align: left">$\notin$</td>
+          <td style="text-align: left">不属于</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\subset</code></td>
+          <td style="text-align: left">$\subset$</td>
+          <td style="text-align: left">子集</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\subseteq</code></td>
+          <td style="text-align: left">$\subseteq$</td>
+          <td style="text-align: left">真子集</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigcup</code></td>
+          <td style="text-align: left">$\bigcup$</td>
+          <td style="text-align: left">并集</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigcap</code></td>
+          <td style="text-align: left">$\bigcap$</td>
+          <td style="text-align: left">交集</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigvee</code></td>
+          <td style="text-align: left">$\bigvee$</td>
+          <td style="text-align: left">逻辑或</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigwedge</code></td>
+          <td style="text-align: left">$\bigwedge$</td>
+          <td style="text-align: left">逻辑与</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\biguplus</code></td>
+          <td style="text-align: left">$\biguplus$</td>
+          <td style="text-align: left">多重集</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\bigsqcup</code></td>
+          <td style="text-align: left">$\bigsqcup$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\hat{y}</code></td>
+          <td style="text-align: left">$\hat{y}$</td>
+          <td style="text-align: left">期望</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\check{y}</code></td>
+          <td style="text-align: left">$\check{y}$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\breve{y}</code></td>
+          <td style="text-align: left">$\breve{y}$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\overline{a+b+c+d}</code></td>
+          <td style="text-align: left">$\overline{a+b+c+d}$</td>
+          <td style="text-align: left">平均值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\underline{a+b+c+d}</code></td>
+          <td style="text-align: left">$\underline{a+b+c+d}$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}</code></td>
+          <td style="text-align: left">$\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\uparrow</code></td>
+          <td style="text-align: left">$\uparrow$</td>
+          <td style="text-align: left">向上</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\downarrow</code></td>
+          <td style="text-align: left">$\downarrow$</td>
+          <td style="text-align: left">向下</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\Uparrow</code></td>
+          <td style="text-align: left">$\Uparrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\Downarrow</code></td>
+          <td style="text-align: left">$\Downarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\rightarrow</code></td>
+          <td style="text-align: left">$\rightarrow$</td>
+          <td style="text-align: left">向右</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\leftarrow</code></td>
+          <td style="text-align: left">$\leftarrow$</td>
+          <td style="text-align: left">向左</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\Rightarrow</code></td>
+          <td style="text-align: left">$\Rightarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\Leftarrow</code></td>
+          <td style="text-align: left">$\Leftarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\longrightarrow</code></td>
+          <td style="text-align: left">$\longrightarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\longleftarrow</code></td>
+          <td style="text-align: left">$\longleftarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\Longrightarrow</code></td>
+          <td style="text-align: left">$\Longrightarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\Longleftarrow</code></td>
+          <td style="text-align: left">$\Longleftarrow$</td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="矩阵">矩阵<a hidden class="anchor" aria-hidden="true" href="#矩阵">#</a></h2>
+<h3 id="简单矩阵">简单矩阵<a hidden class="anchor" aria-hidden="true" href="#简单矩阵">#</a></h3>
+<p>$$
+\begin{matrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{matrix} \tag{1}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>\begin{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span> 1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span> 4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span> 7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>\end{matrix} \tag{1}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>$$
+</span></span></code></pre></div><h3 id="带左右括号的矩阵大中小括号">带左右括号的矩阵(大中小括号)<a hidden class="anchor" aria-hidden="true" href="#带左右括号的矩阵大中小括号">#</a></h3>
+<h3 id="大括号">大括号<a hidden class="anchor" aria-hidden="true" href="#大括号">#</a></h3>
+<p>$$
+\left{
+\begin{matrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{matrix}
+\right} \tag{2}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> \left\{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> \begin{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>   1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>   4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>   7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  \end{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  \right\} \tag{2}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>或
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> \begin{Bmatrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>   1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>   4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>   7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  \end{Bmatrix} \tag{2}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>$$
+</span></span></code></pre></div><h3 id="中括号">中括号<a hidden class="anchor" aria-hidden="true" href="#中括号">#</a></h3>
+<p>$$
+\left[
+\begin{matrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{matrix}
+\right] \tag{3}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span> \left[
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span> \begin{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>   1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>   4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>   7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>  \end{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>  \right] \tag{3}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span> \begin{bmatrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>   1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>   4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>   7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>  \end{bmatrix} \tag{3}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>$$
+</span></span></code></pre></div><h3 id="小括号">小括号<a hidden class="anchor" aria-hidden="true" href="#小括号">#</a></h3>
+<p>$$
+\left(
+\begin{matrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{matrix}
+\right) \tag{4}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> \left(
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span> \begin{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>   1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>   4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>   7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>  \end{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>  \right) \tag{4}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>$$
+</span></span></code></pre></div><h3 id="包含希腊字母与省略号">包含希腊字母与省略号<a hidden class="anchor" aria-hidden="true" href="#包含希腊字母与省略号">#</a></h3>
+<p>$$
+\left(
+\begin{matrix}
+1      &amp; 2        &amp; \cdots &amp; 5        \\
+6      &amp; 7        &amp; \cdots &amp; 10       \\
+\vdots &amp; \vdots   &amp; \ddots &amp; \vdots   \\
+\alpha &amp; \alpha+1 &amp; \cdots &amp; \alpha+4
+\end{matrix}
+\right) \tag{5}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>\left\(
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>\begin{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>1      <span style="color:#b4637a">&amp;</span> 2        <span style="color:#b4637a">&amp;</span> \cdots <span style="color:#b4637a">&amp;</span> 5        \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>6      <span style="color:#b4637a">&amp;</span> 7        <span style="color:#b4637a">&amp;</span> \cdots <span style="color:#b4637a">&amp;</span> 10       \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>\vdots <span style="color:#b4637a">&amp;</span> \vdots   <span style="color:#b4637a">&amp;</span> \ddots <span style="color:#b4637a">&amp;</span> \vdots   \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>\alpha <span style="color:#b4637a">&amp;</span> \alpha+1 <span style="color:#b4637a">&amp;</span> \cdots <span style="color:#b4637a">&amp;</span> \alpha+4
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>\end{matrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>\right\) \tag{5}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>$$
+</span></span></code></pre></div><h2 id="行列式">行列式<a hidden class="anchor" aria-hidden="true" href="#行列式">#</a></h2>
+<p>$$
+\begin{vmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9
+\end{vmatrix}
+\tag{7}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> \begin{vmatrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>   1 <span style="color:#b4637a">&amp;</span> 2 <span style="color:#b4637a">&amp;</span> 3 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>   4 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 6 \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>   7 <span style="color:#b4637a">&amp;</span> 8 <span style="color:#b4637a">&amp;</span> 9
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>  \end{vmatrix}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>\tag{7}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>$$
+</span></span></code></pre></div><h2 id="表格">表格<a hidden class="anchor" aria-hidden="true" href="#表格">#</a></h2>
+<h3 id="简单表格">简单表格<a hidden class="anchor" aria-hidden="true" href="#简单表格">#</a></h3>
+<p>$$
+\begin{array}{|c|c|c|}
+\hline 2 &amp; 9 &amp; 4\\
+\hline 7 &amp; 5 &amp; 3\\
+\hline 6 &amp; 1 &amp; 8\\
+\hline
+\end{array}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>\begin{array}{|c|c|c|}  c、l、r分别表示居中、左对齐、右对齐
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	竖直分割线：在定义式中插入 |， （||表示两条竖直分割线）。
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	水平分割线：在下一行输入前插入 \hline
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	\hline 2 <span style="color:#b4637a">&amp;</span> 9 <span style="color:#b4637a">&amp;</span> 4\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	\hline 7 <span style="color:#b4637a">&amp;</span> 5 <span style="color:#b4637a">&amp;</span> 3\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	\hline 6 <span style="color:#b4637a">&amp;</span> 1 <span style="color:#b4637a">&amp;</span> 8\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	\hline
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>\end{array}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>$$
+</span></span></code></pre></div><h3 id="真值表">真值表<a hidden class="anchor" aria-hidden="true" href="#真值表">#</a></h3>
+<p>$$
+\begin{array}{c c|c}
+A &amp; B &amp; F\\
+\hline 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 1\\
+1 &amp; 0 &amp; 1\\
+1 &amp; 1 &amp; 1\\
+\end{array}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>\begin{array}{c c|c}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	       A <span style="color:#b4637a">&amp;</span> B <span style="color:#b4637a">&amp;</span> F\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	\hline 0 <span style="color:#b4637a">&amp;</span> 0 <span style="color:#b4637a">&amp;</span> 0\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	       0 <span style="color:#b4637a">&amp;</span> 1 <span style="color:#b4637a">&amp;</span> 1\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	       1 <span style="color:#b4637a">&amp;</span> 0 <span style="color:#b4637a">&amp;</span> 1\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>	       1 <span style="color:#b4637a">&amp;</span> 1 <span style="color:#b4637a">&amp;</span> 1\\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>\end{array}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>$$
+</span></span></code></pre></div><h2 id="多行等式对齐">多行等式对齐<a hidden class="anchor" aria-hidden="true" href="#多行等式对齐">#</a></h2>
+<p>$$
+\begin{aligned}
+a &amp;= b + c \\
+&amp;= d + e + f
+\end{aligned}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>\begin{aligned}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>a <span style="color:#b4637a">&amp;</span>= b + c \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  <span style="color:#b4637a">&amp;</span>= d + e + f
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>\end{aligned}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>$$
+</span></span></code></pre></div><h2 id="方程组条件表达式">方程组、条件表达式<a hidden class="anchor" aria-hidden="true" href="#方程组条件表达式">#</a></h2>
+<p>$$
+\begin{cases}
+3x + 5y +  z \\
+7x - 2y + 4z \\
+-6x + 3y + 2z
+\end{cases}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>\begin{cases}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>3x + 5y +  z \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>7x - 2y + 4z \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>-6x + 3y + 2z
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>\end{cases}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>$$
+</span></span></code></pre></div><p>$$
+f(n) =
+\begin{cases}
+n/2,  &amp; \text{if }n\text{ is even} \\
+3n+1, &amp; \text{if }n\text{ is odd}
+\end{cases}
+$$</p>
+<div class="highlight"><pre tabindex="0" style="color:#575279;background-color:#faf4ed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>$$
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>f(n) =
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>\begin{cases} 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>n/2,  <span style="color:#b4637a">&amp;</span> \text{if }n\text{ is even} \\
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>3n+1, <span style="color:#b4637a">&amp;</span> \text{if }n\text{ is odd}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>\end{cases}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>$$
+</span></span></code></pre></div><h2 id="间隔">间隔<a hidden class="anchor" aria-hidden="true" href="#间隔">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">语法</th>
+          <th style="text-align: left">效果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">紧贴： <code>a\!b</code></td>
+          <td style="text-align: left">$a!b$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">无空格： <code>ab</code></td>
+          <td style="text-align: left">$ab$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">小空格： <code>a\,b</code></td>
+          <td style="text-align: left">$a,b$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">中空格： <code>a\;b</code></td>
+          <td style="text-align: left">$a;b$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">大空格： <code>a\ b</code></td>
+          <td style="text-align: left">$a\ b$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">真空格： <code>a\quad b</code></td>
+          <td style="text-align: left">$a\quad b$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">双真空格： <code>a\qquad b</code></td>
+          <td style="text-align: left">$a\qquad b$</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="数学结构">数学结构<a hidden class="anchor" aria-hidden="true" href="#数学结构">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">符号</th>
+          <th style="text-align: left">代码</th>
+          <th style="text-align: left">符合</th>
+          <th style="text-align: left">代码</th>
+          <th style="text-align: left">符号</th>
+          <th style="text-align: left">代码</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">$\frac{abd}{xyz}$</td>
+          <td style="text-align: left"><code>\frac{abd}{xyz}</code></td>
+          <td style="text-align: left">$\overline{abc}$</td>
+          <td style="text-align: left"><code>\overline{abc}</code></td>
+          <td style="text-align: left">$\overrightarrow{abc}$</td>
+          <td style="text-align: left"><code>\overrightarrow{abc}</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$f’$</td>
+          <td style="text-align: left"><code>f’</code></td>
+          <td style="text-align: left">$\underline{abc}$</td>
+          <td style="text-align: left"><code>\underline{abc}</code></td>
+          <td style="text-align: left">$\overleftarrow{abc}$</td>
+          <td style="text-align: left"><code>\overleftarrow{abc}</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$\sqrt{abc}$</td>
+          <td style="text-align: left"><code>\sqrt{abc}</code></td>
+          <td style="text-align: left">$\widehat{abc}$</td>
+          <td style="text-align: left"><code>\widehat{abc}</code></td>
+          <td style="text-align: left">$\overbrace{abc}$</td>
+          <td style="text-align: left"><code>\overbrace{abc}</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$\sqrt[n]{abc}$</td>
+          <td style="text-align: left"><code>\sqrt[n]{abc}</code></td>
+          <td style="text-align: left">$\widetilde{abc}$</td>
+          <td style="text-align: left"><code>\widetilde{abc}</code></td>
+          <td style="text-align: left">$\underbrace{abc}$</td>
+          <td style="text-align: left"><code>\underbrace{abc}</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="分隔符">分隔符<a hidden class="anchor" aria-hidden="true" href="#分隔符">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">符号</th>
+          <th style="text-align: left">代码</th>
+          <th style="text-align: left">符号</th>
+          <th style="text-align: left">代码</th>
+          <th style="text-align: left">符号</th>
+          <th style="text-align: left">代码</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">$\vert$</td>
+          <td style="text-align: left"><code>\vert</code></td>
+          <td style="text-align: left">$\lfloor$</td>
+          <td style="text-align: left"><code>\lfloor</code></td>
+          <td style="text-align: left">$\llcorner$</td>
+          <td style="text-align: left"><code>\llcorner</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$\Vert$</td>
+          <td style="text-align: left"><code>\Vert</code></td>
+          <td style="text-align: left">$\rfloor$</td>
+          <td style="text-align: left"><code>\rfloor</code></td>
+          <td style="text-align: left">$\lrcorner$</td>
+          <td style="text-align: left"><code>\lrcorner</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$\langle$</td>
+          <td style="text-align: left"><code>\langle</code></td>
+          <td style="text-align: left">$\lceil$</td>
+          <td style="text-align: left"><code>\lceil</code></td>
+          <td style="text-align: left">$\ulcorner$</td>
+          <td style="text-align: left"><code>\ulcorner</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$\rangle$</td>
+          <td style="text-align: left"><code>\rangle</code></td>
+          <td style="text-align: left">$\rceil$</td>
+          <td style="text-align: left"><code>\rceil</code></td>
+          <td style="text-align: left">$\urcorner$</td>
+          <td style="text-align: left"><code>\urcorner</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">$\backslash$</td>
+          <td style="text-align: left"><code>\backslash</code></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="标准函数名称">标准函数名称<a hidden class="anchor" aria-hidden="true" href="#标准函数名称">#</a></h2>
+<p>函数名称应该出现罗马字体，而不是倾斜，如</p>
+<p>正确：<code>\tan(at-n\pi)</code>\rightarrow$ $\tan(at-n\pi)$</p>
+<p>错误：<code>tan(at-n\pi)</code>\rightarrow$ $tan(at-n\pi)$</p>
+<h2 id="其他样式">其他样式<a hidden class="anchor" aria-hidden="true" href="#其他样式">#</a></h2>
+<p>Caligraphic letters <code>\mathcal{A}</code> 如:$\mathcal{A}$、$\mathcal{B}$、$\mathcal{C}$、$\mathcal{D}$、$\mathcal{E}$、$\mathcal{F}$、$\mathcal{G}$、$\mathcal{H}$、$\mathcal{I}$、$\mathcal{J}$、$\mathcal{K}$、$\mathcal{L}$、$\mathcal{M}$、……、$\mathcal{Z}$</p>
+<p>Mathbb letters  <code>\mathbb{A}</code> 如:$\mathbb{A}$、$\mathbb{B}$、$\mathbb{C}$、$\mathbb{D}$、$\mathbb{E}$、$\mathbb{F}$、$\mathbb{G}$、$\mathbb{H}$、$\mathbb{I}$、$\mathbb{J}$、$\mathbb{K}$、$\mathbb{L}$、$\mathbb{M}$、……、$\mathbb{Z}$</p>
+<p>Math Sans serif letter <code>\mathfrak{A}</code> 如:$\mathfrak{A}$、$\mathfrak{B}$、$\mathbb{C}$、$\mathfrak{D}$、$\mathfrak{E}$、$\mathfrak{F}$、$\mathfrak{G}$、$\mathbb{H}$、$\mathfrak{I}$、$\mathfrak{J}$、$\mathfrak{K}$、$\mathbb{L}$、$\mathfrak{M}$、……、$\mathfrak{Z}$</p>
+<p>Math bold letter <code>\mathbf{A}</code> 如:$\mathbf{A}$、$\mathbf{B}$、$\mathbf{C}$、$\mathbf{D}$、$\mathbf{E}$、$\mathbf{F}$、$\mathbf{G}$、$\mathbf{H}$、$\mathbf{I}$、$\mathbf{J}$、$\mathbf{K}$、$\mathbf{L}$、$\mathbf{M}$、……、$\mathbf{Z}$</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://sharleen-c.github.io/posts/technology/neo4j/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Neo4j 教程</span>
+  </a>
+  <a class="next" href="https://sharleen-c.github.io/posts/technology/hardware_basic/">
+    <span class="title">Next »</span>
+    <br>
+    <span>电脑硬件基本知识及安装</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://sharleen-c.github.io/">Sharleen</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
