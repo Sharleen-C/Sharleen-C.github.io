@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>🪂🌆Science Road. on Sharing Sharleen Blog</title>
+    <link>https://sharleen-c.github.io/posts/science/</link>
+    <description>Recent content in 🪂🌆Science Road. on Sharing Sharleen Blog</description>
+    <generator>Hugo -- 0.134.3</generator>
+    <language>en-us</language>
+    <copyright>Sharleen</copyright>
+    <lastBuildDate>Wed, 25 Sep 2024 14:19:57 +0800</lastBuildDate>
+    <atom:link href="https://sharleen-c.github.io/posts/science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于图结构与文本的互相补充</title>
+      <link>https://sharleen-c.github.io/posts/science/gnn_text/</link>
+      <pubDate>Tue, 24 Sep 2024 16:19:57 +0800</pubDate>
+      <guid>https://sharleen-c.github.io/posts/science/gnn_text/</guid>
+      <description>Desc Text.</description>
+    </item>
+  </channel>
+</rss>

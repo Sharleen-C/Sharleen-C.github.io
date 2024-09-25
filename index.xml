@@ -4,16 +4,39 @@
     <title>Sharing Sharleen Blog</title>
     <link>https://sharleen-c.github.io/</link>
     <description>Recent content on Sharing Sharleen Blog</description>
-    <image>
-      <title>Sharing Sharleen Blog</title>
-      <url>https://sharleen-c.github.io/images/papermod-cover.png</url>
-      <link>https://sharleen-c.github.io/images/papermod-cover.png</link>
-    </image>
     <generator>Hugo -- 0.134.3</generator>
-    <language>en</language>
-    <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Tue, 24 Sep 2024 16:19:57 +0800</lastBuildDate>
+    <language>en-us</language>
+    <copyright>Sharleen</copyright>
+    <lastBuildDate>Wed, 25 Sep 2024 14:30:24 +0800</lastBuildDate>
     <atom:link href="https://sharleen-c.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>☃️Winter</title>
+      <link>https://sharleen-c.github.io/posts/life/winter/</link>
+      <pubDate>Wed, 25 Sep 2024 14:30:24 +0800</pubDate>
+      <guid>https://sharleen-c.github.io/posts/life/winter/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title>🍂Autumn</title>
+      <link>https://sharleen-c.github.io/posts/life/autumn/</link>
+      <pubDate>Wed, 25 Sep 2024 14:30:17 +0800</pubDate>
+      <guid>https://sharleen-c.github.io/posts/life/autumn/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title>🌳Summer</title>
+      <link>https://sharleen-c.github.io/posts/life/summer/</link>
+      <pubDate>Wed, 25 Sep 2024 14:26:01 +0800</pubDate>
+      <guid>https://sharleen-c.github.io/posts/life/summer/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title>🌸Spring</title>
+      <link>https://sharleen-c.github.io/posts/life/spring/</link>
+      <pubDate>Wed, 25 Sep 2024 14:26:01 +0800</pubDate>
+      <guid>https://sharleen-c.github.io/posts/life/spring/</guid>
+      <description>Desc Text.</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://sharleen-c.github.io/about/</link>
@@ -22,17 +45,10 @@
       <description></description>
     </item>
     <item>
-      <title>My 1st post</title>
-      <link>https://sharleen-c.github.io/science/paper/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://sharleen-c.github.io/science/paper/</guid>
-      <description>Desc Text.</description>
-    </item>
-    <item>
-      <title>My 1st post</title>
-      <link>https://sharleen-c.github.io/zh/science/paper/</link>
-      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
-      <guid>https://sharleen-c.github.io/zh/science/paper/</guid>
+      <title>关于图结构与文本的互相补充</title>
+      <link>https://sharleen-c.github.io/posts/science/gnn_text/</link>
+      <pubDate>Tue, 24 Sep 2024 16:19:57 +0800</pubDate>
+      <guid>https://sharleen-c.github.io/posts/science/gnn_text/</guid>
       <description>Desc Text.</description>
     </item>
   </channel>
