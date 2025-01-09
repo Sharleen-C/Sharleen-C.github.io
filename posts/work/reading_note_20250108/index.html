@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>人人都是产品经理阅读笔记之什么是需求 | Sharing Sharleen Blog</title>
+<meta name="keywords" content="work">
+<meta name="description" content="人人都是产品经理阅读笔记之什么是需求.">
+<meta name="author" content="Sharleen">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/work/reading_note_20250108/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[\[','\]\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/science/" title="Science">
+                    <span>Science</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/life/" title="Life">
+                    <span>Life</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/technology/" title="Technology">
+                    <span>Technology</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/work/" title="Work">
+                    <span>Work</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/work/">🎀🎊For Future</a></div>
+    <h1 class="post-title entry-hint-parent">
+      人人都是产品经理阅读笔记之什么是需求
+    </h1>
+    <div class="post-description">
+      人人都是产品经理阅读笔记之什么是需求.
+    </div>
+    <div class="post-meta"><span title='2025-01-09 11:34:25 +0800 CST'>January 9, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Sharleen
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82" aria-label="需求">需求</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90" aria-label="需求分析">需求分析</a><ul>
+                        
+                <li>
+                    <a href="#%e7%94%a8%e6%88%b7%e8%ae%bf%e8%b0%88%e5%ae%9a%e6%80%a7%e5%9c%b0%e8%af%b4" aria-label="用户访谈（定性地说）">用户访谈（定性地说）</a><ul>
+                        
+                <li>
+                    <a href="#%e9%97%ae%e9%a2%98" aria-label="问题：">问题：</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%b0%83%e6%9f%a5%e9%97%ae%e5%8d%b7%e5%ae%9a%e9%87%8f%e5%9c%b0%e8%af%b4" aria-label="调查问卷（定量地说）">调查问卷（定量地说）</a><ul>
+                        
+                <li>
+                    <a href="#%e4%bc%98%e7%82%b9" aria-label="优点">优点</a></li>
+                <li>
+                    <a href="#%e9%97%ae%e9%a2%98-1" aria-label="问题">问题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%8f%af%e7%94%a8%e6%80%a7%e6%b5%8b%e8%af%95%e5%ae%9a%e6%80%a7%e5%9c%b0%e5%81%9a" aria-label="可用性测试（定性地做）">可用性测试（定性地做）</a><ul>
+                        
+                <li>
+                    <a href="#%e6%b5%81%e7%a8%8b" aria-label="流程">流程</a></li>
+                <li>
+                    <a href="#%e9%97%ae%e9%a2%98-2" aria-label="问题">问题</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90%e5%ae%9a%e9%87%8f%e5%9c%b0%e5%81%9a" aria-label="数据分析（定量地做）">数据分析（定量地做）</a><ul>
+                        
+                <li>
+                    <a href="#%e9%97%ae%e9%a2%98-3" aria-label="问题">问题</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e9%87%87%e9%9b%86" aria-label="需求采集">需求采集</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8d%95%e9%a1%b9%e9%9c%80%e6%b1%82%e5%8d%a1%e7%89%87" aria-label="单项需求卡片">单项需求卡片</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e9%87%87%e9%9b%86%e6%96%b9%e6%b3%95" aria-label="需求采集方法">需求采集方法</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90-1" aria-label="需求分析">需求分析</a><ul>
+                        
+                <li>
+                    <a href="#%e6%bb%a1%e8%b6%b3%e9%9c%80%e6%b1%82%e7%9a%84%e4%b8%89%e7%a7%8d%e6%96%b9%e5%bc%8f" aria-label="满足需求的三种方式">满足需求的三种方式</a></li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%88%86%e6%9e%90%e6%b5%81%e7%a8%8b" aria-label="需求分析流程">需求分析流程</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e8%bd%ac%e5%8c%96" aria-label="需求转化">需求转化</a></li>
+                <li>
+                    <a href="#%e7%a1%ae%e5%ae%9a%e5%9f%ba%e6%9c%ac%e5%b1%9e%e6%80%a7" aria-label="确定基本属性">确定基本属性</a></li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%88%86%e7%b1%bb" aria-label="需求分类">需求分类</a></li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%b1%82%e6%ac%a1kano%e6%a8%a1%e5%9e%8b" aria-label="需求层次（KANO模型）">需求层次（KANO模型）</a></li>
+                <li>
+                    <a href="#%e5%95%86%e4%b8%9a%e4%bb%b7%e5%80%bc" aria-label="商业价值">商业价值</a><ul>
+                        
+                <li>
+                    <a href="#%e8%a1%a1%e9%87%8f%e6%8c%87%e6%a0%87%e9%87%8d%e8%a6%81%e6%80%a7%e5%88%86%e8%a7%a3" aria-label="衡量指标①：重要性分解">衡量指标①：重要性分解</a></li>
+                <li>
+                    <a href="#%e8%a1%a1%e9%87%8f%e6%8c%87%e6%a0%87-%e7%b4%a7%e6%80%a5%e5%ba%a6" aria-label="衡量指标② 紧急度">衡量指标② 紧急度</a></li>
+                <li>
+                    <a href="#%e8%a1%a1%e9%87%8f%e6%8c%87%e6%a0%87-%e6%8c%81%e7%bb%ad%e6%97%b6%e9%97%b4" aria-label="衡量指标③ 持续时间">衡量指标③ 持续时间</a></li>
+                <li>
+                    <a href="#%e8%a1%a1%e9%87%8f%e6%8c%87%e6%a0%87-%e5%95%86%e4%b8%9a%e4%bb%b7%e5%80%bc" aria-label="衡量指标④ 商业价值">衡量指标④ 商业价值</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%af%84%e4%bc%b0%e5%ae%9e%e7%8e%b0%e9%9a%be%e5%ba%a6" aria-label="评估实现难度">评估实现难度</a></li>
+                <li>
+                    <a href="#%e6%80%a7%e4%bb%b7%e6%af%94" aria-label="性价比">性价比</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e7%ad%9b%e9%80%89" aria-label="需求筛选">需求筛选</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e6%89%93%e5%8c%85" aria-label="需求打包">需求打包</a></li>
+                <li>
+                    <a href="#%e4%ba%a7%e5%93%81%e4%bc%9a%e8%ae%ae" aria-label="产品会议">产品会议</a></li>
+                <li>
+                    <a href="#%e5%95%86%e4%b8%9a%e9%9c%80%e6%b1%82%e6%96%87%e6%a1%a3" aria-label="商业需求文档">商业需求文档</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f%e7%ae%a1%e7%90%86" aria-label="需求生命周期管理">需求生命周期管理</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e7%8a%b6%e6%80%81" aria-label="需求状态">需求状态</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%85%a8%e8%bf%87%e7%a8%8bdna" aria-label="需求全过程DNA">需求全过程DNA</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9d%99%e6%80%81%e7%94%bb%e5%83%8f" aria-label="静态画像">静态画像</a></li>
+                <li>
+                    <a href="#%e5%8a%a8%e6%80%81%e7%94%bb%e5%83%8f" aria-label="动态画像">动态画像</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%8e%a8%e8%8d%90%e8%af%bb%e7%89%a9" aria-label="推荐读物">推荐读物</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+  <div class="post-content"><h1 id="需求">需求<a hidden class="anchor" aria-hidden="true" href="#需求">#</a></h1>
+<h2 id="需求分析">需求分析<a hidden class="anchor" aria-hidden="true" href="#需求分析">#</a></h2>
+<h3 id="用户访谈定性地说">用户访谈（定性地说）<a hidden class="anchor" aria-hidden="true" href="#用户访谈定性地说">#</a></h3>
+<p>了解用户的目标和观点，采样比较少，但在每个用户身上花的时间比较多</p>
+<h4 id="问题">问题：<a hidden class="anchor" aria-hidden="true" href="#问题">#</a></h4>
+<ol>
+<li>言行不一致：用户所说的话和最后实际做的事情不一样 ==&gt; 让用户在“说”的同时也在“做”；区分用户的客观认知和主观感受</li>
+<li>以偏概全：样本少 ==&gt; 注明可能引起偏差的因素；增量访谈；概率与数理统计</li>
+<li>访谈用户信息无用</li>
+<li>过多输出个人观点</li>
+</ol>
+<blockquote>
+<p>《软件观念革命：交互设计精髓》</p>
+<p>避免固定的问题，增加交流感而非审问感</p>
+<p>首先关注目标，其次关注任务，关键在于用户做选择的动机</p>
+<p>避免让用户成为设计师</p>
+<p>避免讨论技术</p>
+<p>鼓励讲故事</p>
+<p>避免诱导性的问题</p>
+</blockquote>
+<p>==记个人感悟==：产品流程包含①产品生命周期全流程；②目标导向；③目标分解；④资源分配；⑤执行分配</p>
+<h3 id="调查问卷定量地说">调查问卷（定量地说）<a hidden class="anchor" aria-hidden="true" href="#调查问卷定量地说">#</a></h3>
+<p>用户特点：沉默与骑墙的总是大多数</p>
+<h4 id="优点">优点<a hidden class="anchor" aria-hidden="true" href="#优点">#</a></h4>
+<p>避免由少数人（愿意表达想法）代表多数人（沉默与骑墙）</p>
+<h4 id="问题-1">问题<a hidden class="anchor" aria-hidden="true" href="#问题-1">#</a></h4>
+<ol>
+<li>样本偏差：样本与目标用户群体之间的偏差 ==&gt; 尽可能覆盖目标群体中各种类型的用户；保证用户的样本比例接近全体的比例；考虑并表明潜在筛选条件</li>
+<li>样本过少：比例不具有稳定性</li>
+<li>细节：问题表述不应存在引导性；考虑“顺序偏差”和“位置偏差”； ==&gt; 小范围试答——反馈修改——大面积投放</li>
+</ol>
+<h3 id="可用性测试定性地做">可用性测试（定性地做）<a hidden class="anchor" aria-hidden="true" href="#可用性测试定性地做">#</a></h3>
+<p>通过让实际用户使用产品或原型方法来发现界面设计中的可用性测试</p>
+<h4 id="流程">流程<a hidden class="anchor" aria-hidden="true" href="#流程">#</a></h4>
+<p>招募测试用户–准备测试任务–观察记录用户操作– 问询意见分析 – 研究分析，制定优先级</p>
+<h4 id="问题-2">问题<a hidden class="anchor" aria-hidden="true" href="#问题-2">#</a></h4>
+<ol>
+<li>在产品开发各个阶段都可以开始可用性测试，而不是在产品即将上线之前</li>
+<li>不可不做</li>
+<li>测试产品而非测试用户，目的是发现软件产品的问题</li>
+<li>倡导用户积极主动说出自己的思考过程</li>
+<li>千错万错是产品的错</li>
+</ol>
+<p>==产品改版：== ①先从部分次级页面改动；②新旧版本并存；③小面积试验；④依赖一个用户习惯的风格</p>
+<h3 id="数据分析定量地做">数据分析（定量地做）<a hidden class="anchor" aria-hidden="true" href="#数据分析定量地做">#</a></h3>
+<p>According to the data！</p>
+<h4 id="问题-3">问题<a hidden class="anchor" aria-hidden="true" href="#问题-3">#</a></h4>
+<ol>
+<li>注意数据分析的目的是为商业目标做考虑，不需要非常的严谨</li>
+<li>误读数据：统计学中常见的问题，尤其是指标的选择；“为了迎合一个观点而去寻找数据”</li>
+<li>将数据分析作为一种“非功能需求”，在设计时就将衡量方式考虑进去</li>
+</ol>
+<h2 id="需求采集">需求采集<a hidden class="anchor" aria-hidden="true" href="#需求采集">#</a></h2>
+<p>一手需求：由产品人员驱动，去潜在的目标用户处进行采集</p>
+<p>二手需求：产品运行一段时间后，各方反馈得来的需求</p>
+<h3 id="单项需求卡片">单项需求卡片<a hidden class="anchor" aria-hidden="true" href="#单项需求卡片">#</a></h3>
+<p>描述用户需求中包含哪些内容，重点是描述用户场景：“谁在什么时间、地点产生了什么需求”</p>
+<p>需求编号、需求类型</p>
+<p>需求来源（Who）：用户+用户背景</p>
+<p>需求场景（Where, When）：特定的情境</p>
+<p>需求描述（What）：客观的主谓宾描述</p>
+<p>需求原因（Why）：为什么会有这样的需求（值得怀疑）</p>
+<p>验收标准（How）：如何确认需求被满足，尽量以量化或举例的方式解释</p>
+<p>需求重要性权重（How much）：</p>
+<p>​	满足后（“1：一般”到“5：非常高兴”）</p>
+<p>​	未实现（“1：略感遗憾”到“5：非常懊恼”）</p>
+<p>需求生命特征（When）：需求的紧急度；时间持续性</p>
+<p>需求关联（Which）：相关联的“人”、“事”（用户业务与其他需求）、“物”（用户系统、设备）</p>
+<p>参考资料</p>
+<p>竞争者对比：竞争者如何满足该需求；用户客户竞争者及公司对该需求的评价</p>
+<h4 id="需求采集方法">需求采集方法<a hidden class="anchor" aria-hidden="true" href="#需求采集方法">#</a></h4>
+<p>贯穿始终，以防遗漏</p>
+<ol>
+<li>现场调查，定性分析：深度了解客户需求</li>
+<li>AB测试：随机挑选用户进行不同版本的比对测试</li>
+<li>日记研究：注意日记记录着往往是同行而非真实客户，所以在采纳时要保持冷静客观</li>
+<li>卡片分类法：用户参与讨论分类，了解用户内心真实需求</li>
+<li>自己提需求：自己深度感知，持续批评</li>
+</ol>
+<h2 id="需求分析-1">需求分析<a hidden class="anchor" aria-hidden="true" href="#需求分析-1">#</a></h2>
+<blockquote>
+<p>用户跟福特要一匹更快的马，福特却给了用户一辆车</p>
+</blockquote>
+<p>用户需求：用户自以为的需求，经常表达为用户的解决方案</p>
+<p>产品需求：经过产品经理的分析，找到的真实需求，并且表达为产品的解决方案</p>
+<p>需求分析：从用户提出的需求出发，找到用户内心最真实的渴望，再转化为产品需求的过程</p>
+<p>“树叶——树枝——树干——树枝——树干”：从用户提炼得到的分散需求，分解需求到技术人员</p>
+<h3 id="满足需求的三种方式">满足需求的三种方式<a hidden class="anchor" aria-hidden="true" href="#满足需求的三种方式">#</a></h3>
+<p>提高现实（开发）；降低理想（打预防针）；转移需求（寻找更强烈的需求，而放弃原来的需求）</p>
+<h3 id="需求分析流程">需求分析流程<a hidden class="anchor" aria-hidden="true" href="#需求分析流程">#</a></h3>
+<p>需求转化 $\rightarrow$ 确定基本属性$\rightarrow$ 初评实现难度$\rightarrow$ 分析商业价值$\rightarrow$ 计算性价比</p>
+<h4 id="需求转化">需求转化<a hidden class="anchor" aria-hidden="true" href="#需求转化">#</a></h4>
+<p>模块-子模块-feature-任务描述-商业价值描述-商业属性-商业优先级-开发量-性价比</p>
+<h4 id="确定基本属性">确定基本属性<a hidden class="anchor" aria-hidden="true" href="#确定基本属性">#</a></h4>
+<p>编号（唯一性标识，索引）、提交人（PD）、提交时间、模块（5±2）、名称、描述（描述要做什么，而无需描述怎么做，无歧义、完整性、一致性、可测试）、提出者、提出时间、Bug编号</p>
+<h4 id="需求分类">需求分类<a hidden class="anchor" aria-hidden="true" href="#需求分类">#</a></h4>
+<p>功能需求</p>
+<p>非功能需求：性能、可培训、可维护、可扩展、有很多需求不是为终端用户做的，而是为销售、服务、测试团队的同学做的。</p>
+<p><strong>产品功能</strong>需求+产品非功能需求 <strong>=</strong> <strong>产品需求”</strong></p>
+<p><strong>“产品需求+市场需求</strong>+开发需求+测试需求+服务需求+…… <strong>=</strong> <strong>产品包需求”</strong></p>
+<blockquote>
+<p>参考软件工程文档：https://www.mubu.com/doc/1R9RaUU-Z_m</p>
+<p>复习：软件过程与改进、软件工程、软件项目组织管理</p>
+</blockquote>
+<h4 id="需求层次kano模型">需求层次（KANO模型）<a hidden class="anchor" aria-hidden="true" href="#需求层次kano模型">#</a></h4>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-9f840c5f43e4fa06f121e58e8c8e9c7d_1440w.jpg" alt="img"  />
+</p>
+<ul>
+<li><strong>基本型需求</strong>：必备需求、理所当然需求，是顾客对企业提供的产品或服务因素的基本要求。是顾客认为产品“必须有”的属性或功能。当其特性不充足(不满足顾客需求)时，顾客很不满意；当其特性充足(满足顾客需求)时，顾客也可能不会因而表现出满意。</li>
+<li><strong>期望型需求</strong>：也称为意愿型需求。是指顾客的满意状况与需求的满足程度成比例关系的需求，此类需求得到满足或表现良好的话，<a href="https://baike.baidu.com/item/%E5%AE%A2%E6%88%B7%E6%BB%A1%E6%84%8F%E5%BA%A6/6267474?fromModule=lemma_inlink">客户满意度</a>会显著增加，企业提供的产品和<a href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E6%B0%B4%E5%B9%B3/2463079?fromModule=lemma_inlink">服务水平</a>超出<a href="https://baike.baidu.com/item/%E9%A1%BE%E5%AE%A2%E6%9C%9F%E6%9C%9B/4853268?fromModule=lemma_inlink">顾客期望</a>越多，顾客的满意状况越好。当此类需求得不到满足或表现不好的话，客户的不满也会显著增加。<strong>有些期望型需求连顾客都不太清楚，但是是他们希望得到的，也叫用户需求的==痒处==。这是处于成长期的需求，客户、竞争对手和企业自身都关注的需求，也是体现竞争能力的需求。对于这类需求，企业的做法应该是注重提高这方面的质量，要力争超过竞争对手</strong></li>
+<li>魅力型需求：又称兴奋型需求。指不会被顾客过分期望的需求。对于魅力型需求，随着满足顾客期望程度的增加，顾客满意度也会急剧上升，但一旦得到满足，即使表现并不完善，顾客表现出的满意状况则也是非常高的。反之，即使在期望不满足时，顾客也不会因而表现出明显的不满意</li>
+<li>无差异型需求：不论提供与否，对用户体验无影响。是质量中既不好也不坏的方面，它们不会导致顾客满意或不满意。</li>
+<li><strong>反向型需求</strong>：又称逆向型需求，指引起强烈不满的质量特性和导致低水平满意的质量特性，因为并非所有的消费者都有相似的喜好。许多用户根本都没有此需求，提供后用户满意度反而会下降，而且提供的程度与用户满意程度成反比。</li>
+<li>“雪中送炭”or“锦上添花”：当一个<strong>锦上添花的功能被用户普遍接受</strong>以后，几乎所有的产品也都拥有了，也就渐渐提升为雪中送炭的功能了</li>
+</ul>
+<h4 id="商业价值">商业价值<a hidden class="anchor" aria-hidden="true" href="#商业价值">#</a></h4>
+<h5 id="衡量指标重要性分解">衡量指标①：重要性分解<a hidden class="anchor" aria-hidden="true" href="#衡量指标重要性分解">#</a></h5>
+<p>KANO模型调研的每个功能/需求都有正向和负向两个问题构成，正向测量的是用户在面对<strong>具备</strong>这项功能时的满意度，<strong>负向</strong>测量的事用户在面对<strong>不具备</strong>这项功能时的满意度</p>
+<ul>
+<li>喜欢：我很喜欢这个功能，有了这个功能会让我开心满意</li>
+<li>理应如此：对于我来说是必备功能，应该具备的</li>
+<li>无所谓：有没有我觉得都无所谓</li>
+<li>可以忍受：可以有，但是对我来说，没有最好</li>
+<li>不喜欢：有了这个功能，我感到很不满意</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">不提供</th>
+          <th style="text-align: left"></th>
+          <th style="text-align: left"></th>
+          <th style="text-align: left"></th>
+          <th style="text-align: left"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">喜欢</td>
+          <td style="text-align: left">理应如此</td>
+          <td style="text-align: left">无所谓</td>
+          <td style="text-align: left">可以忍受</td>
+          <td style="text-align: left">不喜欢</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>提供此功能</strong></td>
+          <td style="text-align: left">喜欢</td>
+          <td style="text-align: left">Q</td>
+          <td style="text-align: left">A</td>
+          <td style="text-align: left">A</td>
+          <td style="text-align: left">A</td>
+          <td style="text-align: left">O</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">理应如此</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">M</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">无所谓</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">M</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">可以忍受</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">I</td>
+          <td style="text-align: left">M</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">不喜欢</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">R</td>
+          <td style="text-align: left">Q</td>
+      </tr>
+  </tbody>
+</table>
+<p>A：魅力属性；O：期望属性；M：必备属性；I：无差异属性；R：反向属性；Q：可疑结果</p>
+<p>增加后的<strong>满意系数</strong> $Better/SI=(A+O)/(A+O+M+I)$，Better的数值通常为正，代表如果提供某种功能属性的话，用户满意度会提升；正值越大越接近1，表示对用户满意上的影响越大,用户满意度提升的影响效果越强，上升的也就更快</p>
+<p>消除后的<strong>不满意系数</strong> $Worse/DEI=-1 \times (O+M)/(A+O+M+I)$，可以理解为不满意系数，其数值通常为负，代表如果不提供某种功能属性的话，用户的满意度会降低；值越负向/越接近-1，表示对用户不满意上的影响最大，满意度降低的影响效果越强，下降的越快</p>
+<p><img loading="lazy" src="https://pic4.zhimg.com/v2-4eef4bf56cd72aa5ea6e97d431312f33_1440w.jpg" alt="img"  />
+</p>
+<ul>
+<li>第一象限表示：**双高。**better系数值高，worse系数绝对值也很高的情况。落入这一象限的属性，称之为是<!-- raw HTML omitted -->期望属性<!-- raw HTML omitted -->，即表示产品提供此功能，用户满意度会提升，当不提供此功能，用户满意度就会降低，==这是质量的竞争性属性，应尽力去满足用户的期望型需求==。提供用户喜爱的额外服务或产品功能，使其产品和服务优于竞争对手并有所不同，引导用户加强对本产品的良好印象</li>
+<li>第二象限表示：**越有越好。**better系数值高，worse系数绝对值低的情况。落入这一象限的属性，称之为是<!-- raw HTML omitted -->魅力属性<!-- raw HTML omitted -->，即表示不提供此功能，用户满意度不会降低，但当提供此功能，用户满意度和忠诚度会有很大提升</li>
+<li>第三象限表示：better系数值低，worse系数绝对值也低的情况。落入这一象限的属性，称之为是<!-- raw HTML omitted -->无差异属性<!-- raw HTML omitted -->，即无论提供或不提供这些功能，用户满意度都不会有改变，这些功能点是用户并不在意的功能</li>
+<li>第四象限表示：better系数值低，worse系数绝对值高的情况。落入这一象限的属性，称之为是<!-- raw HTML omitted -->必备属性<!-- raw HTML omitted -->，即表示当产品提供此功能，用户满意度不会提升，当不提供此功能，用户满意度会大幅降低；说明落入此象限的功能是最基本的功能，这些功能是用户认为我们产品==必须提供的==</li>
+</ul>
+<h5 id="衡量指标-紧急度">衡量指标② 紧急度<a hidden class="anchor" aria-hidden="true" href="#衡量指标-紧急度">#</a></h5>
+<p>在时间维度上判断这个需求是否迫切，紧急不重要的需求通常表现为解决了短期的问题，如果熬过去没做，对长期影响不大；或者解决了局部的问题，如果不做对于大多数用户没有影响。</p>
+<h5 id="衡量指标-持续时间">衡量指标③ 持续时间<a hidden class="anchor" aria-hidden="true" href="#衡量指标-持续时间">#</a></h5>
+<p>需求是有生命的</p>
+<h5 id="衡量指标-商业价值">衡量指标④ 商业价值<a hidden class="anchor" aria-hidden="true" href="#衡量指标-商业价值">#</a></h5>
+<p>在需求讨论会上由产品团队集体讨论</p>
+<h4 id="评估实现难度">评估实现难度<a hidden class="anchor" aria-hidden="true" href="#评估实现难度">#</a></h4>
+<blockquote>
+<p><strong>绝对不能因为某个需求的商业价值很大就马上去做，也不能因为另一个需求的商业价值不大就不做。</strong></p>
+</blockquote>
+<p>实现难度$\rightarrow$人力成本工作量$\rightarrow$开发量（人天）【人月神话】</p>
+<blockquote>
+<p>用人月作为衡量一项工作的规模是一个危险和带有欺骗性的神话。因为这暗示了人员数量和时间是可以替换的，但事实上并不能等价替换</p>
+<p>Brooks法则：向进度落后的项目中增加人手，只会使进度更加落后</p>
+</blockquote>
+<p>**开发量是非评估不可的，允许误差，并且会由经验丰富的人来评估，通常是技术经理，或者系统分析师、架构师。他们做出简单的评估，并且靠不断的实践来反复修正。**评估者通常估计自己做这个需求要多少时间，然后乘以一个系数，这个系数大于1，反映着相应技术团队的平均技术能力。</p>
+<h4 id="性价比">性价比<a hidden class="anchor" aria-hidden="true" href="#性价比">#</a></h4>
+<p>商业价值➗实现难度（开发量）</p>
+<h2 id="需求筛选">需求筛选<a hidden class="anchor" aria-hidden="true" href="#需求筛选">#</a></h2>
+<p>组织架构：https://www.mubu.com/doc/2KiCDGGS7_m</p>
+<p><a href="https://docs.ihr360.com/strategy/it_strategy/68550">互联网企业组织架构怎么设计？ | i人事-智能一体化HR系统</a></p>
+<ol>
+<li><strong>职能型架构</strong>：按照职能划分部门，如技术、产品、市场等。这种架构适合初创企业，能够快速响应市场需求，但随着企业规模扩大，容易出现部门壁垒。资源战争可以把“鲶鱼效应”从产品内部扩大到公司层面，使产品经理和设计师们更抓狂地为产品的发展而苦苦思索。（鲶鱼效应是采取一种手段或措施，刺激一些企业活跃起来投入到市场中积极参与竞争，从而激活市场中的同行业企业）</li>
+<li>产品划分：资源有保证，产品规划不容易被动改变</li>
+<li><strong>矩阵型架构</strong>：结合职能和项目双重管理，适用于需要跨部门协作的项目。这种架构能够提高资源利用率，但管理复杂度较高。</li>
+<li><strong>扁平化架构</strong>：减少管理层级，强调员工的自主性和创新能力。适合快速变化的互联网环境，但需要强大的企业文化支撑</li>
+</ol>
+<p>需求打包$\rightarrow$BRD(Business Requirement Document)制作$\rightarrow$产品会议$\rightarrow$立项</p>
+<blockquote>
+<p><strong>做项目，终极目标就是：多快好省 ，即范围大、时间短、品质高、资源省。</strong>
+= 项目TQP：项目时间（Times）、项目资源（Resource）、项目质量（品质Quality和数量Quantity）</p>
+<p>互联网行业：项目时间、品质、资源都比较确定，能变的只有量</p>
+</blockquote>
+<h3 id="需求打包">需求打包<a hidden class="anchor" aria-hidden="true" href="#需求打包">#</a></h3>
+<ol>
+<li>“需求打包”最好打包<strong>类似</strong>的功能点。是否类似取决于需求的基本属性</li>
+<li>需求依赖，功能互相之间有<strong>依赖关系</strong>。那些只能先做的功能，应该在产品需求列表里注明；功能与人力资源之间的依赖关系也会经常存在</li>
+<li>需求粒度，尽量细，同时管理成本上升在可接受的范围内</li>
+</ol>
+<h3 id="产品会议">产品会议<a hidden class="anchor" aria-hidden="true" href="#产品会议">#</a></h3>
+<ol>
+<li>回顾上一次产品会议通过的项目，进展，是否需要调整或追加</li>
+<li>商业需求文档，占满2-3倍的潜在资源（相对固定的开发、测试 人员）【资源的争夺是以产品间的争夺为辅，产品内多个项目的争夺为主】</li>
+</ol>
+<h3 id="商业需求文档">商业需求文档<a hidden class="anchor" aria-hidden="true" href="#商业需求文档">#</a></h3>
+<p>项目背景：我们在哪里？为什么要做这个项目，解决什么问题</p>
+<p><strong>商业价值</strong>：我们去哪里？Key Points！</p>
+<p>功能需求描述：怎么做？通过做哪些事情来达到目标，最好可以画出业务逻辑</p>
+<p>非功能需求描述：描述重要的非功能需求</p>
+<p><strong>资源评估</strong>：成本。Second Key Points!（对产品设计师、用户体验师、开发工程师的人力需求）</p>
+<p>风险和对策</p>
+<blockquote>
+<p>花费最少的资源获得最大的商业价值</p>
+<p>用100%的质量实现75%的数量</p>
+<p>情愿把一半的功能做到尽可能完美也不要把全部功能做成半吊子</p>
+<p>完美不是无一分可加，而是无一分可减。</p>
+<p><strong>用不着觉得只有“吃苦耐劳”，做了很多事情才是贡献，而应该直接从目的出发</strong>：内部（指偏技术）的大改动往往是外部（指偏商业）的小改动</p>
+</blockquote>
+<h2 id="需求生命周期管理">需求生命周期管理<a hidden class="anchor" aria-hidden="true" href="#需求生命周期管理">#</a></h2>
+<h3 id="需求状态">需求状态<a hidden class="anchor" aria-hidden="true" href="#需求状态">#</a></h3>
+<p>“待讨论”-初始状态</p>
+<p>“拒绝”（对产品的商业目标在相当长时间里没有价值，标注拒绝理由）</p>
+<p>“暂缓”（有价值，但现在不做，标注重启条件  or 会议上未通过的需求）</p>
+<p>“需求中”（商业价值讨论环节）</p>
+<ul>
+<li>指定负责的PD</li>
+</ul>
+<p>“开发中”（会议通过的需求）</p>
+<ul>
+<li>指定开发工程师</li>
+<li>确定项目名称</li>
+</ul>
+<p>“已完成”</p>
+<ul>
+<li>确定发布时间</li>
+</ul>
+<h2 id="需求全过程dna">需求全过程DNA<a hidden class="anchor" aria-hidden="true" href="#需求全过程dna">#</a></h2>
+<h3 id="静态画像">静态画像<a hidden class="anchor" aria-hidden="true" href="#静态画像">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">需求属性</th>
+          <th style="text-align: left">属性说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">编号</td>
+          <td style="text-align: left">需求的顺序号，唯一性表示</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>提交人</strong></td>
+          <td style="text-align: left">需求的录入PD，负责解释需求</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">提交时间</td>
+          <td style="text-align: left">需求的录入时间，辅助信息</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>模块</strong></td>
+          <td style="text-align: left">根据产品的模块划分</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>名称</strong></td>
+          <td style="text-align: left">用简洁的短语描述需求</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>描述</strong></td>
+          <td style="text-align: left">需求描述：无歧义、完整性、一致性、可测试等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">提出者</td>
+          <td style="text-align: left">即需求的原始提出者，有疑惑时便于追溯</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">提出时间</td>
+          <td style="text-align: left">原始需求的获得时间，辅助信息</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bug编号</td>
+          <td style="text-align: left">一些Bug视为需求，统一管理</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">分类</td>
+          <td style="text-align: left">新增功能、功能改进、体验提升、Bug修复、内部需求等</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">层次</td>
+          <td style="text-align: left">基础、扩展（期望需求）、增值（兴奋需求）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">重要性</td>
+          <td style="text-align: left">重要程度，辅助确定商业价值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">紧迫度</td>
+          <td style="text-align: left">紧急程度，辅助确定商业价值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">持续时间</td>
+          <td style="text-align: left">持续时间，辅助确定商业价值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>商业价值</strong></td>
+          <td style="text-align: left">商业优先级，不考虑实现难度，群体决策</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>开发量</strong></td>
+          <td style="text-align: left">需求的开发工作量，表征实现难度</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>性价比</strong></td>
+          <td style="text-align: left">“商业价值/开发量”，用于决定先做哪个</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>状态</strong></td>
+          <td style="text-align: left">需求生命周期：待讨论、暂缓、拒绝、需求中、开发中、已发布</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>负责PD</strong></td>
+          <td style="text-align: left">状态进入“需求中”后确定</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">开发工程师</td>
+          <td style="text-align: left">状态进入“开发中”后确定</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">项目名称</td>
+          <td style="text-align: left">需求的发布项目</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">发布时间</td>
+          <td style="text-align: left">需求的发布时间</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">备注</td>
+          <td style="text-align: left">其他任何理由，如：1、被拒绝的理由；2、被暂缓的理由和重启条件；3、其他相关文档……</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="动态画像">动态画像<a hidden class="anchor" aria-hidden="true" href="#动态画像">#</a></h3>
+<!-- raw HTML omitted -->
+<p>对需求管理的不同数据进行数据分析，也可以辅助理解当前产品的状态</p>
+<h2 id="推荐读物">推荐读物<a hidden class="anchor" aria-hidden="true" href="#推荐读物">#</a></h2>
+<p>《长尾理论》</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/work/reading_note_20250109/">
+    <span class="title">Next »</span>
+    <br>
+    <span>人人都是产品经理阅读笔记之什么是项目管理</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://sharleen-c.github.io/">Sharleen</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

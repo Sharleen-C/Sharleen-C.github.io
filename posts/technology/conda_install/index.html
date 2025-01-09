@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Conda安装以及创建虚拟环境 | Sharing Sharleen Blog</title>
 <meta name="keywords" content="technology">
 <meta name="description" content="Conda安装简单但又有一点复杂🥲">
 <meta name="author" content="Sharleen">
 <link rel="canonical" href="https://canonical.url/to/page">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://sharleen-c.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://sharleen-c.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://sharleen-c.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://sharleen-c.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://sharleen-c.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://sharleen-c.github.io/posts/technology/conda_install/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/technology/conda_install/">
 <noscript>
     <style>
         #theme-toggle,
@@ -89,79 +89,7 @@
         border: inherit;
         color: #515151;
     }
-</style><meta property="og:title" content="Conda安装以及创建虚拟环境" />
-<meta property="og:description" content="Conda安装简单但又有一点复杂🥲" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://sharleen-c.github.io/posts/technology/conda_install/" />
-<meta property="og:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-09-25T21:34:54+08:00" />
-<meta property="article:modified_time" content="2024-09-25T21:34:54+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" />
-<meta name="twitter:title" content="Conda安装以及创建虚拟环境"/>
-<meta name="twitter:description" content="Conda安装简单但又有一点复杂🥲"/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://sharleen-c.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "🥂🪄Useful Technology",
-      "item": "https://sharleen-c.github.io/posts/technology/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "Conda安装以及创建虚拟环境",
-      "item": "https://sharleen-c.github.io/posts/technology/conda_install/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Conda安装以及创建虚拟环境",
-  "name": "Conda安装以及创建虚拟环境",
-  "description": "Conda安装简单但又有一点复杂🥲",
-  "keywords": [
-    "technology"
-  ],
-  "articleBody": "Conda安装以及创建虚拟环境 conda安装 首先查看自己是否安装了conda，键盘Win+R, 输入cmd，按回车，输入conda -V，查看版本号。\n下载Anaconda,直接搜索，进入官网， 依次点击，选择与自己电脑对应的版本，进行下载。\n右击，以管理员身份运行，进行安装。\n默认安装路径D:\\Anaconda\\install\n一定要勾选添加环境变量！点击Install，安装\n这里两个方框都不勾选，防止打开其他网页。\n查看Anaconda是否安装成功\nAnaconda创建Pytorch虚拟环境 首先使用conda创建虚拟环境 输入activate，激活，进入base环境。\n输入conda create -n pytorch1 python=3.8 #指定python版本号创建名为pytorch1虚拟环境\n创建完成\nbase环境输入conda activate pytorch1，进入创建的虚拟环境。并验证python环境\n在PyCharm中配置Interpreter\nFile-Settings-Project-Project Interpreter-Add Interpreter\nconda info --envs查看是否有虚拟环境\nconda install pytorch torchvision torchaudio cpuonly -c pytorch安装pytorch\nAnaconda创建Tensorflow虚拟环境 Tensorflow和Keras版本对照表 - _yhwu - 博客园 (cnblogs.com)\ntensorflow=2.1 keras=2.3.1 python=3.6\nconda create -n TF2.1 python=3.6\n和创建Pytorch一致\n使用不同的虚拟环境时需要切换不同的Interpreter\n==安装这些库的时候千万注意，要使用命令 activate 虚拟环境名 进入你创建的虚拟环境之后在使用pip或者conda指令安装对应的库。==\nconda创建Python虚拟环境并安装tensorflow GPU环境_conda search cudnn==7.4-CSDN博客\n在Anaconda下安装Pytorch的超详细步骤_anaconda安装pytorch-CSDN博客\nAnaconda同时安装Tensorflow和Pytorch（window系统）步骤/流程/方法_tensorflow和pytorch可以共存吗-CSDN博客\n手把手教Anaconda，pytorch、tensorflow安装、虚拟环境搭建及jupyter、pycharm编译器配制（后附安装包供下载）_下了pytorch之后怎么下tensorflow-CSDN博客\nPyTorch\nConda创建等指令 创建虚拟环境\n1conda create -n xxx python=3.? 进入虚拟环境\n1source activate xxx 2# or 3conda activate xxx 退出虚拟环境\n1conda deactivate 删除虚拟环境\n1conda remove -n xxx --all 查看虚拟环境\n1conda info --env 其他问题 Conda cannot proceed due to an error in your proxy configuration. Check for typos and other configuration errors in any ‘.netrc’ file in your home directory, any environment variables ending in ‘_PROXY’, and any other system-wide proxy configuration settings.\n该问题源于网络问题，可以打开/关闭VPN试试\n【已解决】ProxyError: Conda cannot proceed due to an error in your proxy configuration.Check for typos a-CSDN博客\nAttributeError: module numpy has no attribute object . np.object\nnumpy版本太高导致的，最新版本通常会改很多东西，直接降低numpy版本就行，一个版本一个版本慢慢试下去就行\nconda uninstall numpy\nconda install numpy==1.20.0\nPackagesNotFoundError: The following packages are not available from current channels:\nPackagesNotFoundError: The following packages are not available from current channels的解决办法-CSDN博客\nPackagesNotFoundError: The following packages are not available from current channels 解决办法-CSDN博客\n（清华镜像不能用，改用豆瓣或阿里）\n【陆续排坑】解决conda下载速度慢的问题：更换国内源_conda config –remove-key channels-CSDN博客\nTensorflow、python、keras和cuda的对应版本（更新于2022.6.18） - 知乎 (zhihu.com)\n服务器安装Jupyter pwd：123456\njupyter_notebook_config.py\n1c.NotebookApp.ip = '*' 2c.NotebookApp.open_browser = False 3c.NotebookApp.port = 8080 4c.NotebookApp.password = 'argon2:$argon2id$v=19$m=10240,t=10,p=8$eamL8kky6WaYSEKeNGPXHA$c8oDS/K1rWkN2vhDEr//rOVguKfG5nwPMfW34iA/R0c' 5allow_remote_access = True 最详细本地浏览器远程访问服务器Jupyter notebook配置_jupyter notebook host-CSDN博客\n在cmd中输入ssh -p 端口号 用户名@服务器 -L127.0.0.1:9999:127.0.0.1:8080\n输入个人密码\n在本地浏览器输入：127.0.0.1:9999\n再输入Jupyter密码：123456\n",
-  "wordCount" : "240",
-  "inLanguage": "en",
-  "image":"https://sharleen-c.github.io/%3Cimage%20path/url%3E","datePublished": "2024-09-25T21:34:54+08:00",
-  "dateModified": "2024-09-25T21:34:54+08:00",
-  "author":{
-    "@type": "Person",
-    "name": "Sharleen"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://sharleen-c.github.io/posts/technology/conda_install/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sharing Sharleen Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://sharleen-c.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</style>
 </head>
 
 <body class="" id="top">
@@ -179,7 +107,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://sharleen-c.github.io/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -205,38 +133,38 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://sharleen-c.github.io/archives" title="Archive">
+                <a href="http://localhost:1313/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/science/" title="Science">
+                <a href="http://localhost:1313/posts/science/" title="Science">
                     <span>Science</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/life/" title="Life">
+                <a href="http://localhost:1313/posts/life/" title="Life">
                     <span>Life</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/tags/" title="Tags">
-                    <span>Tags</span>
+                <a href="http://localhost:1313/posts/technology/" title="Technology">
+                    <span>Technology</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/technology/" title="Technology">
-                    <span>Technology</span>
+                <a href="http://localhost:1313/posts/work/" title="Work">
+                    <span>Work</span>
                 </a>
             </li>
         </ul>
@@ -246,7 +174,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://sharleen-c.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/technology/">🥂🪄Useful Technology</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/technology/">🥂🪄Useful Technology</a></div>
     <h1 class="post-title entry-hint-parent">
       Conda安装以及创建虚拟环境
     </h1>
@@ -483,12 +411,12 @@ configuration settings.</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sharleen-c.github.io/posts/technology/vscode_usage/">
+  <a class="prev" href="http://localhost:1313/posts/technology/vscode_usage/">
     <span class="title">« Prev</span>
     <br>
     <span>VSCode使用相关问题</span>
   </a>
-  <a class="next" href="https://sharleen-c.github.io/posts/technology/new_website/">
+  <a class="next" href="http://localhost:1313/posts/technology/new_website/">
     <span class="title">Next »</span>
     <br>
     <span>Hugo &#43; PaperMode 建站踩坑指北</span>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>人人都是产品经理阅读笔记之什么是项目管理 | Sharing Sharleen Blog</title>
+<meta name="keywords" content="technology">
+<meta name="description" content="人人都是产品经理阅读笔记之什么是项目管理">
+<meta name="author" content="Sharleen">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/work/reading_note_20250109/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[\[','\]\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/science/" title="Science">
+                    <span>Science</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/life/" title="Life">
+                    <span>Life</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/technology/" title="Technology">
+                    <span>Technology</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/work/" title="Work">
+                    <span>Work</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/work/">🎀🎊For Future</a></div>
+    <h1 class="post-title entry-hint-parent">
+      人人都是产品经理阅读笔记之什么是项目管理
+    </h1>
+    <div class="post-description">
+      人人都是产品经理阅读笔记之什么是项目管理
+    </div>
+    <div class="post-meta"><span title='2025-01-09 11:32:02 +0800 CST'>January 9, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Sharleen
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e9%a1%b9%e7%9b%ae" aria-label="项目">项目</a><ul>
+                        
+                <li>
+                    <a href="#%e4%ba%a7%e5%93%81vs%e9%a1%b9%e7%9b%ae" aria-label="产品vs项目">产品vs项目</a></li>
+                <li>
+                    <a href="#%e9%a1%b9%e7%9b%ae%e5%90%af%e5%8a%a8kick-off" aria-label="项目启动（Kick Off）">项目启动（Kick Off）</a><ul>
+                        
+                <li>
+                    <a href="#%e5%9b%a2%e9%98%9f%e7%bb%84%e5%bb%ba" aria-label="团队组建">团队组建</a></li>
+                <li>
+                    <a href="#%e9%a1%b9%e7%9b%ae%e8%ae%a1%e5%88%92" aria-label="项目计划">项目计划</a><ul>
+                        
+                <li>
+                    <a href="#%e5%86%8d%e8%af%84%e5%b7%a5%e4%bd%9c%e9%87%8f" aria-label="再评工作量：">再评工作量：</a></li>
+                <li>
+                    <a href="#%e5%b7%a5%e6%9c%9f%e6%8e%a8%e7%ae%97" aria-label="工期推算">工期推算</a></li>
+                <li>
+                    <a href="#%e6%95%b4%e5%90%88%e9%a1%b9%e7%9b%ae%e8%ae%a1%e5%88%92" aria-label="整合项目计划">整合项目计划</a></li>
+                <li>
+                    <a href="#%e4%bf%9d%e6%8c%81%e6%b2%9f%e9%80%9a" aria-label="保持沟通">保持沟通</a></li></ul>
+                </li>
+                <li>
+                    <a href="#kick-off%e8%aa%93%e5%b8%88%e5%a4%a7%e4%bc%9a" aria-label="Kick Off誓师大会">Kick Off誓师大会</a></li>
+                <li>
+                    <a href="#wbswork-breakdown-structure%e5%b7%a5%e4%bd%9c%e5%88%86%e8%a7%a3%e7%bb%93%e6%9e%84" aria-label="WBS（Work Breakdown Structure，工作分解结构）">WBS（Work Breakdown Structure，工作分解结构）</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e5%bc%80%e5%8f%91" aria-label="需求开发">需求开发</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e6%96%87%e6%a1%a3" aria-label="需求文档">需求文档</a></li>
+                <li>
+                    <a href="#%e4%ba%a7%e5%93%81%e9%9c%80%e6%b1%82%e6%96%87%e6%a1%a3" aria-label="产品需求文档">产品需求文档</a><ul>
+                        
+                <li>
+                    <a href="#%e6%80%bb%e4%bd%93%e8%af%b4%e6%98%8e" aria-label="总体说明">总体说明</a></li>
+                <li>
+                    <a href="#%e7%94%a8%e4%be%8b%e6%96%87%e6%a1%a3" aria-label="用例文档">用例文档</a></li>
+                <li>
+                    <a href="#%e8%ae%be%e8%ae%a1demo" aria-label="设计Demo">设计Demo</a></li>
+                <li>
+                    <a href="#%e6%a6%82%e8%a6%81%e8%ae%be%e8%ae%a1%e4%b8%8e%e8%af%a6%e7%bb%86%e8%ae%be%e8%ae%a1" aria-label="概要设计与详细设计">概要设计与详细设计</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e8%af%84%e5%ae%a1" aria-label="需求评审">需求评审</a></li>
+                <li>
+                    <a href="#%e9%9c%80%e6%b1%82%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f" aria-label="需求生命周期">需求生命周期</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+  <div class="post-content"><h1 id="项目">项目<a hidden class="anchor" aria-hidden="true" href="#项目">#</a></h1>
+<h2 id="产品vs项目">产品vs项目<a hidden class="anchor" aria-hidden="true" href="#产品vs项目">#</a></h2>
+<p>项目：只会进行一次，包含多项互相关联的任务，并且由绩效、时间、成本和范围限制的一项工作</p>
+<blockquote>
+<p>产品：解决某个问题的东西</p>
+<p>项目：为了解决某个问题/完成产品的过程</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">做产品</th>
+          <th style="text-align: left">做项目</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">生命周期</td>
+          <td style="text-align: left">较长，关注整个产品从规划到制造，再到最终维护和消亡</td>
+          <td style="text-align: left">有特定的目标，通过验收就表示项目生命周期结束</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">具体要做的事情</td>
+          <td style="text-align: left">探索、修正、创新</td>
+          <td style="text-align: left">明确的目标，计划与控制</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">产出物</td>
+          <td style="text-align: left">批量生产的产品，或提供给大量用户，较为通用。考虑用有限的资源满足更多的需求</td>
+          <td style="text-align: left">只进行一次，个性化定制</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><strong>产品经理</strong></td>
+          <td style="text-align: left"><strong>项目经理</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">目标</td>
+          <td style="text-align: left">做正确的事情，靠想</td>
+          <td style="text-align: left">把事情做正确，靠做</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">关注</td>
+          <td style="text-align: left">产品生命周期，关注商业目标</td>
+          <td style="text-align: left">按照目标完成任务</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">任务</td>
+          <td style="text-align: left">构思</td>
+          <td style="text-align: left">实现</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">关键</td>
+          <td style="text-align: left">判断力和创造力</td>
+          <td style="text-align: left">执行力和控制力</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">诉求</td>
+          <td style="text-align: left">尽可能增加多的功能和特征以满足用户需求</td>
+          <td style="text-align: left">尽可能小地控制工作范围，使得项目在规定时间与预算内完成</td>
+      </tr>
+  </tbody>
+</table>
+<p>“做产品”的过程，正是通过做一个又一个项目实现的，但并不是项目的简单累加。在产品渐渐满足目标用户群体的通用需求后，继续做下去的话，会使产品成为项目的集合体，臃肿不堪，因此我们就需要<strong>细分市场</strong>，这时候<strong>产品可能升级为“产品线”</strong>，按不同的细分市场，推出不同的产品，<strong>表现形式上叫版本、模块、增值服务</strong>，什么都行，本质上是<strong>通过合理地安排项目来实现产品的规划。</strong></p>
+<blockquote>
+<p>按照产品管理的思想和方法，产品线不仅仅是产品集合的概念，还包括以下含义： 产品线划分是一种业务分类，产品线实质上是业务线； 产品线是端到端的，即从客户需求到满足客户需求，也可以理解为从机会到现金</p>
+<p>从市场划分的角度看，产品线是公司层面的细分市场； 产品线是一个财务核算单位，要对产品线的业务绩效负责，而不单纯追求短期利润； 产品线之间存在技术或/和市场方面的协同效应。</p>
+</blockquote>
+<h2 id="项目启动kick-off">项目启动（Kick Off）<a hidden class="anchor" aria-hidden="true" href="#项目启动kick-off">#</a></h2>
+<h3 id="团队组建">团队组建<a hidden class="anchor" aria-hidden="true" href="#团队组建">#</a></h3>
+<p>项目督导委员会：老板&amp;老板的老板 $\rightarrow$ “背黑锅”和“买单”</p>
+<p>组织结构：项目经理、产品经理、开发经理、测试经理、服务团队、用户体验团队（UE）……【关键是关键的人要到位】</p>
+<h3 id="项目计划">项目计划<a hidden class="anchor" aria-hidden="true" href="#项目计划">#</a></h3>
+<h4 id="再评工作量">再评工作量：<a hidden class="anchor" aria-hidden="true" href="#再评工作量">#</a></h4>
+<p>$工作量=(最乐观+最悲观+最可能)/3$</p>
+<p>$工作量=(最乐观+最悲观+最可能\times 4)/6$</p>
+<p>开发经理分配任务，并把重要人物调进关键路径：项目管理中，关键路径是指影响项目完成时间的关键任务。</p>
+<p>工作量粒度：“1人天”，“1人小时”，$1人天=5/6人小时$</p>
+<h4 id="工期推算">工期推算<a hidden class="anchor" aria-hidden="true" href="#工期推算">#</a></h4>
+<p>需要考虑任务之间的依赖关系，适当留出机动时间</p>
+<p>一味增加资源是不可取的方式，事件之间的依赖关系，人员之间的沟通成本都需要被考虑</p>
+<h4 id="整合项目计划">整合项目计划<a hidden class="anchor" aria-hidden="true" href="#整合项目计划">#</a></h4>
+<ol>
+<li>将开发计划、测试计划、发布计划合并称为项目计划</li>
+<li>确定项目里程碑（监控点）：通常是需求完成、编码完成、发布上线</li>
+</ol>
+<h4 id="保持沟通">保持沟通<a hidden class="anchor" aria-hidden="true" href="#保持沟通">#</a></h4>
+<ul>
+<li>项目晨会：自项目进入开发阶段至发布日止，开发经理每日召集相关人员，主要是PD、开发人员、测试人员参加。</li>
+<li>项目日报：自Kick Off起至发布日止，项目经理每日发给项目的所有干系人，测试开始后以测试日报为主</li>
+<li>评审会：相应PD召集需求评审；相应开发人员召集设计评审；相应测试人员召集TC（Test Case）评审；产品可用之后，项目经理尽快召集功能评审，项目所有干系人参与评估。</li>
+<li>项目变更申请：项目发生重大变更，项目经理与项目督导委员会沟通后确认变更。</li>
+<li>发布预告及公告：项目经理在项目发布前两个工作日发预告给项目所有干系人，项目发布成功后发公告给所有干系人。</li>
+</ul>
+<h3 id="kick-off誓师大会">Kick Off誓师大会<a hidden class="anchor" aria-hidden="true" href="#kick-off誓师大会">#</a></h3>
+<p>15min±</p>
+<p>项目背景：我们在哪里为什么要做这个项目==&gt;痛下决心</p>
+<p>项目意义、目的与目标：我们去哪里，未来的美好前景==&gt;面带桃花</p>
+<p>需求、功能点概述：我们怎么去==&gt;跃跃欲试</p>
+<p>项目组织架构：互相认识，老板多多参与</p>
+<p>项目计划：项目时间点、里程碑、资源</p>
+<p>沟通计划</p>
+<h3 id="wbswork-breakdown-structure工作分解结构">WBS（Work Breakdown Structure，工作分解结构）<a hidden class="anchor" aria-hidden="true" href="#wbswork-breakdown-structure工作分解结构">#</a></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/486618354">项目经理的管理利器——WBS工作分解结构 - 知乎</a></p>
+<p>WBS 的结构一般是分为 3 到 5 层，第一层级内容是项目成果，第二层级是项目成功的重要组成部分，第3~5级是细节组成。</p>
+<p>**每一层级也会有不同的原则，具体是：第一层要清晰具体，**比如，内容要写成名称+性质+类别（项目管理全能工具箱培训项目）而不是简单的培训项目。</p>
+<p>**第二层要求必须100%完整，**如果少于100%就会在做的过程中遗漏一些内容，如果多于100%就会有范围蔓延，会影响下一步的进度计划</p>
+<p>**第3~5层就是可交付成果的形式，**只有这样我们才能把工作包分配具体的负责人。所以最后一层工作包中其实是可以包含任务负责人、时间、成本（各种资源）等内容的。</p>
+<p>**除了层级规则之外，WBS也有其独特的组件命名规则，一般是由编号+名词组成，**比如在制造汽车的项目中就可能有叫 1.4.1座椅 的组件。</p>
+<p>关于编号一般是以数字层级逐渐往下来区分层级，比如说1、1.1、1.1.1等等。</p>
+<p>而编号后的名称也只能是名词不能是动词</p>
+<p>==分解原则==</p>
+<p>除了命名有规则之外，为了保证WBS的分解更合理，它也有固定的分解原则，比如说：</p>
+<ul>
+<li>干系人参与原则：有参与度才有支持度。</li>
+<li>100%原则：只有想的全面才能做的全面。</li>
+<li>相互独立原则：相互独立才能杜绝出现责任交叉和推诿现象。</li>
+<li>不可再分原则：最小单位才能任务清晰且易于管理。</li>
+<li>信息透明原则：信息透明才能互相信任，资源合理利用，并清晰自己的职责。</li>
+<li>80小时原则：负责人必须在管理上花费40-80个小时才能真正做好项目。</li>
+<li>责任到人原则：人都会趋利避害，只有责任到人才能努力负责。</li>
+<li>滚动式规划原则：紧跟现状才能做最优化的选择。</li>
+<li>3-5层原则：一般层级是3~5层，少了容易不清晰，多了可能会混乱。</li>
+<li>结果可以考核原则：只有可考核才能真正责任到人。</li>
+</ul>
+<p>==可参考的质量核对单==：</p>
+<ul>
+<li>明确了项目工作</li>
+<li>涵盖了100%的工作，包含了须完成的所有可交付成果，包括项目管理</li>
+<li>工作包有利于识别为交付工作包所需开展的任务</li>
+<li>以图形、文本或表格来呈现对项目范围的逐层分解</li>
+<li>WBS组件用名词和形容词命名</li>
+<li>是全部可交付成果的层级结构</li>
+<li>每个组件都有一个WBS标识（编码）</li>
+<li>至少有两层，其中至少有一个分解层</li>
+<li>由工作的执行者创建，干系人和专家已经参与WBS的创建</li>
+</ul>
+<p>==WBS的分解步骤==，其中内容分五步：</p>
+<ol>
+<li>识别和分析可交付成果及相关工作</li>
+<li>确定WBS的结构和编排方法</li>
+<li>自上而下逐层细化分解</li>
+<li>制定和分配标识编码</li>
+<li>核实分解程度是必要且充分的</li>
+</ol>
+<p>有经验的项目可以利用原来用过的WBS模板，<strong>自顶而下</strong>地优化并套用，无经验的项目可以<strong>自下而上</strong>，列出一个个最小的任务点，再组装起来。</p>
+<h2 id="需求开发">需求开发<a hidden class="anchor" aria-hidden="true" href="#需求开发">#</a></h2>
+<h3 id="需求文档">需求文档<a hidden class="anchor" aria-hidden="true" href="#需求文档">#</a></h3>
+<ol>
+<li>
+<p>BRD: Business Requirement Document 商业需求文档</p>
+<p>面向老板，没有产品细节，包括市场分析、销售策略、盈利预测等</p>
+</li>
+<li>
+<p>MRD: Market Requirement Document 市场需求文档</p>
+<p>面向老板，市场与竞争对手分析，包括可通过哪些功能来实现商业目的</p>
+<p>功能、非功能需求分哪些，功能的优先级</p>
+<p>产出物：Feature List、业务逻辑图</p>
+</li>
+<li>
+<p>PRD: Product Requirement Document 产品需求文档</p>
+<p>面向技术</p>
+<p>产出：整体说明、用例文档、产品Demo等</p>
+</li>
+<li>
+<p>FSD: Functional Specifications Document 功能详细说明</p>
+<p>用例设计、产品界面、业务逻辑细节，类似概要设计</p>
+</li>
+</ol>
+<h3 id="产品需求文档">产品需求文档<a hidden class="anchor" aria-hidden="true" href="#产品需求文档">#</a></h3>
+<h4 id="总体说明">总体说明<a hidden class="anchor" aria-hidden="true" href="#总体说明">#</a></h4>
+<p>修订历史、项目概述、功能范围（业务逻辑图）、用户范围、词汇表、非功能需求</p>
+<h4 id="用例文档">用例文档<a hidden class="anchor" aria-hidden="true" href="#用例文档">#</a></h4>
+<p>UML: <strong>Unified Modeling Language</strong> 统一建模语言</p>
+<p>Key: 类图、用例图、状态图、顺序图</p>
+<p>UC内容：用例标识、用例名称、业务描述（商业目标/用户目的）、需求描述（产品需求）、行为者（用例的Actor）、前置条件、后置条件、其他说明、界面描述（可以单独写界面文档，互相引用）、业务规则、流程描述</p>
+<p><strong>无歧义、完整性、一致性、可测试</strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="设计demo">设计Demo<a hidden class="anchor" aria-hidden="true" href="#设计demo">#</a></h4>
+<p>从低保真到高保真</p>
+<h4 id="概要设计与详细设计">概要设计与详细设计<a hidden class="anchor" aria-hidden="true" href="#概要设计与详细设计">#</a></h4>
+<ol>
+<li>不以写的东西是需求还是设计区分职责，而是以“业务”或“技术”区分、</li>
+<li>PD应该与开发工程师协商，沉淀出产品规范，省去重复劳动</li>
+</ol>
+<h3 id="需求评审">需求评审<a hidden class="anchor" aria-hidden="true" href="#需求评审">#</a></h3>
+<p>统一认识，消除误解，及时发现偏差，防止问题随时间放大</p>
+<ul>
+<li>
+<p>需求评审：是PRD评审、UC评审、Demo评审的统称。先PRD，UC和Demo后续</p>
+<p>参会人员：做决定的人、相关产品接口人</p>
+</li>
+<li>
+<p>设计评审：是在概要设计与详细设计完成之后进行，由开发工程师把对需求的理解以设计文档的形式说给PD、测试听。</p>
+</li>
+<li>
+<p>测试评审：俗称TC评审，是在TC编写完成，测试开始执行之前进行，由测试工程师把对需求的理解以TC的形式说给PD、开发听。</p>
+</li>
+</ul>
+<h3 id="需求生命周期">需求生命周期<a hidden class="anchor" aria-hidden="true" href="#需求生命周期">#</a></h3>
+<!-- raw HTML omitted -->
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/work/reading_note_20250108/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>人人都是产品经理阅读笔记之什么是需求</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/science/subgraph/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Subgraph for KG</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://sharleen-c.github.io/">Sharleen</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

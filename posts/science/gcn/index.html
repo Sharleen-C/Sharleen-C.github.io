@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>GCN简单入门指北-学习版 | Sharing Sharleen Blog</title>
+<meta name="keywords" content="science">
+<meta name="description" content="与图结构相关当然绕不开GCN啦">
+<meta name="author" content="Sharleen">
+<link rel="canonical" href="https://canonical.url/to/page">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/science/gcn/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\[\[','\]\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            TeX: { equationNumbers: { autoNumber: "AMS" },
+                extensions: ["AMSmath.js", "AMSsymbols.js"] }
+        }
+    });
+
+    MathJax.Hub.Queue(function() {
+        
+        
+        
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i = 0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/science/" title="Science">
+                    <span>Science</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/life/" title="Life">
+                    <span>Life</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/technology/" title="Technology">
+                    <span>Technology</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/work/" title="Work">
+                    <span>Work</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/science/">🪂🌆Science Road.</a></div>
+    <h1 class="post-title entry-hint-parent">
+      GCN简单入门指北-学习版
+    </h1>
+    <div class="post-description">
+      与图结构相关当然绕不开GCN啦
+    </div>
+    <div class="post-meta"><span title='2024-09-26 10:08:58 +0800 CST'>September 26, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Sharleen
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#gcn%e5%85%a5%e9%97%a8" aria-label="GCN入门">GCN入门</a><ul>
+                        
+                <li>
+                    <a href="#what-is-gcn" aria-label="What is GCN">What is GCN</a><ul>
+                        
+                <li>
+                    <a href="#%e5%9b%be%e7%bb%93%e6%9e%84" aria-label="图结构">图结构</a></li>
+                <li>
+                    <a href="#%e6%a8%a1%e5%9e%8b%e5%ae%9a%e4%b9%89" aria-label="模型定义">模型定义</a></li>
+                <li>
+                    <a href="#%e5%9b%be%e6%8b%89%e6%99%ae%e6%8b%89%e6%96%af%e7%9f%a9%e9%98%b5graph-laplacian" aria-label="图拉普拉斯矩阵（Graph Laplacian）">图拉普拉斯矩阵（Graph Laplacian）</a><ul>
+                        
+                <li>
+                    <a href="#%e6%8b%89%e6%99%ae%e6%8b%89%e6%96%af%e7%9f%a9%e9%98%b5%e7%9a%84%e6%80%a7%e8%b4%a8" aria-label="拉普拉斯矩阵的性质">拉普拉斯矩阵的性质</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#review-of-gcn" aria-label="Review of GCN">Review of GCN</a></li></ul>
+                </li>
+                <li>
+                    <a href="#r-gcn" aria-label="R-GCN">R-GCN</a></li>
+                <li>
+                    <a href="#graphsage" aria-label="GraphSAGE">GraphSAGE</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8e%9f%e7%90%86" aria-label="原理">原理</a></li></ul>
+                </li>
+                <li>
+                    <a href="#gat" aria-label="GAT">GAT</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9d%9e%e5%af%b9%e7%a7%b0%e7%9a%84%e6%b3%a8%e6%84%8f%e5%8a%9b%e6%9d%83%e9%87%8d" aria-label="非对称的注意力权重">非对称的注意力权重</a></li>
+                <li>
+                    <a href="#%e5%a4%9a%e5%a4%b4%e6%b3%a8%e6%84%8f%e5%8a%9b%e6%9c%ba%e5%88%b6" aria-label="多头注意力机制">多头注意力机制</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+            const id = encodeURI(element.getAttribute('id')).toLowerCase();
+            if (element === activeElement){
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+            } else {
+                document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+            }
+        })
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+  <div class="post-content"><h1 id="gcn入门">GCN入门<a hidden class="anchor" aria-hidden="true" href="#gcn入门">#</a></h1>
+<h2 id="what-is-gcn">What is GCN<a hidden class="anchor" aria-hidden="true" href="#what-is-gcn">#</a></h2>
+<p><img loading="lazy" src="https://pic2.zhimg.com/v2-061e2013bcc9c9ff9a329a1c9303a7a9_b.webp?consumer=ZHI_MENG" alt="img"  />
+</p>
+<p>一个拥有$C$个input channel的graph作为输入，经过中间的hidden layers，得到$F$个 output channel的输出</p>
+<h3 id="图结构">图结构<a hidden class="anchor" aria-hidden="true" href="#图结构">#</a></h3>
+<p>node level</p>
+<p>仅通过对graph的特征/信号（features/signals）$X$作为输入：一个 $N \times D$的矩阵( $N$: 输入图的nodes的个数，$D$输入的特征维度) ，得到输出 $Z$：一个$N \times F$的矩阵($F$输出的特征维度)</p>
+<p>每个grph都可以通过邻接矩阵$A$进行表示</p>
+<p>网络中每一个隐藏层都可以写成$H^{(l+1)}=f(H^{(l)},A)$</p>
+<p>其中输入层$H(0)=X$，输出层$H(L)=Z$，$L$是层数</p>
+<h3 id="模型定义">模型定义<a hidden class="anchor" aria-hidden="true" href="#模型定义">#</a></h3>
+<p><strong>隐藏层的非线性函数</strong></p>
+<p>$$f(H^{(l)},A) = \sigma (\hat D^{- \frac{1}{2}} \hat A \hat D^{- \frac{1}{2}}H^{(l)}W^{(l)})$$</p>
+<p>$$f(H^{(l)},A) = \sigma (AH^{(l)}W^{(l)})$$</p>
+<p>对$AH^{(l)}$做矩阵相乘：通过邻接矩阵将相邻的节点信息相加得到下一层的输入</p>
+<p><img loading="lazy" src="https://pic3.zhimg.com/v2-f6b141e8bb884729f9ea2d26e43065d2_b.webp?consumer=ZHI_MENG" alt="img"  />
+</p>
+<ul>
+<li>问题①：缺失自身信息 ==&gt; 每个节点增加一条self-loop到每一个节点（节点的度矩阵）</li>
+</ul>
+<p>$\hat A = A + I$</p>
+<ul>
+<li>问题②：经过一次$AH$矩阵变换后，得到的输出会变大，特征向量$X$的scale会改变，在经过多层变化之后，将和输入的scale差距越来越大 ==&gt; 将邻接矩阵归一化（邻接矩阵 / 度数）</li>
+</ul>
+<p>$A = D^{-1}A$，对于$A_{ij} = \frac {A_{ij}}{d_i}$</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240407164333915.png" alt="image-20240407164333915"  />
+</p>
+<p>实际运用中，采用的是对称的归一化$A = D^{- \frac{1}{2}} A  D^{- \frac{1}{2}}$，对于$A_{ij} = \frac {A_{ij}}{\sqrt{d_i} \sqrt{d_j}}$</p>
+<p><a href="https://www.bilibili.com/video/BV1Xy4y1i7sq/?spm_id_from=333.999.0.0&amp;vd_source=99250843a61813217182d0f0cb411c4b">简单粗暴带你理解GCN图卷积神经网络_哔哩哔哩_bilibili</a></p>
+<p>可以理解为对平均法的改进，</p>
+<p>平均法：如果A认识B，B认识一群人，此时A会吸收所有B的特征，这是不合理的</p>
+<p>改进：$\sqrt{d_i} \sqrt{d_j}$通过该公式，将二者信息融合，减少平均法的问题</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240407164406450.png" alt="image-20240407164406450"  />
+</p>
+<p>（这与拉普拉斯矩阵相关）</p>
+<p>结合上述内容，即为$$f(H^{(l)},A) = \sigma (\hat D^{- \frac{1}{2}} \hat A \hat D^{- \frac{1}{2}}H^{(l)}W^{(l)})$$</p>
+<p>$\hat D^{- \frac{1}{2}} \hat A \hat D^{- \frac{1}{2}}$事实上就是一个对邻接矩阵的变化（通过度来变化）</p>
+<p>其中$\hat A = A+I$，$\hat D$是$\hat A$的degree matrix，$\hat D^{- \frac{1}{2}} \hat A \hat D^{- \frac{1}{2}}$是对$A$做了归一化</p>
+<h3 id="图拉普拉斯矩阵graph-laplacian">图拉普拉斯矩阵（Graph Laplacian）<a hidden class="anchor" aria-hidden="true" href="#图拉普拉斯矩阵graph-laplacian">#</a></h3>
+<p>首先我们表示一个graph的方式有很多，我们可以用邻接矩阵，也可以用Incidence matrix。 这个matrix 中，每一行表示一个边（表示一条关系，图中有多少条关系就有多少行），每一列表示一个节点（图中有多少个节点就有多少列）。每一行中，边的节点的起点用记为1，边的终点记为-1。 我们将这个metrix 记为 $C$</p>
+<p>图拉普拉斯矩阵定义为：$L(G) = C^TC$（$n<em>m\times m</em>n$）获得$n*n$的图拉普拉斯矩阵</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240407164219590.png" alt="image-20240407164219590"  />
+</p>
+<p>对角线的值$L_{i,i} = \sum_jC_{j,i}C_{j,i}$，如果$C_{j,i}=0$，其积为0；如果$C_{j,i}=1/-1$，其积为1，所以对角线代表的是每个节点的度（degree）</p>
+<p>非对角线的值$L_{i,j}=\vec e_i \vec e_j = \sum_kC_{k,i}C_{k,j}$，如果节点$i$和$j$没有相连，那么$C_{k,i}C_{k,j}=0$，否则$C_{k,i}C_{k,j}=-1$，于是非对角线的值就是邻接矩阵的负值</p>
+<p>所以可以推导得到：</p>
+<p>$$L(G) = C^TC = D - A$$</p>
+<p><img loading="lazy" src="https://pic3.zhimg.com/v2-0c49c9f7023ccbf3930c098eded34d3a_b.webp?consumer=ZHI_MENG" alt="img"  />
+</p>
+<h4 id="拉普拉斯矩阵的性质">拉普拉斯矩阵的性质<a hidden class="anchor" aria-hidden="true" href="#拉普拉斯矩阵的性质">#</a></h4>
+<ul>
+<li>$L(G)$是对称矩阵</li>
+<li>$L(G)$有实数的，非负的<strong>特征值</strong></li>
+<li>$L(G)$有实数的，正交的<strong>特征矩阵</strong></li>
+</ul>
+<h2 id="review-of-gcn">Review of GCN<a hidden class="anchor" aria-hidden="true" href="#review-of-gcn">#</a></h2>
+<ul>
+<li><strong>GCN的基本思想：</strong> 把一个节点在图中的高纬度邻接信息降维到一个低维的向量表示。</li>
+<li><strong>GCN的优点：</strong> 可以捕捉graph的全局信息，从而很好地表示node的特征。</li>
+<li><strong>GCN的缺点：</strong> Transductive learning的方式，需要把所有节点都参与训练才能得到node embedding，无法快速得到新node的embedding</li>
+</ul>
+<p>既然<strong>新增的节点，一定会改变原有节点的表示</strong>，那么我们<strong>干嘛一定要得到每个节点的一个固定的表示呢？<strong>我们何不直接</strong>学习一种节点的表示方法</strong>。这样不管graph怎么改变，都可以很容易地得到新的表示</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240409204439987.png" alt="image-20240409204439987"  />
+</p>
+<p>每一个节点形成的图就是一个样本</p>
+<p>每一层中共享参数</p>
+<p>图神经网络的层数是计算图的层数，而不是神经网络的层数</p>
+<p>“六度空间”</p>
+<p>图神经网络的深度不能过深，一般两到三层即可（如果太深，学习到的embedding会高度相似）</p>
+<p>可学习的参数是各层的权重层</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240409204309365.png" alt="image-20240409204309365"  />
+</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240409210316364.png" alt="image-20240409210316364"  />
+</p>
+<p>进一步优化：邻域节点采用一套权重，self-embedding采用一套权重（$W_k B_k$）</p>
+<p>$H^{(k+1)} = \sigma (\widetilde{A}H^{(k)}W^T_k + H^{(k)}B^T_k)$ 前半部分是邻居信息，后半部分是自身信息</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240409210451393.png" alt="image-20240409210451393"  />
+</p>
+<h1 id="r-gcn">R-GCN<a hidden class="anchor" aria-hidden="true" href="#r-gcn">#</a></h1>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240409213654243.png" alt="image-20240409213654243"  />
+</p>
+<p>公式前半部分表示：在$r$关系下的邻居节点$j$，优化一个权重；不同$r$优化不同的$W_r$。$i$表示自身节点，$N^r_i$表示和$i$有$r$关系的节点</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240409214008694.png" alt="image-20240409214008694"  />
+</p>
+<p>不同的in/out/loop都是不同的$r$，绿色节点代表不同的regularization</p>
+<h1 id="graphsage">GraphSAGE<a hidden class="anchor" aria-hidden="true" href="#graphsage">#</a></h1>
+<h2 id="原理">原理<a hidden class="anchor" aria-hidden="true" href="#原理">#</a></h2>
+<p>去学习一个节点的信息是怎么通过其邻居节点的特征聚合而来的。 学习到了这样的“<strong>聚合函数</strong>”，而我们本身就已知各个节点的特征和邻居关系，我们就可以很方便地得到一个新节点的表示了。</p>
+<p>GraphSAGE方法学到的node embedding，是根据node的邻居关系的变化而变化的，也就是说，即使是旧的node，如果建立了一些新的link，那么其对应的embedding也会变化，而且也很方便地学到。</p>
+<h1 id="gat">GAT<a hidden class="anchor" aria-hidden="true" href="#gat">#</a></h1>
+<p>Graph Attention Network</p>
+<p>针对节点$i$和节点$j$ ， GAT 首先学习了他们之间的注意力权重$\alpha_{ij}$ （如左图所示）；然后，基于注意力权重${\alpha_1,…,\alpha_6}$来对节点${1,…,6}$的表示${h_1,…,h_6}$ 加权平均，进而得到节点$1$的表示 。</p>
+<h2 id="非对称的注意力权重">非对称的注意力权重<a hidden class="anchor" aria-hidden="true" href="#非对称的注意力权重">#</a></h2>
+<p>注意力值
+$$
+e_{ij} = a(W\vec h_i,W\vec h_j)
+$$
+$\vec h_i$，$\vec h_j$分别是两个节点的embeddings，$W$是投影矩阵
+$$
+e_{ij} = LeakyReLU(\vec a^T[W\vec h_i||W\vec h_j])
+$$
+作者对两个节点的embeddings进行拼接，再映射为一个标量，因为拼接导致$e_{ij}\neq e_{ji}$</p>
+<p>除了拼接操作以外，聚合邻居信息时，需要对每个节点的所有邻居的注意力进行归一化。
+$$
+\alpha <em>{ij} = softmax_j(e</em>{ij}) = \frac {exp(e_{ij})}{\sum <em>{k \in N_i}exp(e</em>{ik})}
+$$
+这里的归一化进一步导致了注意力权重的非对称性。因为在归一化的过程中，每个节点的归一化对象并不一样</p>
+<p>$e_{ij}$是针对节点${i}$的所有邻居进行归一化，而$e_{ji}$是针对节点$j$的所有邻居进行归一化。</p>
+<p>如果加上激活函数$LeakyReLU$，这样不会丢失自己的信息</p>
+<p><img loading="lazy" src="https://raw.githubusercontent.com/ChangxiaoyingCSU/ChangxiaoyingCSU.github.io/master/typora/image-20240410101758694.png" alt="image-20240410101758694"  />
+</p>
+<p>[深入理解图注意力机制（Graph Attention Network）-CSDN博客](<a href="https://blog.csdn.net/c9Yv2cf9I06K2A9E/article/details/105548217#:~:text=">https://blog.csdn.net/c9Yv2cf9I06K2A9E/article/details/105548217#:~:text=</a>图神经网络已经成为深度学习领域最炽手可热的方向之一。 作为一种代表性的图卷积网络，Graph Attention Network,(GAT) 引入了注意力机制来实现更好的邻居聚合。 通过学习邻居的权重，GAT 可以实现对邻居的加权聚合。)
+$$
+h&rsquo;<em>i = \sigma (\sum</em>{j \in N_i} \alpha _{ij}Wh_j)
+$$
+根据计算好的注意力系数，将特征加权求和，$h&rsquo;_i$即为GAT输出的每个顶点$i$融合了邻域信息的新特征，$\sigma(·)$是激活函数</p>
+<h2 id="多头注意力机制">多头注意力机制<a hidden class="anchor" aria-hidden="true" href="#多头注意力机制">#</a></h2>
+<p>$$
+h&rsquo;<em>i(K) =||</em>{k=1}^K \sigma (\sum_{j \in N_i} \alpha _{ij}Wh_j)
+$$</p>
+<p>GAT中重要的学习参数是$W$与$a(\sdot)$，因为上述的逐顶点运算方式，这两个参数仅与顶点特征相关与图的结构毫无关系（也可以从代码上看出来）。所以测试任务中改变图的结构，对于GAT影响并不大只需要改变$N_i$重新计算即可</p>
+<p>与此相反的是，GCN是一种全图的计算方式，一次计算就更新全图的节点特征。学习的参数很大程度与图结构相关，这使得GCN在inductive任务上遇到困境。所以对于图结构存在噪声的任务来讲GAT会比GNN好。</p>
+<p>可以发现本质上而言：GCN与GAT都是将邻居顶点的特征聚合到中心顶点上（一种aggregate运算），利用graph上的local stationary学习新的顶点特征表达。不同的是GCN利用了拉普拉斯矩阵，GAT利用attention系数。一定程度上而言，GAT会更强，因为 顶点特征之间的相关性被更好地融入到模型中。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/life/cinema_luonan/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>西尔莎·罗南（Saoirse Ronan）电影图集</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/technology/neo4j/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Neo4j 教程</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://sharleen-c.github.io/">Sharleen</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

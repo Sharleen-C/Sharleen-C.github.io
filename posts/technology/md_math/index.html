@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Markdown数学公式 | Sharing Sharleen Blog</title>
-<meta name="keywords" content="first">
+<meta name="keywords" content="technology">
 <meta name="description" content="美丽Blog必备才艺">
 <meta name="author" content="Sharleen">
 <link rel="canonical" href="https://canonical.url/to/page">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://sharleen-c.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://sharleen-c.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://sharleen-c.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://sharleen-c.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://sharleen-c.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://sharleen-c.github.io/posts/technology/md_math/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/technology/md_math/">
 <noscript>
     <style>
         #theme-toggle,
@@ -89,79 +89,7 @@
         border: inherit;
         color: #515151;
     }
-</style><meta property="og:title" content="Markdown数学公式" />
-<meta property="og:description" content="美丽Blog必备才艺" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://sharleen-c.github.io/posts/technology/md_math/" />
-<meta property="og:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-09-25T21:49:02+08:00" />
-<meta property="article:modified_time" content="2024-09-25T21:49:02+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" />
-<meta name="twitter:title" content="Markdown数学公式"/>
-<meta name="twitter:description" content="美丽Blog必备才艺"/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://sharleen-c.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "🥂🪄Useful Technology",
-      "item": "https://sharleen-c.github.io/posts/technology/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "Markdown数学公式",
-      "item": "https://sharleen-c.github.io/posts/technology/md_math/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Markdown数学公式",
-  "name": "Markdown数学公式",
-  "description": "美丽Blog必备才艺",
-  "keywords": [
-    "first"
-  ],
-  "articleBody": "Hugo \u0026 MathJax 参考在Hugo中使用MathJax\n新建`layouts/partials/mathjax.html' 1\u003cscript type=\"text/javascript\" 2 async 3 src=\"https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"\u003e 4 MathJax.Hub.Config({ 5 tex2jax: { 6 inlineMath: [['$','$'], ['\\\\(','\\\\)']], 7 displayMath: [['$$','$$'], ['\\[\\[','\\]\\]']], 8 processEscapes: true, 9 processEnvironments: true, 10 skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'], 11 TeX: { equationNumbers: { autoNumber: \"AMS\" }, 12 extensions: [\"AMSmath.js\", \"AMSsymbols.js\"] } 13 } 14 }); 15 16 MathJax.Hub.Queue(function() { 17 // Fix tags after MathJax finishes running. This is a 18 // hack to overcome a shortcoming of Markdown. Discussion at 19 // https://github.com/mojombo/jekyll/issues/199 20 var all = MathJax.Hub.getAllJax(), i; 21 for(i = 0; i \u003c all.length; i += 1) { 22 all[i].SourceElement().parentNode.className += ' has-jax'; 23 } 24 }); 25\u003c/script\u003e 26 27\u003cstyle\u003e 28 code.has-jax { 29 font: inherit; 30 font-size: 100%; 31 background: inherit; 32 border: inherit; 33 color: #515151; 34 } 35\u003c/style\u003e 在layouts/partials/head.html中新增 1{{ partial \"mathjax.html\" . }} 在hugo.toml中增加 1[params] 2math = true 注意在实际在使用过程中由于\\\\会被转义为\\，因此在markdown书写过程中需要注意将换行符\\\\转换为\\\\\\\\ 公式 微分符号 语法 效果 \\nabla $\\nabla$ \\partial x $\\partial x$ \\mathrm{d}x $\\mathrm{d}x$ \\dot x $\\dot x$ \\ddot y $\\ddot y$ 下标问题 语法 效果 \\sum_{i\\leq j\\leq k}^nf(n) $\\sum_{i\\leq j\\leq k}^nf(n)$ \\sum\\limits_{i\\leq j\\leq k}^nf(n) $\\sum\\limits_{i\\leq j\\leq k}^nf(n)$ \\underset{i\\leq j\\leq\\ k}{\\mathrm{arg\\ min}} $\\underset{i\\leq j\\leq\\ k}{\\mathrm{arg\\ min}}$ \\underset{i\\leq j\\leq\\ k}{\\sum} $\\underset{i\\leq j\\leq\\ k}{\\sum}$ 上下标，正负无穷 语法 效果 x^2 $x^2$ y_1 $y_1$ \\infty $\\infty$ -\\infty $-\\infty$ 加减乘除/分式/根号/省略号 语法 效果 a+b-c*d $a+b-c*d$ a\\div{b} $a\\div{b}$ a\\pm{b} $a\\pm{b}$ \\frac{a}{b} $\\frac{a}{b}$ \\sqrt{b} $\\sqrt{b}$ \\cdots $\\cdots$ 三角函数 语法 效果 \\sin{\\theta} $\\sin{\\theta}$ \\cos{\\theta} $\\cos{\\theta}$ \\tan{\\theta} $\\tan{\\theta}$ \\cot{\\theta} $\\cot{\\theta}$ 矢量/累加累乘/极限 语法 效果 \\vec{F} $\\vec{F}$ \\sum_{i=1}^{n}{a_i} $\\sum_{i=1}^{n}{a_i}$ \\prod_{i=1}^{n}{a_i} $ $ \\lim_{a\\rightarrow+\\infty}{a+b} $\\lim_{a\\rightarrow+\\infty}{a+b}$ 希腊字母 语法 效果 语法 效果 \\alpha $\\alpha$ \\beta $\\beta$ \\gamma $\\gamma$ \\delta $\\delta$ \\epsilon $\\epsilon$ \\varepsilon $\\varepsilon$ \\eta $\\eta$ \\theta $\\theta$ \\kappa $\\kappa$ \\iota $\\iota$ \\zeta $\\zeta$ \\lambda $\\lambda$ \\mu $\\mu$ \\phi $\\phi$ \\pi $\\pi$ \\rho $\\rho$ \\xi $\\xi$ \\nu $\\nu$ \\upsilon $\\upsilon$ \\varphi $\\varphi$ \\chi $\\chi$ \\psi $\\psi$ \\omega $\\omega$ 关系运算符 语法 效果 描述 \\leq $\\leq$ 小于等于 \\geq $\\geq$ 大于等于 \\sum $\\sum$ 求和 \\times $\\times$ 乘号 \\pm $\\pm$ 正负号 \\div $\\div$ 除号 \\mid $\\mid$ 竖线 \\cdot $\\cdot$ 点 \\circ $\\circ$ 圈 \\ast $\\ast$ 星号 \\bigotimes $\\bigotimes$ 克罗内克积 \\bigoplus $\\bigoplus$ 异或 \\bigodot $\\bigodot$ 点乘 \\approx $\\approx$ 约等于 \\prod $\\prod$ N元乘积 \\coprod $\\coprod$ N元余积 \\cdots $\\cdots$ 省略号 \\int $\\int$ 积分 \\iint $\\iint$ 双重积分 \\oint $\\oint$ 曲线积分 \\infty $\\infty$ 无穷 \\nabla $\\nabla$ 梯度 \\because $\\because$ 因为 \\therefore $\\therefore$ 所以 \\forall $\\forall$ 任意 \\exists $\\exists$ 存在 \\not= $\\not=$ 不等于 \\not\\subset $\\not\\subset$ 不属于 \\emptyset $\\emptyset$ 空集 \\in $\\in$ 属于 \\notin $\\notin$ 不属于 \\subset $\\subset$ 子集 \\subseteq $\\subseteq$ 真子集 \\bigcup $\\bigcup$ 并集 \\bigcap $\\bigcap$ 交集 \\bigvee $\\bigvee$ 逻辑或 \\bigwedge $\\bigwedge$ 逻辑与 \\biguplus $\\biguplus$ 多重集 \\bigsqcup $\\bigsqcup$ \\hat{y} $\\hat{y}$ 期望 \\check{y} $\\check{y}$ \\breve{y} $\\breve{y}$ \\overline{a+b+c+d} $\\overline{a+b+c+d}$ 平均值 \\underline{a+b+c+d} $\\underline{a+b+c+d}$ \\overbrace{a+\\underbrace{b+c}_{1.0}+d}^{2.0} $\\overbrace{a+\\underbrace{b+c}_{1.0}+d}^{2.0}$ \\uparrow $\\uparrow$ 向上 \\downarrow $\\downarrow$ 向下 \\Uparrow $\\Uparrow$ \\Downarrow $\\Downarrow$ \\rightarrow $\\rightarrow$ 向右 \\leftarrow $\\leftarrow$ 向左 \\Rightarrow $\\Rightarrow$ \\Leftarrow $\\Leftarrow$ \\longrightarrow $\\longrightarrow$ \\longleftarrow $\\longleftarrow$ \\Longrightarrow $\\Longrightarrow$ \\Longleftarrow $\\Longleftarrow$ 矩阵 简单矩阵 $$ \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\tag{1} $$\n1$$ 2\\begin{matrix} 3 1 \u0026 2 \u0026 3 \\\\ 4 4 \u0026 5 \u0026 6 \\\\ 5 7 \u0026 8 \u0026 9 6\\end{matrix} \\tag{1} 7$$ 带左右括号的矩阵(大中小括号) 大括号 $$ \\left{ \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\right} \\tag{2} $$\n1$$ 2 \\left\\{ 3 \\begin{matrix} 4 1 \u0026 2 \u0026 3 \\\\ 5 4 \u0026 5 \u0026 6 \\\\ 6 7 \u0026 8 \u0026 9 7 \\end{matrix} 8 \\right\\} \\tag{2} 9$$ 10或 11$$ 12 \\begin{Bmatrix} 13 1 \u0026 2 \u0026 3 \\\\ 14 4 \u0026 5 \u0026 6 \\\\ 15 7 \u0026 8 \u0026 9 16 \\end{Bmatrix} \\tag{2} 17$$ 中括号 $$ \\left[ \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\right] \\tag{3} $$\n1$$ 2 \\left[ 3 \\begin{matrix} 4 1 \u0026 2 \u0026 3 \\\\ 5 4 \u0026 5 \u0026 6 \\\\ 6 7 \u0026 8 \u0026 9 7 \\end{matrix} 8 \\right] \\tag{3} 9$$ 10 11$$ 12 \\begin{bmatrix} 13 1 \u0026 2 \u0026 3 \\\\ 14 4 \u0026 5 \u0026 6 \\\\ 15 7 \u0026 8 \u0026 9 16 \\end{bmatrix} \\tag{3} 17$$ 小括号 $$ \\left( \\begin{matrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{matrix} \\right) \\tag{4} $$\n1$$ 2 \\left( 3 \\begin{matrix} 4 1 \u0026 2 \u0026 3 \\\\ 5 4 \u0026 5 \u0026 6 \\\\ 6 7 \u0026 8 \u0026 9 7 \\end{matrix} 8 \\right) \\tag{4} 9$$ 包含希腊字母与省略号 $$ \\left( \\begin{matrix} 1 \u0026 2 \u0026 \\cdots \u0026 5 \\\\ 6 \u0026 7 \u0026 \\cdots \u0026 10 \\\\ \\vdots \u0026 \\vdots \u0026 \\ddots \u0026 \\vdots \\\\ \\alpha \u0026 \\alpha+1 \u0026 \\cdots \u0026 \\alpha+4 \\end{matrix} \\right) \\tag{5} $$\n1$$ 2\\left\\( 3\\begin{matrix} 41 \u0026 2 \u0026 \\cdots \u0026 5 \\\\ 56 \u0026 7 \u0026 \\cdots \u0026 10 \\\\ 6\\vdots \u0026 \\vdots \u0026 \\ddots \u0026 \\vdots \\\\ 7\\alpha \u0026 \\alpha+1 \u0026 \\cdots \u0026 \\alpha+4 8\\end{matrix} 9\\right\\) \\tag{5} 10$$ 行列式 $$ \\begin{vmatrix} 1 \u0026 2 \u0026 3 \\\\ 4 \u0026 5 \u0026 6 \\\\ 7 \u0026 8 \u0026 9 \\end{vmatrix} \\tag{7} $$\n1$$ 2 \\begin{vmatrix} 3 1 \u0026 2 \u0026 3 \\\\ 4 4 \u0026 5 \u0026 6 \\\\ 5 7 \u0026 8 \u0026 9 6 \\end{vmatrix} 7\\tag{7} 8$$ 表格 简单表格 $$ \\begin{array}{|c|c|c|} \\hline 2 \u0026 9 \u0026 4\\\\ \\hline 7 \u0026 5 \u0026 3\\\\ \\hline 6 \u0026 1 \u0026 8\\\\ \\hline \\end{array} $$\n1$$ 2\\begin{array}{|c|c|c|} c、l、r分别表示居中、左对齐、右对齐 3\t竖直分割线：在定义式中插入 |， （||表示两条竖直分割线）。 4\t水平分割线：在下一行输入前插入 \\hline 5\t\\hline 2 \u0026 9 \u0026 4\\\\ 6\t\\hline 7 \u0026 5 \u0026 3\\\\ 7\t\\hline 6 \u0026 1 \u0026 8\\\\ 8\t\\hline 9\\end{array} 10$$ 真值表 $$ \\begin{array}{c c|c} A \u0026 B \u0026 F\\\\ \\hline 0 \u0026 0 \u0026 0\\\\ 0 \u0026 1 \u0026 1\\\\ 1 \u0026 0 \u0026 1\\\\ 1 \u0026 1 \u0026 1\\\\ \\end{array} $$\n1$$ 2\\begin{array}{c c|c} 3\tA \u0026 B \u0026 F\\\\ 4\t\\hline 0 \u0026 0 \u0026 0\\\\ 5\t0 \u0026 1 \u0026 1\\\\ 6\t1 \u0026 0 \u0026 1\\\\ 7\t1 \u0026 1 \u0026 1\\\\ 8\\end{array} 9$$ 多行等式对齐 $$ \\begin{aligned} a \u0026= b + c \\\\ \u0026= d + e + f \\end{aligned} $$\n1$$ 2\\begin{aligned} 3a \u0026= b + c \\\\ 4 \u0026= d + e + f 5\\end{aligned} 6$$ 方程组、条件表达式 $$ \\begin{cases} 3x + 5y + z \\\\ 7x - 2y + 4z \\\\ -6x + 3y + 2z \\end{cases} $$\n1$$ 2\\begin{cases} 33x + 5y + z \\\\ 47x - 2y + 4z \\\\ 5-6x + 3y + 2z 6\\end{cases} 7$$ $$ f(n) = \\begin{cases} n/2, \u0026 \\text{if }n\\text{ is even} \\\\ 3n+1, \u0026 \\text{if }n\\text{ is odd} \\end{cases} $$\n1$$ 2f(n) = 3\\begin{cases} 4n/2, \u0026 \\text{if }n\\text{ is even} \\\\ 53n+1, \u0026 \\text{if }n\\text{ is odd} 6\\end{cases} 7$$ 间隔 语法 效果 紧贴： a\\!b $a!b$ 无空格： ab $ab$ 小空格： a\\,b $a,b$ 中空格： a\\;b $a;b$ 大空格： a\\ b $a\\ b$ 真空格： a\\quad b $a\\quad b$ 双真空格： a\\qquad b $a\\qquad b$ 数学结构 符号 代码 符合 代码 符号 代码 $\\frac{abd}{xyz}$ \\frac{abd}{xyz} $\\overline{abc}$ \\overline{abc} $\\overrightarrow{abc}$ \\overrightarrow{abc} $f’$ f’ $\\underline{abc}$ \\underline{abc} $\\overleftarrow{abc}$ \\overleftarrow{abc} $\\sqrt{abc}$ \\sqrt{abc} $\\widehat{abc}$ \\widehat{abc} $\\overbrace{abc}$ \\overbrace{abc} $\\sqrt[n]{abc}$ \\sqrt[n]{abc} $\\widetilde{abc}$ \\widetilde{abc} $\\underbrace{abc}$ \\underbrace{abc} 分隔符 符号 代码 符号 代码 符号 代码 $\\vert$ \\vert $\\lfloor$ \\lfloor $\\llcorner$ \\llcorner $\\Vert$ \\Vert $\\rfloor$ \\rfloor $\\lrcorner$ \\lrcorner $\\langle$ \\langle $\\lceil$ \\lceil $\\ulcorner$ \\ulcorner $\\rangle$ \\rangle $\\rceil$ \\rceil $\\urcorner$ \\urcorner $\\backslash$ \\backslash 标准函数名称 函数名称应该出现罗马字体，而不是倾斜，如\n正确：\\tan(at-n\\pi)\\rightarrow$ $\\tan(at-n\\pi)$\n错误：tan(at-n\\pi)\\rightarrow$ $tan(at-n\\pi)$\n其他样式 Caligraphic letters \\mathcal{A} 如:$\\mathcal{A}$、$\\mathcal{B}$、$\\mathcal{C}$、$\\mathcal{D}$、$\\mathcal{E}$、$\\mathcal{F}$、$\\mathcal{G}$、$\\mathcal{H}$、$\\mathcal{I}$、$\\mathcal{J}$、$\\mathcal{K}$、$\\mathcal{L}$、$\\mathcal{M}$、……、$\\mathcal{Z}$\nMathbb letters \\mathbb{A} 如:$\\mathbb{A}$、$\\mathbb{B}$、$\\mathbb{C}$、$\\mathbb{D}$、$\\mathbb{E}$、$\\mathbb{F}$、$\\mathbb{G}$、$\\mathbb{H}$、$\\mathbb{I}$、$\\mathbb{J}$、$\\mathbb{K}$、$\\mathbb{L}$、$\\mathbb{M}$、……、$\\mathbb{Z}$\nMath Sans serif letter \\mathfrak{A} 如:$\\mathfrak{A}$、$\\mathfrak{B}$、$\\mathbb{C}$、$\\mathfrak{D}$、$\\mathfrak{E}$、$\\mathfrak{F}$、$\\mathfrak{G}$、$\\mathbb{H}$、$\\mathfrak{I}$、$\\mathfrak{J}$、$\\mathfrak{K}$、$\\mathbb{L}$、$\\mathfrak{M}$、……、$\\mathfrak{Z}$\nMath bold letter \\mathbf{A} 如:$\\mathbf{A}$、$\\mathbf{B}$、$\\mathbf{C}$、$\\mathbf{D}$、$\\mathbf{E}$、$\\mathbf{F}$、$\\mathbf{G}$、$\\mathbf{H}$、$\\mathbf{I}$、$\\mathbf{J}$、$\\mathbf{K}$、$\\mathbf{L}$、$\\mathbf{M}$、……、$\\mathbf{Z}$\n",
-  "wordCount" : "1221",
-  "inLanguage": "en",
-  "image":"https://sharleen-c.github.io/%3Cimage%20path/url%3E","datePublished": "2024-09-25T21:49:02+08:00",
-  "dateModified": "2024-09-25T21:49:02+08:00",
-  "author":{
-    "@type": "Person",
-    "name": "Sharleen"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://sharleen-c.github.io/posts/technology/md_math/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sharing Sharleen Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://sharleen-c.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</style>
 </head>
 
 <body class="" id="top">
@@ -179,7 +107,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://sharleen-c.github.io/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -205,38 +133,38 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://sharleen-c.github.io/archives" title="Archive">
+                <a href="http://localhost:1313/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/science/" title="Science">
+                <a href="http://localhost:1313/posts/science/" title="Science">
                     <span>Science</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/life/" title="Life">
+                <a href="http://localhost:1313/posts/life/" title="Life">
                     <span>Life</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/tags/" title="Tags">
-                    <span>Tags</span>
+                <a href="http://localhost:1313/posts/technology/" title="Technology">
+                    <span>Technology</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/technology/" title="Technology">
-                    <span>Technology</span>
+                <a href="http://localhost:1313/posts/work/" title="Work">
+                    <span>Work</span>
                 </a>
             </li>
         </ul>
@@ -246,7 +174,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://sharleen-c.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/technology/">🥂🪄Useful Technology</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/technology/">🥂🪄Useful Technology</a></div>
     <h1 class="post-title entry-hint-parent">
       Markdown数学公式
     </h1>
@@ -1368,12 +1296,12 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sharleen-c.github.io/posts/technology/neo4j/">
+  <a class="prev" href="http://localhost:1313/posts/technology/neo4j/">
     <span class="title">« Prev</span>
     <br>
     <span>Neo4j 教程</span>
   </a>
-  <a class="next" href="https://sharleen-c.github.io/posts/technology/hardware_basic/">
+  <a class="next" href="http://localhost:1313/posts/technology/hardware_basic/">
     <span class="title">Next »</span>
     <br>
     <span>电脑硬件基本知识及安装</span>

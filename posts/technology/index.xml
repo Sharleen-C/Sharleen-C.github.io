@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>🥂🪄Useful Technology on Sharing Sharleen Blog</title>
-    <link>https://sharleen-c.github.io/posts/technology/</link>
+    <link>http://localhost:1313/posts/technology/</link>
     <description>Recent content in 🥂🪄Useful Technology on Sharing Sharleen Blog</description>
     <generator>Hugo -- 0.134.3</generator>
     <language>en-us</language>
     <copyright>Sharleen</copyright>
     <lastBuildDate>Wed, 25 Sep 2024 22:25:20 +0800</lastBuildDate>
-    <atom:link href="https://sharleen-c.github.io/posts/technology/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/technology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neo4j 教程</title>
-      <link>https://sharleen-c.github.io/posts/technology/neo4j/</link>
+      <link>http://localhost:1313/posts/technology/neo4j/</link>
       <pubDate>Wed, 25 Sep 2024 22:25:20 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/technology/neo4j/</guid>
+      <guid>http://localhost:1313/posts/technology/neo4j/</guid>
       <description>Knowledge Graph必经之路</description>
     </item>
     <item>
       <title>Markdown数学公式</title>
-      <link>https://sharleen-c.github.io/posts/technology/md_math/</link>
+      <link>http://localhost:1313/posts/technology/md_math/</link>
       <pubDate>Wed, 25 Sep 2024 21:49:02 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/technology/md_math/</guid>
+      <guid>http://localhost:1313/posts/technology/md_math/</guid>
       <description>美丽Blog必备才艺</description>
     </item>
     <item>
       <title>电脑硬件基本知识及安装</title>
-      <link>https://sharleen-c.github.io/posts/technology/hardware_basic/</link>
+      <link>http://localhost:1313/posts/technology/hardware_basic/</link>
       <pubDate>Wed, 25 Sep 2024 21:43:44 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/technology/hardware_basic/</guid>
+      <guid>http://localhost:1313/posts/technology/hardware_basic/</guid>
       <description>为安装一台自己的主机做准备x)</description>
     </item>
     <item>
       <title>VSCode使用相关问题</title>
-      <link>https://sharleen-c.github.io/posts/technology/vscode_usage/</link>
+      <link>http://localhost:1313/posts/technology/vscode_usage/</link>
       <pubDate>Wed, 25 Sep 2024 21:41:28 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/technology/vscode_usage/</guid>
+      <guid>http://localhost:1313/posts/technology/vscode_usage/</guid>
       <description>VSCode作为常用工具，也遇到了一些小问题</description>
     </item>
     <item>
       <title>Conda安装以及创建虚拟环境</title>
-      <link>https://sharleen-c.github.io/posts/technology/conda_install/</link>
+      <link>http://localhost:1313/posts/technology/conda_install/</link>
       <pubDate>Wed, 25 Sep 2024 21:34:54 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/technology/conda_install/</guid>
+      <guid>http://localhost:1313/posts/technology/conda_install/</guid>
       <description>Conda安装简单但又有一点复杂🥲</description>
     </item>
     <item>
       <title>Hugo &#43; PaperMode 建站踩坑指北</title>
-      <link>https://sharleen-c.github.io/posts/technology/new_website/</link>
+      <link>http://localhost:1313/posts/technology/new_website/</link>
       <pubDate>Wed, 25 Sep 2024 14:42:17 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/technology/new_website/</guid>
+      <guid>http://localhost:1313/posts/technology/new_website/</guid>
       <description>一些泪和痛，其实不难，但莫名其妙地花费了很长时间</description>
     </item>
   </channel>

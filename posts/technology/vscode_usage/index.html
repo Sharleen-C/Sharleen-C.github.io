@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>VSCode使用相关问题 | Sharing Sharleen Blog</title>
 <meta name="keywords" content="technology">
 <meta name="description" content="VSCode作为常用工具，也遇到了一些小问题">
 <meta name="author" content="Sharleen">
 <link rel="canonical" href="https://canonical.url/to/page">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://sharleen-c.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://sharleen-c.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://sharleen-c.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://sharleen-c.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://sharleen-c.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://sharleen-c.github.io/posts/technology/vscode_usage/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/technology/vscode_usage/">
 <noscript>
     <style>
         #theme-toggle,
@@ -89,79 +89,7 @@
         border: inherit;
         color: #515151;
     }
-</style><meta property="og:title" content="VSCode使用相关问题" />
-<meta property="og:description" content="VSCode作为常用工具，也遇到了一些小问题" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://sharleen-c.github.io/posts/technology/vscode_usage/" />
-<meta property="og:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-09-25T21:41:28+08:00" />
-<meta property="article:modified_time" content="2024-09-25T21:41:28+08:00" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://sharleen-c.github.io/%3Cimage%20path/url%3E" />
-<meta name="twitter:title" content="VSCode使用相关问题"/>
-<meta name="twitter:description" content="VSCode作为常用工具，也遇到了一些小问题"/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Posts",
-      "item": "https://sharleen-c.github.io/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "🥂🪄Useful Technology",
-      "item": "https://sharleen-c.github.io/posts/technology/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "VSCode使用相关问题",
-      "item": "https://sharleen-c.github.io/posts/technology/vscode_usage/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "VSCode使用相关问题",
-  "name": "VSCode使用相关问题",
-  "description": "VSCode作为常用工具，也遇到了一些小问题",
-  "keywords": [
-    "technology"
-  ],
-  "articleBody": "VSCode使用相关问题 修改文件图标 Extensions -\u003e VSCode Icons -\u003e Install -\u003e Apply\n安装Nodejs 官网下载对应版本安装包\n指定路径进行下载，并将下载路径写入环境变量\nD:\\NodeJs\\install\n1. 查看npm默认存放位置 使用npm get prefix查看npm全局模块的存放路径\n1npm get prefix 2\u003e\u003e\u003e C:\\Users\\xxx\\AppData\\Roaming\\npm 使用npm get cache查看npm缓存默认存放路径\n1npm get cache 2\u003e\u003e\u003e C:\\Users\\xxx\\AppData\\Local\\npm-cache 2. 修改默认文件夹 在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹\n设置全局模块的安装路径到 “node_global” 文件夹，\nnpm config set prefix \"D:\\NodeJs\\install\\node_global\" 设置缓存到 “node_cache” 文件夹\nnpm config set cache \"D:\\NodeJs\\install\\node_cache\" 由于 node 全局模块大多数都是可以通过命令行访问的，还要把【node_global】的路径“E:\\devTools\\nodejs\\node_global”加入到【系统变量 】下的【PATH】 变量中，方便直接使用命令行运行\n3. 测试默认位置是否更改成功 经过上面的步骤，nodejs下载的模块就会自动下载到我们自定义的目录，接下来我们测试一下是否更改成功。输入下面的命令：\nnpm install express -g or npm install express --global 若执行命令npm install express -g出现如下报错：\n是由于对文件夹操作的权限不够，右击安装路径文件夹（D:\\NodeJs\\install）-\u003e属性-\u003e安全，点击编辑，将所有权限都✔即可\n如果依旧报错，就将D:\\NodeJs\\install\\node_modules D:\\NodeJs\\install\\node_cache D:\\NodeJs\\install\\node_global同样赋予所有权限\n4. 设置淘宝镜像 查看当前使用的镜像路径\n1npm config get registry 2\u003e\u003e\u003e https://registry.npmjs.org/ 更换为国内的淘宝镜像\nnpm config set registry https://registry.npmmirror.com 再次检查当前的镜像\n1npm config get registry 2\u003e\u003e\u003e https://registry.npmmirror.com 说明：由于npm的服务器在海外，所以访问速度比较慢，访问不稳定 ，cnpm的服务器是由淘宝团队提供，服务器在国内，cnpm是npm镜像，一般会同步更新，相差在10分钟，所以cnpm在安装一些软件时候会比较有优势。但是cnpm一般只用于模块安装，在项目创建与卸载等相关操作时仍使用npm。\n全局安装基于淘宝源的cnpm\nnpm install -g cnpm --registry=https://registry.npmmirror.com 执行命令查看cnpm是否安装成功\n1cnpm -v 系统禁止运行脚本 在 Vs Code 终端输入 vue init webpack app， 创建一个名为 app 的 Vue 项目时报错如下： 无法加载文件 D:\\nodejs\\node_global\\webpack.ps1，因为在此系统上禁止运行脚本，有关详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170\n解决报错： （1）以管理员身份运行vs code\n（2）在终端执行：get-ExecutionPolicy，显示Restricted（表示状态是禁止的）\n（3）在终端执行：set-ExecutionPolicy RemoteSigned\n（4）在终端执行：get-ExecutionPolicy，显示RemoteSigned\n此时再使用“vue init webpack 项目名称”创建项目，不会报错\n1get-ExecutionPolicy 2\u003e\u003e\u003e Restricted 3set-ExecutionPolicy RemoteSigned 4get-ExecutionPolicy 5\u003e\u003e\u003e RemoteSigned webpack安装 在安装webpack前，你必须为本机安装 node.js\n由于webpack4后的版本，命令迁移至webpack-cli，因此还需安装webpack-cli\n全局安装 npm install webpack webpack-cli -g --save-dev 安装后执行\n1webpack -v 正常显示说明安装好了\n项目安装 npm install webpack webpack-cli --save-dev 项目下多了node_moudle文件 package_lock.json文件；说明成功安装\n1npm init 一路回车，项目出现package.json\n出现依赖包冲突的解决方案 code ERESOLVE peer vue@“^2.6.14 || ^3.2.0“ from pinia@2.0.33\n报错\n[18:53:35] npm ERR! code ERESOLVE [18:53:35] npm ERR! ERESOLVE unable to resolve dependency tree [18:53:35] npm ERR! [18:53:35] npm ERR! While resolving: kamp-website@0.0.0 [18:53:35] npm ERR! Found: vue@3.2.47 [18:53:35] npm ERR! node_modules/vue [18:53:35] npm ERR! vue@\"^3.2.0\" from the root project [18:53:35] npm ERR! peer vue@\"^2.6.14 || ^3.2.0\" from pinia@2.0.33 [18:53:35] npm ERR! node_modules/pinia [18:53:35] npm ERR! pinia@\"^2.0.33\" from the root project [18:53:35] npm ERR! [18:53:35] npm ERR! Could not resolve dependency: [18:53:35] npm ERR! peer vue@\"\u003e= 2.5 \u003c 2.7\" from @vue/composition-api@1.7.1 [18:53:35] npm ERR! node_modules/@vue/composition-api [18:53:35] npm ERR! peer @vue/composition-api@\"^1.4.0\" from pinia@2.0.33 [18:53:35] npm ERR! node_modules/pinia [18:53:35] npm ERR! pinia@\"^2.0.33\" from the root project [18:53:35] npm ERR! [18:53:35] npm ERR! Fix the upstream dependency conflict, or retry [18:53:35] npm ERR! this command with --force, or --legacy-peer-deps [18:53:35] npm ERR! to accept an incorrect (and potentially broken) dependency resolution. [18:53:35] npm ERR! [18:53:35] npm ERR! See /root/.npm/.npm_cache/eresolve-report.txt for a full report. [18:53:35] npm timing npm Completed in 8317ms [18:53:35] [18:53:35] npm ERR! A complete log of this run can be found in: [18:53:35] npm ERR! /root/.npm/.npm_cache/_logs/2023-03-16T10_53_35_924Z-debug.log [18:53:35] [ERROR] BUILD ERROR [18:53:35] [ERROR] 115040348 [18:53:35] [ERROR] 1 解决方法\nnpm install --legacy-peer-deps 运行Vue项目 npm install npm run dev 运行npm run dev 出现错误，显示vite不是外部命令，\n原因是没有删除项目文件中的node_modules 文件夹 和 package-lock.json 文件，删除即可。\n",
-  "wordCount" : "391",
-  "inLanguage": "en",
-  "image":"https://sharleen-c.github.io/%3Cimage%20path/url%3E","datePublished": "2024-09-25T21:41:28+08:00",
-  "dateModified": "2024-09-25T21:41:28+08:00",
-  "author":{
-    "@type": "Person",
-    "name": "Sharleen"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://sharleen-c.github.io/posts/technology/vscode_usage/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Sharing Sharleen Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://sharleen-c.github.io/favicon.ico"
-    }
-  }
-}
-</script>
+</style>
 </head>
 
 <body class="" id="top">
@@ -179,7 +107,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://sharleen-c.github.io/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Sharing Sharleen Blog (Alt + H)">Sharing Sharleen Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -205,38 +133,38 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://sharleen-c.github.io/archives" title="Archive">
+                <a href="http://localhost:1313/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/science/" title="Science">
+                <a href="http://localhost:1313/posts/science/" title="Science">
                     <span>Science</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/about/" title="About">
+                <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/life/" title="Life">
+                <a href="http://localhost:1313/posts/life/" title="Life">
                     <span>Life</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/tags/" title="Tags">
-                    <span>Tags</span>
+                <a href="http://localhost:1313/posts/technology/" title="Technology">
+                    <span>Technology</span>
                 </a>
             </li>
             <li>
-                <a href="https://sharleen-c.github.io/posts/technology/" title="Technology">
-                    <span>Technology</span>
+                <a href="http://localhost:1313/posts/work/" title="Work">
+                    <span>Work</span>
                 </a>
             </li>
         </ul>
@@ -246,7 +174,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://sharleen-c.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/">Posts</a>&nbsp;»&nbsp;<a href="https://sharleen-c.github.io/posts/technology/">🥂🪄Useful Technology</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/technology/">🥂🪄Useful Technology</a></div>
     <h1 class="post-title entry-hint-parent">
       VSCode使用相关问题
     </h1>
@@ -482,12 +410,12 @@ npm install express --global
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://sharleen-c.github.io/posts/technology/hardware_basic/">
+  <a class="prev" href="http://localhost:1313/posts/technology/hardware_basic/">
     <span class="title">« Prev</span>
     <br>
     <span>电脑硬件基本知识及安装</span>
   </a>
-  <a class="next" href="https://sharleen-c.github.io/posts/technology/conda_install/">
+  <a class="next" href="http://localhost:1313/posts/technology/conda_install/">
     <span class="title">Next »</span>
     <br>
     <span>Conda安装以及创建虚拟环境</span>

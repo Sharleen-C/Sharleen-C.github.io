@@ -2,18 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>🪂🌆Science Road. on Sharing Sharleen Blog</title>
-    <link>https://sharleen-c.github.io/posts/science/</link>
+    <link>http://localhost:1313/posts/science/</link>
     <description>Recent content in 🪂🌆Science Road. on Sharing Sharleen Blog</description>
     <generator>Hugo -- 0.134.3</generator>
     <language>en-us</language>
     <copyright>Sharleen</copyright>
-    <lastBuildDate>Wed, 25 Sep 2024 14:19:57 +0800</lastBuildDate>
-    <atom:link href="https://sharleen-c.github.io/posts/science/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Nov 2024 15:32:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Subgraph for KG</title>
+      <link>http://localhost:1313/posts/science/subgraph/</link>
+      <pubDate>Mon, 11 Nov 2024 15:32:02 +0800</pubDate>
+      <guid>http://localhost:1313/posts/science/subgraph/</guid>
+      <description>Desc Text.</description>
+    </item>
+    <item>
+      <title>GCN简单入门指北-学习版</title>
+      <link>http://localhost:1313/posts/science/gcn/</link>
+      <pubDate>Thu, 26 Sep 2024 10:08:58 +0800</pubDate>
+      <guid>http://localhost:1313/posts/science/gcn/</guid>
+      <description>与图结构相关当然绕不开GCN啦</description>
+    </item>
     <item>
       <title>关于图结构与文本的互相补充</title>
-      <link>https://sharleen-c.github.io/posts/science/gnn_text/</link>
+      <link>http://localhost:1313/posts/science/gnn_text/</link>
       <pubDate>Tue, 24 Sep 2024 16:19:57 +0800</pubDate>
-      <guid>https://sharleen-c.github.io/posts/science/gnn_text/</guid>
+      <guid>http://localhost:1313/posts/science/gnn_text/</guid>
       <description>Desc Text.</description>
     </item>
   </channel>
